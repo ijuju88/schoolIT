@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<script>
+function str(a)
+{
+	var x,y,sum;
+	x=document.getElementById("x").value;
+	y=document.getElementById("y").value;
+	
+	if(a==1){sum=parseInt(x)+parseInt(y);}
+	if(a==2){sum=parseInt(x)-parseInt(y);}
+	if(a==3){sum=parseInt(x)*parseInt(y);}
+	if(a==4){sum=parseInt(x)/parseInt(y);}
+	document.getElementById("sum").value=sum;
+}
+
+
+</script>
+  <title>Document</title>
+ </head>
+ <body>
+NUM1:<input type="text" id="x"><br/>
+NUM2:<input type="text" id="y">
+<hr/>
+<input type="button" value="+" onclick="str(1)">
+<input type="button" value="-" onclick="str(2)">
+<input type="button" value="*" onclick="str(3)">
+<input type="button" value="/" onclick="str(4)">
+<br/><hr/>
+Result:<input type="text" id="sum" >
+ </body>
+</html>

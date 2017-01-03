@@ -1,0 +1,29 @@
+package com.Threadtest;
+
+public class NumsumThreadjoin {
+
+}
+
+class NumSum11{
+	int sum;
+	public void setSum(){
+		for (int i = 0; i < 10; i++) {
+			sum+=1;
+		}
+	}
+	
+	public int getSum(){return sum;}
+}
+
+class Therad1 extends Thread{
+	NumSum11 ns11;
+	
+	public Therad1(NumSum11 ns11) {
+		this.ns11=ns11;
+	}
+	
+	public void run(){
+		Thread1 therad1=new Thread1(ns11);
+		therad1.start();
+	}
+}

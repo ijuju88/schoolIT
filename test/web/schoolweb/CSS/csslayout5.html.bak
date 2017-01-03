@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+	#box1{position: absolute;top:0px; left:0px; width:100px; height:100px;
+    background: blue; z-index: 200;}	
+	#box2{position:absolute; top:30px; left:30px; width:100px; height:100px; background:yellow; z-index: 100;}	
+	#box3{position:absolute; top:60px; left:60px; width:100px; height:100px; background:#cc00ff; z-index:0;}	
+
+</style>
+  <title>Document</title>
+ </head>
+ <body>
+	<div id="box1">box #1</p>
+	<div id="box2">box #2</p>
+	<div id="box3">box #3</p>
+ </body>
+</html>

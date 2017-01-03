@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+	function onLoadDoc(){
+		alert("문서가 로드되었습니다");
+		document.body.style.backgroundColor = "red";
+	}
+  </script>
+
+ </head>
+ <body onunload="onLoadDoc();">
+ </body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Testxmljava"/>
+<aop-project name="Admin"/>
+<aop-project name="MVCBoard"/>
+<aop-project name="AOP"/>
+<aop-project name="Student2"/>
+<aop-project name="MybatisProject"/>
+<aop-project name="BoardWeb"/>
+<aop-project name="DIEx3"/>
+</aop-reference-model>

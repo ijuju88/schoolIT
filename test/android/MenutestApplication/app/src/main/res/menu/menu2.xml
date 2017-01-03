@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Color">
+
+    <menu>
+        <item android:title="RED" android:id="@+id/red"/>
+        <item android:title="BLUE" android:id="@+id/blue"/>
+        <item android:title="GREEN" android:id="@+id/green"/>
+    </menu>
+    </item>
+
+    <item android:title="모양변경" >
+    <menu>
+        <item android:title="회전" android:id="@+id/rotate"/>
+        <item android:title="2배확대" android:id="@+id/enlarge"/>
+    </menu>
+    </item>
+</menu>

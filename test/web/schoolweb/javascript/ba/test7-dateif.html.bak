@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	var msg="";
+	var time =new Date().getHours();
+	if(time<12){msg="Good Morning!!"}
+	else if(time < 18){msg="Good Afternoon!!"}
+	else{msg="Good Evening!!"}
+	alert(msg);
+
+	</script>
+
+ </body>
+</html>

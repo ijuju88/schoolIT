@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="고객관리"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="102dp"
+        android:id="@+id/btncustomer"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="매출관리"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btncustomer"
+        android:layout_alignStart="@+id/btncustomer"
+        android:layout_marginTop="39dp"
+        android:id="@+id/btnsales"
+        android:layout_alignEnd="@+id/btncustomer" />
+
+    <Button
+        android:text="상품관리"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnsales"
+        android:layout_alignStart="@+id/btnsales"
+        android:layout_marginTop="39dp"
+        android:id="@+id/btngoods"
+        android:layout_alignEnd="@+id/btnsales" />
+</RelativeLayout>

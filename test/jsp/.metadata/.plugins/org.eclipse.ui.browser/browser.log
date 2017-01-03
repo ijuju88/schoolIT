@@ -1,0 +1,277 @@
+
+11월 01, 2016 15:23:26.10 NEW SESSION
+11월 01, 2016 15:23:26.10 [9716:12020:1101/152326:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 01, 2016 15:27:01.62 Vector smash protection is enabled.
+11월 01, 2016 16:43:14.18 A Parser-blocking, cross-origin script, https://s1.daumcdn.net/svc/original/U03/commonjs/cts/vr200/dcts.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.18 A Parser-blocking, cross-origin script, https://s1.daumcdn.net/svc/original/U03/commonjs/cts/vr200/dcts.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.18 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.19 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.20 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.20 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.21 A Parser-blocking, cross-origin script, https://s1.daumcdn.net/svc/original/U03/commonjs/cts/vr200/dcts.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.21 A Parser-blocking, cross-origin script, https://s1.daumcdn.net/svc/original/U03/commonjs/cts/vr200/dcts.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.23 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.24 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.25 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.26 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.28 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.29 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.30 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.31 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.31 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.32 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:14.33 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.48 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.50 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.51 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.52 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.54 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.55 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.56 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.57 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.58 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.59 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.60 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.61 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.62 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.63 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.64 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.65 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.66 A Parser-blocking, cross-origin script, http://at.artistchai.co.kr/timon/script/at_v12.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.68 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:43:24.69 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www07/ptc/bacf4e54-c1d9-4434-8f9e-4c481c6ef81a.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.
+11월 01, 2016 16:45:06.88 A Parser-blocking, cross-origin script, http://cdn.clicktale.net/www/tc/WR-latest.js, is invoked via document.write. This may be blocked by the browser if the[1101/164506:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 01, 2016 16:56:15.15 [9716:3452:1101/165615:ERROR:CONSOLE(1557)] "TypeError: Cannot read property 'script' of null TypeError: Cannot read property 'script' of null
+11월 01, 2016 16:56:15.16     at WebInspector.EventListener (chrome-devtools://devtools/bundled/inspector.js:6513:251)
+11월 01, 2016 16:56:15.16     at WebInspector.RemoteObjectImpl.createEventListener (chrome-devtools://devtools/bundled/inspector.js:6711:9)
+11월 01, 2016 16:56:15.17     at Array.map (native)
+11월 01, 2016 16:56:15.18     at WebInspector.RemoteObjectImpl.mycallback (chrome-devtools://devtools/bundled/inspector.js:6709:18)
+11월 01, 2016 16:56:15.18     at callback (chrome-devtools://devtools/bundled/inspector.js:4458:39)
+11월 01, 2016 16:56:15.19     at Object.dispatchResponse (chrome-devtools://devtools/bundled/inspector.js:4465:10)
+11월 01, 2016 16:56:15.19     at WebInspector.MainConnection.dispatch (chrome-devtools://devtools/bundled/inspector.js:4415:60)
+11월 01, 2016 16:56:15.20     at WebInspector.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/inspector.js:10591:7)
+11월 01, 2016 16:56:15.20     at WebInspector.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/inspector.js:738:185)
+11월 01, 2016 16:56:15.21     at innerDispatch (chrome-devtools://devtools/bundled/inspector.js:1557:58)", source: chrome-devtools://devtools/bundled/inspector.js (1557)
+
+11월 08, 2016 09:13:58.82 NEW SESSION
+11월 08, 2016 09:13:58.82 [3620:3920:1108/091358:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 08, 2016 09:14:45.95 Vector smash protection is enabled.
+11월 08, 2016 09:16:02.09 [1108/091602:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 08, 2016 09:16:04.45 [1108/091604:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 08, 2016 09:34:33.59 [1108/093433:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 08, 2016 09:36:54.56 [9844,6576:00:36:54.569000] Native Client module will be loaded at base address 0x0000030700000000
+11월 08, 2016 09:37:01.37 [3620:14240:1108/093701:ERROR:pnacl_host.cc(440)] TranslationFinished: TranslationID 40,-878690687 not found.
+
+11월 09, 2016 11:20:02.41 NEW SESSION
+11월 09, 2016 11:20:02.41 [9444:9408:1109/112002:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:25:16.10 [1109/112516:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:29:00.72 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(15953)] [.DisplayCompositor-00000297E28D6510]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+11월 09, 2016 11:29:00.74 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(8803)] [.DisplayCompositor-00000297E28D6510]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+11월 09, 2016 11:29:00.75 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(15953)] [.DisplayCompositor-00000297E28D6510]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+11월 09, 2016 11:29:00.76 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(8803)] [.DisplayCompositor-00000297E28D6510]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+11월 09, 2016 11:29:00.76 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(15953)] [.DisplayCompositor-00000297E28D6510]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+11월 09, 2016 11:29:00.77 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(8803)] [.DisplayCompositor-00000297E28D6510]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+11월 09, 2016 11:29:00.77 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(15953)] [.DisplayCompositor-00000297E28D6510]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+11월 09, 2016 11:29:00.78 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(8803)] [.DisplayCompositor-00000297E28D6510]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+11월 09, 2016 11:29:00.78 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(15953)] [.DisplayCompositor-00000297E28D6510]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+11월 09, 2016 11:29:00.79 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(8803)] [.DisplayCompositor-00000297E28D6510]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+11월 09, 2016 11:29:00.79 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(15953)] [.DisplayCompositor-00000297E28D6510]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+11월 09, 2016 11:29:00.79 [3120:3668:1109/112900:ERROR:gles2_cmd_decoder.cc(8803)] [.DisplayCompositor-00000297E28D6510]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+11월 09, 2016 11:35:14.51 [1109/113514:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:35:14.75 [1109/113514:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:35:14.79 [1109/113514:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:35:14.98 
+11월 09, 2016 11:35:15.01 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:37:10.67 [8304:7152:1109/113710:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:38:25.08 [1109/113825:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:38:25.15 [1109/113825:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:38:25.36 
+11월 09, 2016 11:38:25.38 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:39:41.47 [4660:12828:1109/113941:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:39:47.19 [1109/113947:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:39:47.19 [1109/113947:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:39:47.26 [1109/113947:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:39:47.47 
+11월 09, 2016 11:39:47.48 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:42:02.10 [4576:8220:1109/114202:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:48:25.34 [1109/114825:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:48:25.38 
+11월 09, 2016 11:48:25.39 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:48:30.76 [6568:164:1109/114830:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:48:35.03 [1109/114835:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:48:35.05 [1109/114835:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:48:35.05 [1109/114835:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:50:17.53 [7904:1376:1109/115017:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:50:20.51 [1109/115020:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:50:20.51 [1109/115020:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:50:20.52 [1109/115020:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:50:30.22 [12448:9616:1109/115030:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:52:12.50 [1109/115212:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:52:12.51 [1109/115212:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:52:12.54 
+11월 09, 2016 11:52:12.55 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:52:30.46 [11016:7444:1109/115230:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:53:27.89 [1109/115327:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:53:27.96 [1109/115327:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:53:28.02 
+11월 09, 2016 11:53:28.04 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:53:41.30 [9340:11196:1109/115341:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 11:54:48.56 [1109/115448:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:54:48.59 [1109/115448:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 11:54:48.78 
+11월 09, 2016 11:54:48.78 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 11:55:01.73 [6948:2416:1109/115501:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 12:01:50.81 [1109/120150:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 12:01:50.82 [1109/120150:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 12:01:50.85 
+11월 09, 2016 12:01:50.85 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 12:02:08.74 [3972:4744:1109/120208:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 12:05:56.07 [1109/120556:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 12:05:56.12 [1109/120556:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 12:05:56.20 
+11월 09, 2016 12:05:56.20 KLIB_SelfTest return : KLR_OK
+11월 09, 2016 12:06:29.53 [11952:3240:1109/120629:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 09, 2016 12:08:42.34 [1109/120842:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 12:08:42.40 [1109/120842:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 09, 2016 12:08:42.61 
+11월 09, 2016 12:08:42.62 KLIB_SelfTest return : KLR_OK
+
+11월 10, 2016 12:18:53.42 NEW SESSION
+11월 10, 2016 12:18:53.42 [1408:7544:1110/121853:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 10, 2016 12:19:20.34 [1110/121920:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 10, 2016 12:19:20.35 [1110/121920:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 10, 2016 12:19:20.55 
+11월 10, 2016 12:19:20.56 KLIB_SelfTest return : KLR_OK
+
+11월 15, 2016 08:49:43.95 NEW SESSION
+11월 15, 2016 08:49:43.95 [1472:9716:1115/084943:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 08:53:02.72 [1115/085302:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:54:48.51 [1115/085448:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:54:48.52 [1115/085448:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:54:49.06 
+11월 15, 2016 08:54:49.06 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 08:55:04.15 [9448:9228:1115/085504:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 08:55:22.82 [1115/085522:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:55:22.82 [1115/085522:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:55:23.09 
+11월 15, 2016 08:55:23.10 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 08:55:30.22 [8408:2856:1115/085530:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 08:55:51.57 [1115/085551:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:55:51.58 [1115/085551:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 08:55:51.75 
+11월 15, 2016 08:55:51.75 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 09:02:15.23 [8932:9692:1115/090215:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 09:02:27.53 [1115/090227:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:02:27.55 [1115/090227:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:02:27.56 [1115/090227:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:02:27.91 
+11월 15, 2016 09:02:27.91 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 09:08:46.58 [7736:5228:1115/090846:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 09:10:19.12 [1115/091019:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:15:33.56 [1115/091533:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:15:33.60 [1115/091533:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:15:33.77 
+11월 15, 2016 09:15:33.77 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 09:15:46.89 [8800:9420:1115/091546:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 09:15:58.67 [1115/091558:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:15:58.67 [1115/091558:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:15:58.71 [1115/091558:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 09:15:59.08 
+11월 15, 2016 09:15:59.08 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:05:42.16 [7476:8148:1115/170542:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:06:09.24 [1115/170609:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:06:09.25 [1115/170609:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:06:09.26 [1115/170609:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:06:09.66 
+11월 15, 2016 17:06:09.68 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:06:48.32 [980:8104:1115/170648:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:06:57.46 [1115/170657:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:06:57.47 [1115/170657:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:06:57.48 [1115/170657:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:06:57.87 
+11월 15, 2016 17:06:57.89 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:07:05.98 [10056:11472:1115/170705:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:08:00.89 [1115/170800:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:08:00.93 [1115/170800:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:08:01.11 
+11월 15, 2016 17:08:01.12 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:08:07.19 [9716:11368:1115/170807:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:08:23.11 [1115/170823:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:08:23.13 [1115/170823:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:08:23.42 
+11월 15, 2016 17:08:23.43 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:09:18.43 [10700:11900:1115/170918:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:10:32.25 [1115/171032:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:31:30.81 [4852:11896:1115/173130:ERROR:render_media_log.cc(25)] MediaEvent: PIPELINE_ERROR demuxer: could not open
+11월 15, 2016 17:31:31.71 [4852:11896:1115/173131:ERROR:render_media_log.cc(25)] MediaEvent: PIPELINE_ERROR demuxer: could not open
+11월 15, 2016 17:41:05.00 [1115/174105:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:41:05.05 [1115/174105:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:41:05.27 
+11월 15, 2016 17:41:05.27 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:41:26.87 [10996:4076:1115/174126:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:42:00.35 [1115/174200:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:42:00.38 [1115/174200:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:42:00.50 
+11월 15, 2016 17:42:00.51 KLIB_SelfTest return : KLR_OK
+11월 15, 2016 17:42:53.92 [1520:4140:1115/174253:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+11월 15, 2016 17:43:40.28 [1115/174340:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:43:40.31 [1115/174340:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+11월 15, 2016 17:43:40.57 
+11월 15, 2016 17:43:40.59 KLIB_SelfTest return : KLR_OK
+
+12월 01, 2016 08:43:57.56 NEW SESSION
+12월 01, 2016 08:43:57.56 [4864:1564:1201/084357:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+12월 01, 2016 08:46:42.90 [1201/084642:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:14:50.46 [4864:11684:1201/091450:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+12월 01, 2016 09:15:05.61 [4864:11684:1201/091505:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+12월 01, 2016 09:27:18.29 Vector smash protection is enabled.
+12월 01, 2016 09:30:39.75 [1201/093039:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:30:39.77 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+12월 01, 2016 09:31:03.82 Vector smash protection is enabled.
+12월 01, 2016 09:31:52.54 [1201/093152:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:31:52.56 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+12월 01, 2016 09:31:54.83 Vector smash protection is enabled.
+12월 01, 2016 09:32:52.50 [1201/093252:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:32:52.52 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+12월 01, 2016 09:34:50.43 Vector smash protection is enabled.
+12월 01, 2016 09:40:20.75 [1201/094020:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:40:20.78 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+12월 01, 2016 09:44:01.95 [1201/094401:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:44:18.65 Vector smash protection is enabled.
+12월 01, 2016 09:45:31.51 [1201/094531:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:45:31.52 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+12월 01, 2016 09:45:52.34 Vector smash protection is enabled.
+12월 01, 2016 09:47:04.54 [1201/094704:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 01, 2016 09:47:04.56 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+12월 01, 2016 09:47:38.02 Vector smash protection is enabled.
+
+12월 09, 2016 16:21:42.12 NEW SESSION
+12월 09, 2016 16:21:42.12 [15196:15016:1209/162142:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+12월 09, 2016 16:25:06.51 [1209/162506:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 09, 2016 16:25:06.53 [1209/162506:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 09, 2016 16:25:06.56 
+12월 09, 2016 16:25:06.57 KLIB_SelfTest return : KLR_OK
+12월 09, 2016 16:25:24.20 [1132:15296:1209/162524:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+12월 09, 2016 16:45:13.13 [1209/164513:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 09, 2016 16:45:13.14 [1209/164513:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 09, 2016 16:45:13.37 
+12월 09, 2016 16:45:13.38 KLIB_SelfTest return : KLR_OK
+
+12월 12, 2016 12:01:18.63 NEW SESSION
+12월 12, 2016 12:01:18.63 [884:2052:1212/120118:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+12월 12, 2016 12:25:05.30 [1212/122505:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 12, 2016 12:25:05.31 [1212/122505:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 12, 2016 12:25:05.48 
+12월 12, 2016 12:25:05.50 KLIB_SelfTest return : KLR_OK
+12월 12, 2016 12:26:27.83 [9120:5164:1212/122627:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+12월 12, 2016 13:38:05.88 [1212/133805:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 12, 2016 13:38:06.68 
+12월 12, 2016 13:38:06.69 KLIB_SelfTest return : KLR_OK
+12월 12, 2016 13:53:19.48 [8616:10172:1212/135319:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext
+12월 12, 2016 13:56:20.03 [1212/135620:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 12, 2016 14:05:15.03 Vector smash protection is enabled.
+12월 12, 2016 15:29:57.56 [1212/152957:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 12, 2016 15:29:57.61 [1212/152957:ERROR:main_dll_loader_win.cc(196)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+12월 12, 2016 15:29:58.35 
+12월 12, 2016 15:29:58.38 KLIB_SelfTest return : KLR_OK
+12월 12, 2016 15:30:13.88 [10580:8464:1212/153013:ERROR:native_process_launcher.cc(137)] Can't find manifest for native messaging host com.qq.qmchext

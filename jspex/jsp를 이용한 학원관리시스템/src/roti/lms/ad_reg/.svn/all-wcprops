@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/project/!svn/ver/105/roti_ing/src/roti/lms/ad_reg
+END
+RegisterController.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/project/!svn/ver/72/roti_ing/src/roti/lms/ad_reg/RegisterController.java
+END
+RegisterDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/project/!svn/ver/105/roti_ing/src/roti/lms/ad_reg/RegisterDAO.java
+END
+RegisterListAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/project/!svn/ver/72/roti_ing/src/roti/lms/ad_reg/RegisterListAction.java
+END
+RegisterDeleteAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/project/!svn/ver/72/roti_ing/src/roti/lms/ad_reg/RegisterDeleteAction.java
+END
+RegisterAddAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/project/!svn/ver/103/roti_ing/src/roti/lms/ad_reg/RegisterAddAction.java
+END
+RegisterBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/project/!svn/ver/44/roti_ing/src/roti/lms/ad_reg/RegisterBean.java
+END
+RegisterModifyAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/project/!svn/ver/72/roti_ing/src/roti/lms/ad_reg/RegisterModifyAction.java
+END
+RegisterModifyView.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/project/!svn/ver/72/roti_ing/src/roti/lms/ad_reg/RegisterModifyView.java
+END

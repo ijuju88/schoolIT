@@ -1,0 +1,76 @@
+package com.ClassStary;
+
+public class MethodTest {
+
+	public static void main(String[] args) {
+		Number n1=new Number(10);
+		n1.display();
+		
+		int numsum=n1.sum();
+		
+		double numAvg=n1.avg();
+		System.out.println(numAvg);
+		
+		Number n2=new Number();
+		n2.num1=5;
+	}
+
+}
+
+class  Number{
+	//private=접근제한자
+	
+	/*private*/ int num1;	
+	
+	Number(){}
+	Number(int num1) {this.num1=num1;}
+
+	/*private*/ public int sum() {
+
+		int numSum;
+		for (int i = 1; i < num1; i++) {
+			numSum+=i;
+		}
+		return numSum;
+	}
+	
+	double avg(){double numAvg=(double)sum()/num1; return numAvg;}
+
+	void display(){System.out.print(num1+"\t");}
+}
+
+
+
+
+//package com.ClassStary;
+//
+//public class MethodTest {
+//
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		Number num1=new Number(10,20);
+//		num1.display();
+//		
+//		//int numsum=num1.sum();
+//		//System.out.println(numsum);
+//		System.out.println(num1.sum());
+//		System.out.println(num1.sum(5,10)); //올래있던 값이 아닌 해당 메소드의 함수실행
+//		
+//		System.out.println(num1.div(10.0, 5));*/
+//
+//	}
+//
+//}
+//
+//class  Number{
+//	int num1, num2;
+//		
+//	Number(int num1, int num2) {this.num1=num1; this.num2=num2;}
+//		
+//	//메소드 선언시 return해주어야함.
+//	//int sum(){return num1+ num2;} 
+//		
+//	int sum(int num1, int num2){return num1+ num2;}
+//	double div(double num1, double num2){return num1/num2;} 
+//	
+//}

@@ -1,0 +1,52 @@
+package com.test;
+
+import java.sql.*;
+
+public class ConnectDB {
+	Connection conn;
+	Statement stmt;
+	ResultSet rs = null;
+	
+	public ConnectDB() {
+		try {
+			//드라이버 로딩 : DriverManager에 등록
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			System.out.println("클래스 못찾음");
+		}
+		try {
+			String driver = "jdbc:oracle:thin:@localhost:1521:xe";
+			String id = "oxju88";
+			String pw = "1234";
+			
+			conn=DriverManager.getConnection(driver, id, pw);
+			stmt=conn.createStatement(); //Statement 객체 얻기
+			System.out.println("연결완료");
+			
+			
+			stmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("SQLException"+e.getMessage());
+		}
+	}
+	public void disconn() {
+		  // 연결 끊기
+		  try {
+		   if (rs != null)
+		    rs.close();
+		   if (stmt != null)
+		    stmt.close();
+		   if (conn != null)
+		    conn.close();
+		  } catch (SQLException ee) {
+		   ee.printStackTrace();
+		  }
+		 }
+	
+	public Statement getStatement()
+	 {
+	  return stmt;
+	 }
+
+}

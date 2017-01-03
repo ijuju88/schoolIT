@@ -1,0 +1,60 @@
+<%@ page contentType="text/html; charset=utf-8" session="false"  import="java.sql.*"  %>
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<style text="Text/css">
+body {
+ margin-left: 0px;
+ margin-top: 0px;
+ margin-right: 0px;
+ margin-bottom: 0px;
+ overflow-y: hidden;
+ overflow-x: hidden;
+}
+</style>
+<TITLE>무제 문서</TITLE>
+</HEAD>
+<%
+	HttpSession session = request.getSession(false);
+%>
+<script language="javascript">
+function clean(){
+	top.sidemenu.location.href="null.html";
+}
+function convert(){
+	top.sidemenu.style.filters = "alpha(opacity=100)"; 
+;
+
+}
+</script>
+<BODY>
+<table width="902" height="160" border="0" align="center">
+  <tr>
+    <td width="3" align="right">&nbsp;</td>
+    <td height="102" align="right"><img src="image/markcopy.jpg" alt="" width="200" height="100" /></td>
+    <td width="1" align="right">&nbsp;</td>
+    <td width="673" align="right" valign="top"><a href="Home_print.jsp" target="bottommenu" > 홈으로 </a>
+	<%
+		if(session.getAttribute("login.id")==null) {%> | 로그인 | <a href="inregist.jsp" target="bottommenu">회원가입</a> |<%}
+		else {%> | <%=(String)session.getAttribute("login.id") %> 님 |<a href="mymenu.jsp" target="sidemenu" > 마이페이지 </a>|<% } %> 
+	
+	
+	  고객센터</td>
+  </tr>
+  <tr border="0">
+    <td height="52" colspan="4" align="right">
+	<a href="Home_print.jsp" target="bottommenu" ><img border="0" src="image/menu/images/menu-copy_01.gif" width="106" height="50" /></a>
+	<a href="print_com.jsp" target="bottommenu" ><img border="0" src="image/menu/images/menu-copy_02.gif" onclick="clean()" width="106" height="50" /></a>
+	<a href="commodityregist.jsp" target="bottommenu" ><img border="0" src="image/menu/images/menu_02.gif" onclick="clean()" width="96" height="50" /></a>
+	<a href="mymenu.jsp" target="sidemenu" ><img border="0" onclick="convert()" src="image/menu/images/menu_03.gif" width="139" height="50" /></a>
+	<img border="0" src="image/menu/images/menu-copy_05.gif" width="190" height="50" />
+	</td>
+  </tr>
+</table>
+</BODY>
+</HTML>

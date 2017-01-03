@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+  <script>
+	function main(){
+		document.write("Hello!!");
+	}
+	function main2(){
+		area.innerHTML="Hello";
+	}
+
+  </script>
+ </head>
+ <body>
+  <script>
+	//var x; x="Hello!!"; alert(x);
+  </script>
+  <input type="button" value="enter" onclick="main()">
+
+  <input type="button" value="enter2" onclick="main2()">
+  <div id="area">div</div>
+ </body>
+</html>

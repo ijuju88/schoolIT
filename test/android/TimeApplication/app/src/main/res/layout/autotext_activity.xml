@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/actv"
+        android:completionHint="선택하세용~"
+        android:completionThreshold="2"
+        android:hint="자동완셩 텍스트뷰"/>
+
+    <MultiAutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="선택하세용~"
+        android:completionThreshold="2"
+        android:hint="멀티자동완셩 텍스트뷰"
+        android:id="@+id/mactv" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="285dp"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imageView" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="285dp"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imageView2" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

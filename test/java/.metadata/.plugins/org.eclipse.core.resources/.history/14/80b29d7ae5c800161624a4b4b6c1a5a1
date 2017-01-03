@@ -1,0 +1,77 @@
+package com.server;
+
+import java.awt.AlphaComposite;
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class ServerFrame extends JFrame implements ActionListener{
+	//main 
+	JTextArea ja;
+	JButton butStartStop;
+	ChatServer chatServer=null;
+	
+	//서버배경 이미지
+	 ImageIcon icon;
+	 
+	 //아이콘 관련
+	 Toolkit toolkit = Toolkit.getDefaultToolkit(); 
+	 Image img = toolkit.getImage("image/icon2.png");
+
+	public ServerFrame(){
+		setTitle("토크서버");
+		setBounds(600, 400, 500, 400);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setIconImage(img);
+		
+		icon=new ImageIcon("image/snow.jpg"); //배경이미지
+		ja=new JTextArea(){
+			
+			//그림 투명도 설정 
+			public void paintComponent(Graphics g) {
+				 Graphics2D g2d = (Graphics2D) g.create(); 
+			        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); 
+	                g2d.drawImage(icon.getImage(), 0, 0, null);
+	                setOpaque(false);
+	                super.paintComponent(g);
+	            }
+			};
+		
+		ja.setEditable(false); //JTextArea를 수정하지 못하게 하는 것
+		JScrollPane jp=new JScrollPane(ja);
+		butStartStop=new JButton("start");
+		butStartStop.addActionListener(this);
+		add(jp, BorderLayout.CENTER);
+		add(butStartStop, BorderLayout.SOUTH);
+		setVisible(true);
+		
+		chatServer=new ChatServer(this);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new ServerFrame();
+	}
+	void displayText(String str){
+		ja.append(str+"\n");
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		if(butStartStop.getText().equals("start")){
+			chatServer.startServer();
+		}else{
+			chatServer.stopServer();
+		}
+	}
+
+}

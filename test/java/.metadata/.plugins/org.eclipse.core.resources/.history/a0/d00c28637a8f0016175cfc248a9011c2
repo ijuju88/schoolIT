@@ -1,0 +1,34 @@
+package com.test;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class Tax_Bill extends JPanel{
+	//private final JPanel Taxpanel[]=new JPanel[6];
+	private JPanel Taxpanel1, Taxpanel2, Taxpanel3, Taxpanel4, Taxpanel5, Taxpanel6; 
+	
+	public Tax_Bill() {
+		setBounds(0, 0, 795, 400);
+		setLayout(null);
+		
+		Taxpanel1=new JPanel();
+		add(Taxpanel1);
+		Taxpanel2=new JPanel();
+		add(Taxpanel2);
+		Taxpanel3=new JPanel();
+		add(Taxpanel3);
+		Taxpanel4=new JPanel();
+		add(Taxpanel4);
+		Taxpanel5=new JPanel();
+		add(Taxpanel5);
+		Taxpanel6=new JPanel();
+		add(Taxpanel6);
+		
+		
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new Tax_Bill();
+	}
+}

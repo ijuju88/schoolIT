@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script>
+	function tab(){
+		var str="<table border='1'>";
+		var r=document.getElementById("row").value;
+		var c=document.getElementById("col").value;
+		for (var i=1;i<=r; i++)
+		{str+="<tr>";
+			for (var j=1;j<=c;j++)
+			{
+				str+="<td>";
+				str+=i+","+j;
+				str+="</td>";
+			}str+="</tr>";
+		}
+	str+="</table>";
+	d1.innerHTML=str;
+	}
+	</script>
+ </head>
+ <body>
+<!--   행:<input type="text" id="row"> -->
+<!--   열:<input type="text" id="col"> -->
+<select name="tab" id="row">
+	<option value="1" selected>1
+	<option value="2">2
+	<option value="3">3
+	<option value="4">4
+</select>
+
+<select name="tab" id="col">
+	<option value="1" selected>1
+	<option value="2">2
+	<option value="3">3
+	<option value="4">4
+</select>
+
+  <button onclick="tab()">Enter</button>
+  <div id="d1"></div>
+ </body>
+</html>

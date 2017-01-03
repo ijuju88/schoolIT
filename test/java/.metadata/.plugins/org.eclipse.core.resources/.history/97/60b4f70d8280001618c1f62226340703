@@ -1,0 +1,16 @@
+package com.Threadtest;
+
+public class NumsumThreadjoin {
+
+}
+
+class NumSum{
+	int sum;
+	public void setSum(){
+		for (int i = 0; i < array.length; i++) {
+			sum+=1;
+		}
+	}
+	
+	public void getSum(){return sum;}
+}

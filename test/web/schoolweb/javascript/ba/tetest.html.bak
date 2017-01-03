@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<script>
+	var str="<table border='1'>";
+	str+="<tr>";
+	str+="<td>학생명</td><td>국어</td><td>수학</td><td>총점</td><td>평균</td><td>학점</td><td>순위</td>";
+	str+="</tr>";
+	var sname=" ", s1=0, s2=0, sum=0, avg=0, dep=" ";
+function Stu(){
+	getStudent();
+	Ssum();
+	Savg();
+	Sdep();
+	str+=StuDate();
+	student.innerHTML=str;
+
+}
+
+//학생정보 및 성적 불려오기
+function getStudent(){
+	sname=document.getElementById("name").value;
+	s1=document.getElementById("score1").value;
+	s2=document.getElementById("score2").value;
+}
+
+//총점구하기
+function Ssum()
+{
+sum=parseInt(s1)+parseInt(s2);
+}
+
+
+//평균구하기
+function Savg(){
+	avg= parseInt(sum)/2;
+}
+
+//학점구하기
+function Sdep(){
+	if(avg>=90){dep= "A";}	
+	else if(avg>=80){dep= "B";}	
+	else if(avg>=70){dep= "C";}
+	else dep= "F";
+}
+
+function StuDate(){
+	var stu=new Array();
+	stu[0]=sname;
+	stu[1]=s1;
+	stu[2]=s2;
+	stu[3]=sum;
+	stu[4]=avg;
+	stu[5]=dep;
+
+	str ="<tr>";
+	str += "<td>"+ stu[0] + "</td>";
+	str += "<td>"+ stu[1] + "</td>";
+	str += "<td>"+ stu[2] + "</td>";
+	str += "<td>"+ stu[3] + "</td>";
+	str += "<td>"+ stu[4] + "</td>" ;
+	str += "<td>"+ stu[5] + "</td>" ;
+	str +="</tr>";
+	return str;
+}
+
+</script>
+ </head>
+ <body>
+  성명:<input type="text" id="name">
+  국어:<input type="text" id="score1">
+  영어:<input type="text" id="score2" >
+  <button onclick="Stu()">결과</button>
+
+  <div id="student">
+  </div>
+ </body>
+</html>
+
+
+
+<!-- str+="<tr>";
+	str+="<td>";
+	str+=sname;
+	str+="</td>";
+	str+="<td>";
+	str+=s1;
+	str+="</td>";
+	str+="<td>";
+	str+=s2;
+	str+="</td>";
+	str+="<td>";
+	str+=sum;
+	str+="</td>";
+	str+="<td>";
+	str+=avg;
+	str+="</td>";
+	str+="<td>";
+	str+=dep;
+	str+="</td>";
+	str+="<td>";
+	str+=rank;
+	str+="</td>";
+	str+="</tr>";
+	 -->

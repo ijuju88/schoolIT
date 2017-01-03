@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+	img{opacity:0.4;}img:hover{opacity:1.0;}
+	#a{visibility:visible;}/*visible, hidden*/
+
+	div#a1{width:100px; height:100px; background-color:#cc99ff; 
+	transition:width 2s;}
+	div#a1:hover{width:200px;}
+
+	div#a2{ width: 100px;height: 100px;background: yellow;
+            transition: width 5s height 5s border 5s, transform 5s;
+            -webkit-transition: width 5s, height 5s, border 5s,-webkit-transform 5s;}
+    div#a2:hover {width: 200px;height: 100px;
+            transform: rotate(180deg); -webkit-transform: rotate(180deg);}
+
+</style>
+  <title>Document</title>
+ </head>
+ <body>
+<img src="macalog.jpg" width="200	" height="150"/> <!--투명-->
+<img id="a" src="border.png" width="200	" height="150"/> <!--숨기기-->
+
+<div id="a1">마우스를 올리면 늘어나용</div>
+<div id="a2">마우스를 올리면 늘어나용</div>
+ </body>
+</html>

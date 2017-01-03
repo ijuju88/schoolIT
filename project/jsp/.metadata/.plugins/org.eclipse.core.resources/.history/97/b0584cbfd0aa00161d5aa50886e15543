@@ -1,0 +1,53 @@
+package common;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Vector;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import reservation.ReservationBean;
+import util.ConnectionUtil;
+
+public class CommonAction {
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	private static CommonAction instance = new CommonAction();
+	
+	public CommonAction(){}
+	
+	// 객체 리턴
+	public static CommonAction getInstance(){
+		return instance;
+	}
+
+	
+	// room.jsp 방추가
+	public void insertRoom(reservation.RoomBean room){
+		String SQL = "//작성부분 (힌트 room테이블, 시퀀스 ROOM_SEQ.NEXTVAL)";
+		
+		//작성부분(try~finally 작성)
+		
+	}
+
+	// room.jsp 방수정
+	public void updateRoom(reservation.RoomBean room){
+		String SQL = "//작성부분 update문 작성";
+		
+		//작성부분(try~finally 작성)
+	}
+	
+	// room.jsp 제거
+	public void deleteRoom(reservation.RoomBean room){
+		String SQL = "//작성부분(DELETE문작성 조건은 RNO)";
+		//작성부분(try~finally 작성)
+	}
+
+}

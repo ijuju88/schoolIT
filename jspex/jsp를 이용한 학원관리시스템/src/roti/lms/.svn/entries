@@ -1,0 +1,52 @@
+10
+
+dir
+108
+https://rotiple:80/svn/project/roti_ing/src/roti/lms
+https://rotiple:80/svn/project
+
+
+
+2014-05-21T07:05:11.199366Z
+107
+seo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+484d4a8a-1177-3747-804c-c0309f82b453
+
+action
+dir
+
+ad_login
+dir
+
+ad_reg
+dir
+
+ad_stu
+dir
+
+ad_sub
+dir
+
+ad_tch
+dir
+
+ad_tchdb
+dir
+
+student
+dir
+

@@ -1,0 +1,22 @@
+room(방정보) 관련 
+- pan2/WebContent/관리자용.sql을 열어서 데이터 추가하기(오라클)
+- 관리자 (id/pw는 admin)
+- ctrl+F 로 '작성부분'을 찾으세요
+- 시간남으면 css에서 스타일도 바꾸어보세요
+
+------------------jsp--------------------
+pan2/WebContent/admin/room.jsp
+- 값(value)넘기기 (22~29)(40~48)
+
+pan2/WebContent/admin/roomPro.jsp
+- (9) jsp:useBean, setProperty 작성하기
+
+
+----------------java----------------------
+pan2/src/common/CommonAction.java
+- insertRoom(방추가), updateRoom(방수정), deleteRoom(방삭제) 를 작성하기
+
+pan2/src/reservation/ActionBean.java(방정보불러오기만 작성되어있음)
+- (34) sql 문
+- (48) RoomBean.jsp 를 참고해 작성하기
+

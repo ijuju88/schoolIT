@@ -1,0 +1,99 @@
+package ChatProgram.Client;
+
+import java.awt.AlphaComposite;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+public class test {
+	// icon
+	Toolkit toolkit = Toolkit.getDefaultToolkit();
+	Image img = toolkit.getImage("img/networkicon.png");
+
+	private final ImageIcon imageIcon = new ImageIcon("img/snowman.jpg");
+	
+	private JFrame Login_GUI = new JFrame();
+	private JPanel Login_panel;
+	private JTextField textField_ip;
+	private JTextField textField_port;
+	private JTextField textField_id;
+	private JButton button_login = new JButton("접 속");
+
+	public test() {
+		Login_GUI.setIconImage(img);// 아이콘 바꾸기
+		Login_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Login_GUI.setBounds(100, 100, 318, 399);
+		Login_GUI.setResizable(false);
+
+		Login_panel = new JPanel();
+		Login_panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		Login_GUI.setContentPane(Login_panel);
+		Login_panel.setLayout(null);
+
+		JLabel lblNewLabel = new JLabel("Server IP");
+		lblNewLabel.setBounds(44, 141, 77, 15);
+		Login_panel.add(lblNewLabel);
+
+		JLabel lblNewLabel_1 = new JLabel("Server Port");
+		lblNewLabel_1.setBounds(44, 197, 77, 15);
+		Login_panel.add(lblNewLabel_1);
+
+		textField_ip = new JTextField();
+		textField_ip.setBounds(120, 138, 137, 21);
+		Login_panel.add(textField_ip);
+		textField_ip.setColumns(10);
+
+		textField_port = new JTextField();
+		textField_port.setBounds(120, 194, 137, 21);
+		Login_panel.add(textField_port);
+		textField_port.setColumns(10);
+
+		JLabel lblId = new JLabel("ID");
+		lblId.setBounds(44, 254, 57, 15);
+		Login_panel.add(lblId);
+
+		textField_id = new JTextField();
+		textField_id.setBounds(119, 251, 138, 21);
+		Login_panel.add(textField_id);
+		textField_id.setColumns(10);
+
+		button_login.setBounds(44, 328, 213, 23);
+		Login_panel.add(button_login);
+		
+		JPanel panel = new JPanel(){
+
+			Image image = imageIcon.getImage();
+
+			public void paintComponent(Graphics g) {
+				Graphics2D g2d = (Graphics2D) g; // 더 많은 그래픽 기능을 사용하기 위하여
+													// Graphics2D 캐스트...
+				// 이미지를 반투명으로 출력하기 위해 2번째 인자에 0.5를 입력 (0.0완전투명 ~ 1.0불투명) float
+				// 형으로 써야하므로 캐스트 -> (float) 0.5
+				g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (float) 0.5));
+
+				setOpaque(false);
+				super.paintComponent(g);
+
+				g2d.drawImage(image, 0, 0, null);
+
+			}
+		};
+		panel.setBounds(44, 10, 213, 121);
+		Login_panel.add(panel);
+		Login_GUI.setVisible(true);
+		;
+	}
+
+	public static void main(String[] args) {
+		new test();
+	}
+}

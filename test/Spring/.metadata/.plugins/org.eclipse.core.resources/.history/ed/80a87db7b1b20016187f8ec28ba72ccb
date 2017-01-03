@@ -1,0 +1,5 @@
+package com.agm.admin;
+
+public class AdminConnection {
+
+}

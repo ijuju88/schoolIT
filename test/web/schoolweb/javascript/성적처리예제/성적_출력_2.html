@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ 
+  <title>객체 생성 및 활용</title>
+  <script>
+	
+				var tag="<tr><th>학생명</th><th>국어</th><th>영어</th><th>총점</th><th>평균</th></tr>";
+				function  main(tname, tkor, teng)
+				{
+					STU = new	Student(tname, tkor,teng)
+					tag+= makeTag(STU.name, STU.kor, STU.eng, STU.plus(), STU.avg());
+					tbl.innerHTML = tag;
+				}
+				function Student(i, j, k)
+				{
+					this.name = i;
+					this.kor = j;
+					this.eng=k;
+					this.plus=function(){return parseInt(this.kor)+parseInt(this.eng);}
+					this.avg=function(){return (parseInt(this.kor)+parseInt(this.eng))/2;}
+				}
+			
+				function makeTag(name, kor, eng, tot, avr)
+				{
+			    var	tempTag ="<tr>" ;
+				tempTag += "<td>"+ name + "</td>" + "<td> " + kor +"</td>"+ "<td>"+eng + "</td>" ;
+				tempTag += "<td> " +tot + "</td>";
+				tempTag += "<td> " +avr + "</td>";
+				tempTag += "</tr> ";
+					return tempTag;
+				}
+
+
+  
+  </script>
+ </head>
+ <body>
+  <input type="text" id="txtName">
+  <input type="text" id="txtKor">
+  <input type="text" id="txtEng">
+  <input type="button" value="Enter" onclick="main(txtName.value, txtKor.value,txtEng.value)">
+ </body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+ <head>
+
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		function maxopen(url, wunattributes){
+			var maxwindow=window.open(url, "", screen.availHeght);
+			maxwindow.moveTo(0,0);
+			maxwindow.resizeTo(screen.avilWidth, screen.availHeght);
+		}
+
+	</script>
+	 <a href="#" onClick="maxopen('http://www.google.com', 'resize=1, scrollbars=1, status=1'); return false">
+ </body>
+</html>

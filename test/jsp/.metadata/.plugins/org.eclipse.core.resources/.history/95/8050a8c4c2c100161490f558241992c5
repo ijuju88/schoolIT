@@ -1,0 +1,91 @@
+package board.controller.action;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import board.dao.*;
+import board.vo.*;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+public class BoardUpdateAction implements Action {
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		//String realPath = "E:/ijuju/jsp/pan/WebContent/files"; //파일이 업로드 될 경로
+		String realPath = request.getServletContext().getRealPath("files");
+		
+		//String realPath = "/home/hosting_users/ijuju88/tomcat/webapps/pan/files";
+		
+		int maxSize = 1024 * 1024 * 10;
+		int file_size = 0;
+
+		File f = new File(realPath);
+		System.out.println("f.getPath():"+f.getPath());
+		if (!f.exists()) {
+			f.mkdirs();
+		}
+		
+		MultipartRequest mul = new MultipartRequest(request, realPath,
+				maxSize, "UTF-8",new DefaultFileRenamePolicy());
+
+		response.setCharacterEncoding("UTF-8"); 
+		
+		String file_name = "";
+		int no = Integer.parseInt(mul.getParameter("no"));
+		String category = mul.getParameter("category");
+		String username = mul.getParameter("username");
+		String password = mul.getParameter("password");
+		String title = mul.getParameter("title");
+		String content = mul.getParameter("content");
+		String userip = request.getRemoteAddr();
+		String file_chk = mul.getParameter("file_chk");
+
+		if ("01".equals(file_chk)) {
+			f = mul.getFile("file_name");
+			file_name = f.getName();
+			file_size = (int) f.length();
+		} else {
+			file_name = "-";
+			file_size = 0;
+		}
+
+		BoardDao dao = new BoardDao();
+
+	    int check = dao.userCheck(no, password);
+
+	    System.out.println("check : "+check);
+	    if(check==1){
+	    	dao.updateBoard(category, title, username, userip, content,file_name, file_size, no);
+	    	
+	    	RequestDispatcher dis=request.getRequestDispatcher("/board/list.jsp");
+			dis.forward(request, response);
+	    }
+	    else
+	    {
+	    	response.setContentType("text/html; charset=UTF-8");
+	    	PrintWriter pr=response.getWriter();
+			pr.println("<html>");
+			pr.println("<head><title>비번오류</title>");
+			pr.println("<body>");
+			pr.println("<table>");
+			pr.println("<tr><td bgcolor='#FFD4DF'>");
+			pr.println("비번이 아닙니다...");
+			pr.println("</td></tr>");
+			pr.println("<tr><td bgcolor='#FFD4DF'>");
+			pr.println("<a href='../pan/BoardServlet?command=board_list'>");
+			pr.println("리스트로");
+			pr.println("</a>" );
+			pr.println("</td></tr>");
+			pr.println("</table>");
+			pr.println("</body></html>");
+	    }
+	    }
+}

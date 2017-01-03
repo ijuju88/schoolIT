@@ -1,0 +1,68 @@
+package board.controller.action;
+
+import java.io.*;
+import java.sql.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+import board.dao.BoardDao;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+public class BoardWriteAction implements Action {
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException, SQLException {
+		
+		 String path = request.getResource("").getPath(); // 현재 클래스의 절대 경로를 가져온다.
+		    System.out.println(path); //--> 절대 경로가 출력됨
+		    File fileInSamePackage = new File(path + "test.txt"); // path 폴더 내의 test.txt 를 가리킨다.
+		String realPath = request.getServletContext().getRealPath("files");
+		 
+		//String realPath = "‪‪/files"; //파일이 업로드 될 경로
+		int maxSize = 1024 * 1024 * 10; //파일 크기제한  1k * 1k * 10 = 10메가
+		int file_size = 0;
+		
+		File f = new File(realPath);
+		System.out.println("f.getPath():"+f.getPath());
+		if (!f.exists()) {
+			f.mkdirs();
+		}
+
+		MultipartRequest mul = new MultipartRequest(request, realPath,
+				maxSize, "UTF-8",new DefaultFileRenamePolicy());
+
+		response.setCharacterEncoding("UTF-8"); 
+	
+		String file_name = "";
+		String category = mul.getParameter("category");
+		String username = mul.getParameter("username");
+		String password = mul.getParameter("password");
+		String title = mul.getParameter("title");
+		String content = mul.getParameter("content");
+		String userip = request.getRemoteAddr();
+		String file_chk = mul.getParameter("file_chk");
+
+		System.out.println("변경된 category " +category); 
+		
+		System.out.println("file_chk->"+file_chk);
+		if ("01".equals(file_chk)) {
+			f = mul.getFile("file_name");
+			file_name = f.getName();
+			file_size = (int) f.length();
+			System.out.print("f: " +f.getName()); 
+		} else {
+			file_name = "-";
+			file_size = 0;
+		}
+		BoardDao dao = new BoardDao();
+		
+		dao.insertBoard(category, title, username, userip, password,
+				content, file_name, file_size);
+		
+		new BoardListAction().execute(request, response);
+
+	}
+}

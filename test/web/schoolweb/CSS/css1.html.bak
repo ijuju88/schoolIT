@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+	<!--2.내부파일(헤드선언)-->
+	<style>
+	p{background-color:blue;}
+	</style>
+	
+	<!--3.외부파일-->
+	<link rel="stylesheet" href="style1.css">
+	
+ </head>
+ <body>
+	<p>test1</p> 
+	<!--1.내부파일(인라인)-->
+	<p style="background-color:red;">test2</p>
+	<p>test3</p>
+ </body>
+</html>

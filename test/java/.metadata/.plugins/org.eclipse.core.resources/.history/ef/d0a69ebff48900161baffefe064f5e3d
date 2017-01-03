@@ -1,0 +1,144 @@
+package StudentManager;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.util.Vector;
+public class stuEx {
+ Connection con = null;
+ PreparedStatement pstmt = null;
+ ResultSet rs = null;
+ String sql, name, grade, stunum;
+ static Vector col = new Vector();
+ static Vector data = new Vector();
+ JTable j;
+ 
+ public void conn() {
+  try {
+   // 오라클 드라이버 선언
+   Class.forName("oracle.jdbc.driver.OracleDriver");
+  } catch (ClassNotFoundException cnfe) {
+   cnfe.printStackTrace();
+   return;
+  }
+  try {
+   // 오라클 DB연결
+   con = DriverManager
+     .getConnection("jdbc:oracle:thin:@localhost:1521:ORACLE",
+       "scott", "tiger");
+   
+  } catch (SQLException ee) {
+   ee.printStackTrace();
+  }
+ 
+ }
+ public void disconn() {
+  // 연결 끊기
+  try {
+   if (rs != null)
+    rs.close();
+   if (pstmt != null)
+    pstmt.close();
+   if (con != null)
+    con.close();
+  } catch (SQLException ee) {
+   ee.printStackTrace();
+  }
+ }
+ // J버튼에 입력된 String데이터 받아 오기 inputAction실행 시
+ public void inputdb(String jtf1, String jtf2, String jtf3) {
+  try {
+   // 연결
+   conn();
+   
+   String sql = "insert into stu values('" + jtf1 + "','" + jtf2
+     + "','" + jtf3 + "')";
+   pstmt = con.prepareStatement(sql);
+   pstmt.executeUpdate();
+  } catch (SQLException se) {
+  }
+  finally{
+   disconn(); 
+  }
+  
+  defJTable();
+ }
+ public void defJTable() {
+  try {
+   conn();
+   pstmt = con.prepareStatement("select * from stu");
+   rs = pstmt.executeQuery();
+   
+   //DB의 데이터 받아 와 row입력
+   while (rs.next()) {
+    Vector row = new Vector();
+    row.addElement(rs.getString("name"));
+    row.addElement(rs.getString("grade"));
+    row.addElement(rs.getString("stunum"));
+    data.addElement(row);
+   }
+  } catch (SQLException e) {
+   e.printStackTrace();
+  }
+  finally{
+   disconn();
+  }
+ }
+ 
+ //renew
+ public void redefJTable() {
+  data.clear();
+  try {
+   conn();
+   pstmt = con.prepareStatement("select * from stu");
+   rs = pstmt.executeQuery();
+   
+   while (rs.next()) {
+    Vector row = new Vector();
+    row.addElement(rs.getString("name"));
+    row.addElement(rs.getString("grade"));
+    row.addElement(rs.getString("stunum"));
+    data.addElement(row);
+   }
+  } catch (SQLException e) {
+   e.printStackTrace();
+  }
+  finally{
+   disconn();
+  }
+ }
+ 
+ //JTable을 리턴.
+ public JTable getJTable(){
+  defJTable();
+  col.addElement("이름");
+  col.addElement("학년");
+  col.addElement("학번");
+  DefaultTableModel model = new DefaultTableModel(data, col){
+   public boolean isCellEditable(int row,int column){
+    return false;
+   }
+  };
+  j = new JTable(model);
+ 
+  return j;
+ }
+ 
+ public void deleteRow(String stunum){
+  try {
+   conn();
+   pstmt = con.prepareStatement("delete from stu where stunum = '" + stunum + "'");
+   pstmt.executeUpdate();
+   
+  } catch (SQLException e) {
+   e.printStackTrace();
+  }
+  finally{
+   disconn();
+  }
+ }
+}

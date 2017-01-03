@@ -1,0 +1,30 @@
+package com.ClassStary;
+
+public class MethodTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Number num1=new Number(10,20);
+		num1.display();
+		
+		int numsum=num1.sum();
+		System.out.println(numsum);
+		
+	}
+
+}
+
+class  Number{
+	int num1, num2;
+	
+	Number(int num1, int num2) {this.num1=num1; this.num2=num2;}
+	
+	void display(){
+		System.out.print(num1+"\t"); System.out.println(num2);
+	}
+	//메소드 선언시 return해주어야함.
+	int sum(){return num1+ num2;}
+	int sum(int num1, int num2){return num1+ num2;}
+	double div(double num1, double num2){return num1%num2;}
+	
+}

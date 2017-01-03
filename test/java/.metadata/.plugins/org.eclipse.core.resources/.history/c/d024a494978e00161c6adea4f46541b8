@@ -1,0 +1,48 @@
+package com.print;
+
+import java.awt.BorderLayout;
+import java.awt.event.*;
+import java.awt.print.PrinterException;
+import java.text.MessageFormat;
+
+import javax.swing.*;
+import javax.swing.text.html.*;
+
+import com.test.Account_registration;
+import com.test.Account_registrationDAO;
+
+public class MainClass {
+	private JTable ARtable = new JTable();
+	private Account_registrationDAO Adao = new Account_registrationDAO();
+
+	public MainClass() {
+		Adao.defJTable();
+		ARtable = Adao.getJTable();
+
+		JFrame frame = new JFrame("Table Printing");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane scrollPane = new JScrollPane(ARtable);
+		frame.add(scrollPane, BorderLayout.CENTER);
+		JButton button = new JButton("Print");
+		ActionListener printAction = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MessageFormat headerFormat = new MessageFormat("Page {0}");
+					MessageFormat footerFormat = new MessageFormat("- {0} -");
+					ARtable.print(JTable.PrintMode.FIT_WIDTH, headerFormat, footerFormat);
+				} catch (PrinterException pe) {
+					System.err.println("Error printing: " + pe.getMessage());
+				}
+			}
+		};
+		button.addActionListener(printAction);
+		frame.add(button, BorderLayout.SOUTH);
+		frame.setSize(300, 150);
+		frame.setVisible(true);
+	}
+
+	public static void main(String args[]) {
+
+		new MainClass();
+	}
+}

@@ -1,0 +1,17 @@
+CREATE OR REPLACE PROCEDURE emp_test (t_empno     EMP.EMPNO%TYPE,
+                                      t_name      EMP.ENAME%TYPE,
+                                      t_job       EMP.JOB%TYPE,
+                                      t_manger    EMP.MGR%TYPE,
+                                      t_salary    EMP.SAL%TYPE)
+IS
+BEGIN
+   INSERT INTO emp (ename,
+                    job,
+                    mgr,
+                    sal)
+        VALUES (t_name,
+                t_job,
+                t_manger,
+                t_salary);
+END;
+/

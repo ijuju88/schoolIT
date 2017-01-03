@@ -1,0 +1,84 @@
+package com.print;
+
+import java.awt.BorderLayout;
+import java.awt.event.*;
+import java.awt.print.PrinterException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.MessageFormat;
+import java.util.Vector;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+import com.test.Account_registrationDAO;
+
+public class MainClass {
+	private JTable ARtable = new JTable();
+	private Account_registrationDAO Adao = new Account_registrationDAO();
+	private Vector<String> col = new Vector<String>();
+	private Vector<Vector<String>> data = new Vector<Vector<String>>();
+	Connection connect = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+	
+	public MainClass() {
+		ARtable=setTable();
+
+		JFrame frame = new JFrame("Table Printing");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane scrollPane = new JScrollPane(ARtable);
+		frame.add(scrollPane, BorderLayout.CENTER);
+		JButton button = new JButton("Print");
+		ActionListener printAction = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MessageFormat headerFormat = new MessageFormat("Page {0}");
+					MessageFormat footerFormat = new MessageFormat("- {0} -");
+					ARtable.print(JTable.PrintMode.FIT_WIDTH, headerFormat, footerFormat);
+				} catch (PrinterException pe) {
+					System.err.println("Error printing: " + pe.getMessage());
+				}
+			}
+		};
+		button.addActionListener(printAction);
+		frame.add(button, BorderLayout.SOUTH);
+		frame.setSize(300, 150);
+		frame.setVisible(true);
+	}
+
+	
+	public JTable setTable() throws ClassNotFoundException {
+
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		connect = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "oxju88", "1234");
+		statement = connect.createStatement();
+		resultSet = statement.executeQuery("select *  from Accountregistration");
+
+		
+		col.addElement("번호");
+		col.addElement("회사명");
+		col.addElement("대표명");
+		col.addElement("주소");
+		col.addElement("업태");
+		col.addElement("종목");
+
+		// 더블클릭해서 수정금지하기
+		DefaultTableModel model = new DefaultTableModel(data, col) {
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+		ARtable = new JTable(model);
+
+		return ARtable;
+	}
+	
+	public static void main(String args[]) {
+
+		new MainClass();
+	}
+}

@@ -1,0 +1,14 @@
+CREATE OR REPLACE PROCEDURE ename_sal (vempno emp.empno%TYPE)
+IS
+   vename   emp.ename%TYPE;
+   vsal     emp.sal%TYPE;
+BEGIN
+   SELECT ename, sal
+     INTO vename, vsal
+     FROM emp
+    WHERE empno = vempno;
+
+   DBMS_OUTPUT.PUT_LINE ('사원명은 ' || vename || ' 입니다');
+   DBMS_OUTPUT.PUT_LINE ('급여는 ' || vsal || '입니다');
+END;
+/

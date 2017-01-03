@@ -1,0 +1,23 @@
+package com.ClassStary;
+
+public class MethodTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Number num1=new Number();
+		
+	}
+
+}
+
+class  Number{
+	int num1, num2;
+	
+	void display(){
+		System.out.println(num1); System.out.println(num2);
+	}
+	int sum(){return num1+ num2;}
+	int sum(int num1, int num2){return num1+ num2;}
+	double div(double num1, double num2){return num1%num2;}
+	
+}

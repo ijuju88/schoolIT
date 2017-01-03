@@ -1,0 +1,108 @@
+package com.clinet;
+
+import java.awt.AlphaComposite;
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class ClientFrame extends JFrame implements ActionListener {
+	JTextField fAddress, fName, fData;
+	JButton btConn, btSend;
+	JTextArea ja;
+	ChatClient chatClient;
+
+	ImageIcon icon;
+	
+	 //아이콘 관련
+	 Toolkit toolkit = Toolkit.getDefaultToolkit(); 
+	 Image img = toolkit.getImage("image/icon2.png");
+
+	public ClientFrame() {
+		setTitle("chat client");
+		this.setIconImage(img);
+		setBounds(600, 400, 500, 400);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		JPanel jp1 = new JPanel();
+		JPanel jp2 = new JPanel();
+
+		fAddress = new JTextField("192.168.0.48", 10); // 127.0.0.1
+		fName = new JTextField(10);
+		fData = new JTextField();
+		btConn = new JButton("start");
+		btSend = new JButton("send");
+		btSend.setEnabled(false); // 연결이 되어야 활성화 됨.
+
+		icon = new ImageIcon("image/snow.jpg");
+		ja = new JTextArea() {
+			// 그림 투명도 설정
+			public void paintComponent(Graphics g) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+				g2d.drawImage(icon.getImage(), 0, 0, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		ja.setEditable(false); //JTextArea를 수정하지 못하게 하는 것
+		JScrollPane jsp = new JScrollPane(ja);
+
+		jp1.add(new JLabel("서버 주소:"));
+		jp1.add(fAddress);
+		jp1.add(new JLabel("대화명"));
+		jp1.add(fName);
+		jp1.add(btConn);
+
+		jp2.setLayout(new BorderLayout());
+		jp2.add(fData, BorderLayout.CENTER);
+		jp2.add(btSend, BorderLayout.EAST);
+
+		add(jp1, BorderLayout.NORTH);
+		add(jsp, BorderLayout.CENTER); // ==add(jsp);
+		add(jp2, BorderLayout.SOUTH);
+
+		setVisible(true);
+
+		btConn.addActionListener(this);
+		btSend.addActionListener(this);
+		fData.addActionListener(this);
+		chatClient = new ChatClient(this);
+
+	}
+
+	public static void main(String[] args) {
+		new ClientFrame();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		// TODO Auto-generated method stub
+		try {
+			if (event.getSource() == btConn) {
+				if (btConn.getText().equals("start")) {
+					String address = fAddress.getText();
+					chatClient.startClient(address);
+				} else {
+					chatClient.stopClient();
+				}
+			} else {
+				String name = fName.getText();
+				String data = fData.getText();
+				
+				chatClient.send(name + ">>" + data);
+				fData.setText("");
+			}
+		} catch (Exception e1) {
+		}
+	}
+
+	void displayText(String str) {
+
+		ja.append(str + "\n");
+	}
+
+}

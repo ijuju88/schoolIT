@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$("button").click(function(){
+				alert($('#target').val());
+			});
+			  $("#button1").click(function () { $("p").append("<b style='color:red'>Hello! </b>."); });
+			            $("#button2").click(function () {  $("p").prepend("<b style='color:red'>Hello! </b>."); 
+		});
+
+			  $("#button3").click(function () { $(".container").remove(); });
+        });
+        $(document).ready(function () {
+            $("#button4").click(function () {
+                $(".container").empty();
+            });
+
+
+		});
+	</script>
+</head>
+<body>
+	이름: <input type="text" id="target" value =""><br />
+	    <button id="text">val()</button>
+
+	 <p>I would like to say: </p>
+	    <button id="button1">append()</button>
+	    <button id="button2">prepend()</button><br />
+	
+	<button id="button3">remove()</button>
+	    <button id="button4">empty()</button>
+
+
+	<div class="container">
+		        <p class="hello">Hello</p>
+		        <p class="goodbye">Goodbye</p>
+	    </div>
+
+</body>
+</html>

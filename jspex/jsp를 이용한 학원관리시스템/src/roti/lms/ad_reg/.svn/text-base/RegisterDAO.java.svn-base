@@ -1,0 +1,261 @@
+package roti.lms.ad_reg;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import roti.lms.ad_reg.*;
+
+public class RegisterDAO {
+	DataSource ds;
+	Connection con;
+	PreparedStatement pstmt;
+	ResultSet rs;
+
+	public RegisterDAO() {
+		try {
+			Context init = new InitialContext();
+			ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
+			System.out.println("db연결");
+		} catch (Exception ex) {
+			System.out.println("DB 연결 실패 : " + ex);
+			return;
+		}
+	}
+
+	// 글의 개수 구하기.
+	public int getListCount() {
+		int x = 0;
+
+		try {
+			con = ds.getConnection();
+			System.out.println("getConnection");
+			pstmt = con.prepareStatement("select count(*) from register");
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				x = rs.getInt(1);
+			}
+		} catch (Exception ex) {
+			System.out.println("getListCount 에러: " + ex);
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException ex) {
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException ex) {
+				}
+		}
+		return x;
+	}
+
+	// 글 목록 보기.
+	public List getRegisterList(int page, int limit) {
+		System.out.println("리스트불러오기쿼리실행");
+		String list_sql = "select * from (select rownum rnum, rg_id, sub_no, rg_start, rg_end, classroom, charge from (select * from register)) where rnum>=? and rnum<=?";
+		List list = new ArrayList();
+		int startrow = (page - 1) * 10 + 1; // 읽기 시작할 row 번호.
+		int endrow = startrow + limit - 1; // 읽을 마지막 row 번호.
+
+		try {
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(list_sql);
+			pstmt.setInt(1, startrow);
+			pstmt.setInt(2, endrow);
+			rs = pstmt.executeQuery();
+
+			System.out.println("while시작");
+			while (rs.next()) {
+				RegisterBean board = new RegisterBean();
+
+				board.setRg_id(rs.getString("rg_id"));
+				board.setSub_no(rs.getInt("sub_no"));
+				board.setRg_start(rs.getString("rg_start"));
+				board.setRg_end(rs.getString("rg_end"));
+				board.setClassroom(rs.getInt("classroom"));
+				board.setCharge(rs.getInt("charge"));
+				list.add(board);
+			}
+			return list;
+		} catch (Exception ex) {
+			System.out.println("getRegisterList Catch에러 : " + ex);
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+					System.out.println("List_rs");
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException ex) {
+					System.out.println("List_pstmt");
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException ex) {
+					System.out.println("List_con");
+				}
+		}
+		return null;
+	}
+
+	// 글 등록.
+	public boolean RegisterInsert(RegisterBean board) {
+		int num = 0;
+		String sql = "";
+
+		int result = 0;
+		System.out.println("InserDao실행");
+		try {
+			con = ds.getConnection();
+			pstmt = con.prepareStatement("select * from register");
+			System.out.println("갯수쿼리실행");
+			rs = pstmt.executeQuery();
+
+			if (rs.next())
+				num = rs.getInt(10) + 1;
+			else
+				num = 1;
+
+			sql = "insert into register (rg_id,sub_no,rg_start,rg_end,classroom,charge) values(?,?,?,?,?,?)";
+			System.out.println("입력쿼리실행");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, board.getRg_id());
+			pstmt.setInt(2, board.getSub_no());
+			pstmt.setString(3, board.getRg_start());
+			pstmt.setString(4, board.getRg_end());
+			pstmt.setInt(5, board.getClassroom());
+			pstmt.setInt(6, board.getCharge());
+
+			result = pstmt.executeUpdate();
+			if (result == 0)
+				return false;
+
+			return true;
+		} catch (Exception ex) {
+			System.out.println("List catch 에러 : " + ex);
+			System.out.println("입력catch");
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+					System.out.println("입력rs");
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException ex) {
+					System.out.println("입력pstmt");
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException ex) {
+					System.out.println("입력con");
+				}
+		}
+		return false;
+	}
+
+	// 글 수정.
+	public boolean registerModify(RegisterBean registermodify) throws Exception {
+
+		String sql = "";
+
+		System.out.println("ModifyDao실행");
+
+		try {
+			con = ds.getConnection();
+			sql = "update register set rg_id=?,sub_no=?,rg_start=?,rg_end=?,classroom=?,charge=? where rg_id=? and sub_no=?";
+			System.out.println("수정쿼리실행");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, registermodify.getRg_id());
+			pstmt.setInt(2, registermodify.getSub_no());
+			pstmt.setString(3, registermodify.getRg_start());
+			pstmt.setString(4, registermodify.getRg_end());
+			pstmt.setInt(5, registermodify.getClassroom());
+			pstmt.setInt(6, registermodify.getCharge());
+			pstmt.setString(7, registermodify.getRg_id());
+			pstmt.setInt(8, registermodify.getSub_no());
+			pstmt.executeUpdate();
+			return true;
+		} catch (Exception ex) {
+			System.out.println("RegisterModify 에러 : " + ex);
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+					System.out.println("수정rs-try");
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException ex) {
+					System.out.println("수정pstmt-try");
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException ex) {
+					System.out.println("수정con-try");
+				}
+		}
+		return false;
+	}
+
+	// 글 삭제.
+	public boolean registerDelete(String rg_id, int sub_no) {
+		String delete_sql = "";
+		System.out.println("삭제Dao실행");
+		int result;
+
+		try {
+			con = ds.getConnection();
+
+			delete_sql = "delete from register where rg_id =? and sub_no=? ";
+			System.out.println("삭제쿼리실행");
+			// commit ="commit";
+			pstmt = con.prepareStatement(delete_sql);
+			pstmt.setString(1, rg_id);
+			pstmt.setInt(2, sub_no);
+			result = pstmt.executeUpdate();
+			if (result == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (Exception ex) {
+			System.out.println("RegisterDelete 에러 : " + ex);
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception ex) {
+			}
+		}
+		return false;
+	}
+}

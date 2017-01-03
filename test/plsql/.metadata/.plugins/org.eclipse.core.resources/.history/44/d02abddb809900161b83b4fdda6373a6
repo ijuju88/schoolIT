@@ -1,0 +1,8 @@
+CREATE OR REPLACE PROCEDURE update_20
+IS
+BEGIN
+   UPDATE emp
+      SET job = 'CLERK'
+    WHERE deptno = 20;
+END;
+/

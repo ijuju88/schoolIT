@@ -1,0 +1,527 @@
+package com.test;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.regex.Pattern;
+
+import javax.swing.*;
+import javax.swing.filechooser.*;
+
+public class Company_registration extends JPanel {
+	private static final long serialVersionUID = 1L;
+	private Company_registrationDAO dao = new Company_registrationDAO();
+	private JTextField CRtext[] = new JTextField[8];
+
+	private JPanel CRpanel;
+	private JTable CRtable = new JTable();
+	private String CRRow1 = "";
+	private String CRRow2 = "";
+	private String CRRow3 = "";
+	private String CRRow4 = "";
+	private String CRRow5 = "";
+	private String CRRow6 = "";
+
+	private JFileChooser CRjfc = new JFileChooser();
+
+	private JLabel CRlb;
+	private JButton CRJBNew;
+	private JButton CRJBSave;
+	private JButton CRJBMod;
+	private JButton CRJBSaveMod;
+	private JButton CRJBCel;
+	private JButton CRJBDel;
+	private JButton CRExcel;
+
+	Company_registration() {
+		setLayout(null);
+
+		CRpanel = new JPanel();
+		CRpanel.setBounds(0, 0, 795, 183);
+		// add(panel);
+		CRpanel.setLayout(null);
+
+		JLabel CRNo = new JLabel("사업자번호");
+		CRNo.setFont(new Font("Dialog", Font.PLAIN, 18));
+		CRNo.setBounds(24, 8, 120, 18);
+		CRpanel.add(CRNo);
+
+		CRtext[0] = new JTextField();
+		CRtext[0].setBounds(130, 5, 70, 24);
+		CRpanel.add(CRtext[0]);
+		CRtext[0].setColumns(3);
+
+		JLabel jl1 = new JLabel("-");
+		jl1.setBounds(203, 5, 70, 24);
+		CRpanel.add(jl1);
+
+		CRtext[1] = new JTextField();
+		CRtext[1].setBounds(210, 5, 70, 24);
+		CRpanel.add(CRtext[1]);
+		CRtext[1].setColumns(2);
+
+		JLabel jl2 = new JLabel("-");
+		jl2.setBounds(283, 5, 70, 24);
+		CRpanel.add(jl2);
+
+		CRtext[2] = new JTextField();
+		CRtext[2].setBounds(290, 5, 70, 24);
+		CRpanel.add(CRtext[2]);
+		CRtext[2].setColumns(5);
+
+		JLabel CRName = new JLabel("회사명");
+		CRName.setFont(new Font("Dialog", Font.PLAIN, 18));
+		CRName.setBounds(24, 38, 120, 18);
+		CRpanel.add(CRName);
+
+		CRtext[3] = new JTextField();
+		CRtext[3].setBounds(130, 35, 320, 24);
+		CRtext[3].setColumns(12);
+		CRpanel.add(CRtext[3]);
+
+		JLabel CRBoss = new JLabel("대표자명");
+		CRBoss.setBounds(23, 68, 120, 18);
+		CRpanel.add(CRBoss);
+		CRBoss.setFont(new Font("Dialog", Font.PLAIN, 18));
+
+		CRtext[4] = new JTextField();
+		CRtext[4].setColumns(12);
+		CRtext[4].setBounds(130, 65, 320, 24);
+		CRpanel.add(CRtext[4]);
+
+		JLabel CRCrcategory = new JLabel("주소");
+		CRCrcategory.setFont(new Font("Dialog", Font.PLAIN, 18));
+		CRCrcategory.setBounds(24, 98, 120, 18);
+		CRpanel.add(CRCrcategory);
+
+		CRtext[5] = new JTextField();
+		CRtext[5].setColumns(12);
+		CRtext[5].setBounds(130, 95, 320, 24);
+		CRpanel.add(CRtext[5]);
+
+		JLabel CREvent = new JLabel("업태");
+		CREvent.setFont(new Font("Dialog", Font.PLAIN, 18));
+		CREvent.setBounds(24, 128, 120, 18);
+		CRpanel.add(CREvent);
+
+		CRtext[6] = new JTextField();
+		CRtext[6].setColumns(12);
+		CRtext[6].setBounds(130, 125, 320, 24);
+		CRpanel.add(CRtext[6]);
+
+		JLabel label = new JLabel("종목");
+		label.setFont(new Font("Dialog", Font.PLAIN, 18));
+		label.setBounds(24, 158, 120, 18);
+		CRpanel.add(label);
+
+		CRtext[7] = new JTextField();
+		CRtext[7].setColumns(12);
+		CRtext[7].setBounds(130, 155, 320, 24);
+		CRpanel.add(CRtext[7]);
+
+		CRJBNew = new JButton("신규");
+		CRJBNew.setBounds(600, 35, 169, 27);
+		CRpanel.add(CRJBNew);
+
+		CRJBSave = new JButton("저장");
+		CRJBSave.setBounds(600, 5, 169, 27);
+		CRpanel.add(CRJBSave);
+
+		CRJBSaveMod = new JButton("내용저장");
+		CRJBSaveMod.setBounds(600, 5, 169, 27);
+		CRpanel.add(CRJBSaveMod);
+
+		CRJBMod = new JButton("수정");
+		CRJBMod.setBounds(600, 65, 169, 27);
+		CRpanel.add(CRJBMod);
+
+		CRJBCel = new JButton("취소");
+		CRJBCel.setBounds(600, 125, 169, 27);
+		CRpanel.add(CRJBCel);
+
+		CRJBDel = new JButton("삭제");
+		CRJBDel.setBounds(600, 95, 169, 27);
+		CRpanel.add(CRJBDel);
+
+		CRExcel = new JButton("엑셀파일만들기");
+		CRExcel.setEnabled(false);
+		CRExcel.setBounds(600, 155, 169, 27);
+		CRpanel.add(CRExcel);
+
+		CRJBNew.addActionListener(new newAction());// 신규
+		CRJBSave.addActionListener(new inputAction()); // 저장
+		CRJBDel.addActionListener(new deleteAction()); // 삭제
+		CRJBMod.addActionListener(new ModnewAction()); // 수정
+		CRJBSaveMod.addActionListener(new renewAction()); // 수정저장
+		CRExcel.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					new CRexcelAction();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		}); // 엑셀파일저장
+
+		CRJBCel.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				for (int i = 0; i < CRtext.length; i++) {
+					CRtext[i].setText("");
+					CRlb.setEnabled(false);
+					CRJBNew.setEnabled(true);// 신규
+					CRJBSave.setEnabled(false); // 저장
+					CRJBDel.setEnabled(true);// 삭제
+					CRJBMod.setEnabled(true); // 수정
+					CRJBCel.setEnabled(false); // 취소
+					CRJBSaveMod.setVisible(false); // 수정시만 나타나게 할거임
+					CRtext[i].setEnabled(false);
+					CRExcel.setEnabled(true);// 엑셀
+				}
+
+			}
+		});
+
+		CRJBNew.setEnabled(true);// 신규
+		CRJBSave.setEnabled(false); // 저장
+		CRJBDel.setEnabled(true);// 삭제
+		CRJBMod.setEnabled(true); // 수정
+		CRJBCel.setEnabled(false); // 취소
+		CRJBSaveMod.setVisible(false); // 수정시만 나타나게 할거임
+		CRtext[0].setEnabled(false);
+		CRtext[1].setEnabled(false);
+		CRtext[2].setEnabled(false);
+		CRtext[3].setEnabled(false);
+		CRtext[4].setEnabled(false);
+		CRtext[5].setEnabled(false);
+		CRtext[6].setEnabled(false);
+		CRtext[7].setEnabled(false);
+		CRExcel.setEnabled(true);// 엑셀
+
+		CRtable = dao.getJTable();
+
+		// 행을 선택해 해당행데이터 알아봄
+		CRtable.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CRRow1 = (String) CRtable.getValueAt(CRtable.getSelectedRow(), 0);
+				CRRow2 = (String) CRtable.getValueAt(CRtable.getSelectedRow(), 1);
+				CRRow3 = (String) CRtable.getValueAt(CRtable.getSelectedRow(), 2);
+				CRRow4 = (String) CRtable.getValueAt(CRtable.getSelectedRow(), 3);
+				CRRow5 = (String) CRtable.getValueAt(CRtable.getSelectedRow(), 4);
+				CRRow6 = (String) CRtable.getValueAt(CRtable.getSelectedRow(), 5);
+			}
+		});
+
+		setLayout(new GridLayout(2, 1));
+		add(CRpanel);
+
+		CRlb = new JLabel("저장눌려 직인을 찾습니다. 취소하셔도 저장은 됩니다만...");
+		CRlb.setBounds(480, 183, 290, 18);
+		CRpanel.add(CRlb);
+
+		CRlb.setEnabled(false);
+
+		add(new JScrollPane(CRtable));
+
+		setBounds(0, 0, 795, 400);
+		setVisible(true);
+	}
+
+	// 신규버튼
+	class newAction implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			CRlb.setEnabled(true);
+			CRJBNew.setEnabled(false);// 신규
+			CRJBSave.setEnabled(true); // 저장
+			CRJBDel.setEnabled(false);// 삭제
+			CRJBMod.setEnabled(false); // 수정
+			CRJBCel.setEnabled(true); // 취소
+			CRExcel.setVisible(true); // 엑셀
+			CRJBSaveMod.setVisible(false);
+			for (int j = 0; j < CRtext.length; j++) {
+				CRtext[j].setEnabled(true);
+				CRExcel.setEnabled(false);// 엑셀
+			}
+		}
+
+	}
+
+	// 저장버튼
+	class inputAction implements ActionListener {
+		String num;
+
+		public void actionPerformed(ActionEvent e) {
+			num = CRtext[0].getText() + CRtext[1].getText() + CRtext[2].getText();
+			CRlb.setEnabled(true);
+			CRJBNew.setEnabled(true);// 신규
+			CRJBSave.setEnabled(false); // 저장
+			CRJBDel.setEnabled(true);// 삭제
+			CRJBMod.setEnabled(true); // 수정
+			CRJBCel.setEnabled(false); // 취소
+			CRJBSaveMod.setVisible(false);
+			CRExcel.setVisible(true); // 엑셀
+
+			String tf1 = CRtext[0].getText() + "-" + CRtext[1].getText() + "-" + CRtext[2].getText();
+			String tf2 = CRtext[3].getText();
+			String tf3 = CRtext[4].getText();
+			String tf4 = CRtext[5].getText();
+			String tf5 = CRtext[6].getText();
+			String tf6 = CRtext[7].getText();
+
+			if (CRtext[0].getText().equals("") || CRtext[1].getText().equals("") || CRtext[2].getText().equals("")
+					|| CRtext[3].getText().equals("") || CRtext[4].getText().equals("")
+					|| CRtext[5].getText().equals("") || CRtext[6].getText().equals("")
+					|| CRtext[7].getText().equals("")) {
+				int su = JOptionPane.showConfirmDialog(null, "입력하지 않은 곳이 있으니 다시 입력해주세요", "실패",
+						JOptionPane.YES_NO_OPTION);
+				if (su == JOptionPane.YES_OPTION) {
+					CRlb.setEnabled(true);
+					CRJBNew.setEnabled(false);// 신규
+					CRJBSave.setEnabled(true); // 저장
+					CRJBDel.setEnabled(false);// 삭제
+					CRJBMod.setEnabled(false); // 수정
+					CRJBCel.setEnabled(true); // 취소
+					CRExcel.setVisible(false); // 엑셀
+					return;
+				} else if (su == JOptionPane.NO_OPTION) {
+					for (int i = 0; i < CRtext.length; i++) {
+						CRtext[i].setText("");
+						CRJBNew.setEnabled(true);// 신규
+						CRJBSave.setEnabled(false); // 저장
+						CRJBDel.setEnabled(true);// 삭제
+						CRJBMod.setEnabled(true); // 수정
+						CRJBCel.setEnabled(false); // 취소
+						CRJBSaveMod.setVisible(false); // 수정시만 나타나게 할거임
+						CRtext[i].setEnabled(false);
+						CRExcel.setEnabled(true);// 엑셀
+					}
+				}
+
+			} else {
+				for (int i = 0; i < num.length(); i++) {
+					System.out.println(num.charAt(i));
+					if (!(num.charAt(i) > 47 && num.charAt(i) < 58)) {
+						JOptionPane.showConfirmDialog(null, "사업자번호형식 이 안맞습니다-숫자가 아님", "사업자번호오류",
+								JOptionPane.WARNING_MESSAGE);
+						for (int j = 0; j < CRtext.length; j++) {
+							CRtext[j].setText("");
+							CRJBNew.setEnabled(true);// 신규
+							CRJBSave.setEnabled(false); // 저장
+							CRJBDel.setEnabled(true);// 삭제
+							CRJBMod.setEnabled(true); // 수정
+							CRJBCel.setEnabled(false); // 취소
+							CRJBSaveMod.setVisible(false); // 수정시만 나타나게 할거임
+							CRtext[j].setEnabled(false);
+							CRExcel.setEnabled(true);// 엑셀
+						}
+						return;
+					} else if (num.length() != 10) {
+						JOptionPane.showConfirmDialog(null, "사업자번호형식 이 안맞습니다-10자리아님", "사업자번호오류",
+								JOptionPane.WARNING_MESSAGE);
+						for (int j = 0; j < CRtext.length; j++) {
+							CRtext[j].setText("");
+							CRJBNew.setEnabled(true);// 신규
+							CRJBSave.setEnabled(false); // 저장
+							CRJBDel.setEnabled(true);// 삭제
+							CRJBMod.setEnabled(true); // 수정
+							CRJBCel.setEnabled(false); // 취소
+							CRJBSaveMod.setVisible(false); // 수정시만 나타나게 할거임
+							CRtext[j].setEnabled(false);
+							CRExcel.setEnabled(true);// 엑셀
+						}
+						return;
+					} else if ((CRtext[0].getText().length() != 3) && (CRtext[1].getText().length() != 2)
+							&& CRtext[2].getText().length() != 5) {
+						JOptionPane.showMessageDialog(null, "사업자번호형식은 3자리-2자리-5자리입니다- 예)111-11-11111");
+						return;
+					} else {
+						int result = result = CRjfc.showOpenDialog(null);
+						if (result != JFileChooser.APPROVE_OPTION) {
+							CRjfc.setMultiSelectionEnabled(false);// 다중 선택 불가
+							int su = JOptionPane.showConfirmDialog(null, "경로를 선택하지않았습니다 저장하실겁니까??", "경고",
+									JOptionPane.YES_NO_CANCEL_OPTION);
+							if (su == JOptionPane.YES_OPTION) {
+								dao.inputdb(tf1, tf2, tf3, tf4, tf5, tf6);
+								dao.redefJTable();
+								CRtable.updateUI();
+								for (int j = 0; j < CRtext.length; j++) {
+									CRtext[j].setText("");
+									CRtext[j].setEnabled(false);
+									CRExcel.setEnabled(true); // 엑셀
+								}
+								return;
+							} else if (su == JOptionPane.NO_OPTION) {
+								for (int j = 0; j < CRtext.length; j++) {
+
+									CRlb.setEnabled(true);
+									CRJBNew.setEnabled(false);// 신규
+									CRJBSave.setEnabled(true); // 저장
+									CRJBDel.setEnabled(false);// 삭제
+									CRJBMod.setEnabled(false); // 수정
+									CRJBCel.setEnabled(true); // 취소
+									CRJBSaveMod.setVisible(false);
+									CRExcel.setEnabled(true); // 엑셀
+								}
+								return;
+							}
+						} else if (result == JFileChooser.APPROVE_OPTION) {
+							String tf7 = CRjfc.getSelectedFile().getPath();
+
+							dao.inputdb(tf1, tf2, tf3, tf4, tf5, tf6, tf7);
+							dao.redefJTable();
+							CRtable.updateUI();
+							for (int j = 0; j < CRtext.length; j++) {
+								CRtext[j].setText("");
+								CRtext[j].setEnabled(false);
+								CRExcel.setEnabled(true); // 엑셀
+							}
+							return;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	// 삭제버튼
+	class deleteAction implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (CRRow1.equals("")) {
+				JOptionPane.showConfirmDialog(null, "행을선택해 삭제합니다 삭제하실 테이블을 선택해주세요-_<", "실패",
+						JOptionPane.WARNING_MESSAGE);
+			}
+
+			dao.deleteRow(CRRow1);
+
+			dao.redefJTable();
+			CRtable.updateUI();
+		}
+	}
+
+	// 수정버튼
+	class ModnewAction implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (CRRow1.equals("")) {
+				JOptionPane.showConfirmDialog(null, "행을선택해 수정합니다 수정하실 테이블을 더블클릭해주세요-_<", "실패",
+						JOptionPane.WARNING_MESSAGE);
+				return;
+			}
+			CRlb.setEnabled(true);
+			CRJBNew.setEnabled(false);// 신규
+			CRJBDel.setEnabled(false);// 삭제
+			CRJBMod.setEnabled(false); // 수정
+			CRJBCel.setEnabled(true); // 취소
+			CRJBSaveMod.setEnabled(true);
+			CRJBSaveMod.setVisible(true);
+			CRJBSave.setVisible(false);
+			CRExcel.setEnabled(false); // 엑셀
+
+			System.out.println(CRRow1);
+			String[] strarr = CRRow1.split("-");
+
+			CRtext[0].setText(strarr[0]);
+			CRtext[1].setText(strarr[1]);
+			CRtext[2].setText(strarr[2]);
+			CRtext[3].setText(CRRow2);
+			CRtext[4].setText(CRRow3);
+			CRtext[5].setText(CRRow4);
+			CRtext[6].setText(CRRow5);
+			CRtext[7].setText(CRRow6);
+			for (int j = 3; j < CRtext.length; j++) {
+				CRtext[j].setEnabled(true);
+			}
+		}
+
+	}
+
+	// 수정저장버튼
+	class renewAction implements ActionListener {
+
+		public void actionPerformed(ActionEvent e) {
+			CRlb.setEnabled(true);
+			CRJBNew.setEnabled(true);// 신규
+			CRJBSave.setEnabled(false); // 저장
+			CRJBDel.setEnabled(true);// 삭제
+			CRJBMod.setEnabled(true); // 수정
+			CRJBCel.setEnabled(false); // 취소
+			CRJBSave.setVisible(true);
+			CRJBSaveMod.setVisible(false);
+			CRExcel.setEnabled(true); // 엑셀
+
+			String tf1 = CRtext[0].getText() + "-" + CRtext[1].getText() + "-" + CRtext[2].getText();
+			String tf2 = CRtext[3].getText();
+			String tf3 = CRtext[4].getText();
+			String tf4 = CRtext[5].getText();
+			String tf5 = CRtext[6].getText();
+			String tf6 = CRtext[7].getText();
+
+			int result = CRjfc.showOpenDialog(null);
+			CRjfc.setMultiSelectionEnabled(false);// 다중 선택 불가
+
+			if (CRtext[0].getText().equals("") || CRtext[1].getText().equals("") || CRtext[2].getText().equals("")
+					|| CRtext[3].getText().equals("") || CRtext[4].getText().equals("")
+					|| CRtext[5].getText().equals("") || CRtext[6].getText().equals("")
+					|| CRtext[7].getText().equals("")) {
+				JOptionPane.showConfirmDialog(null, "입력하지 않은 곳이 있으니 다시 입력해주세요", "실패", JOptionPane.WARNING_MESSAGE);
+
+				CRlb.setEnabled(true);
+				CRJBNew.setEnabled(false);// 신규
+				CRJBDel.setEnabled(false);// 삭제
+				CRJBMod.setEnabled(false); // 수정
+				CRJBCel.setEnabled(true); // 취소
+				CRJBSaveMod.setEnabled(true);
+				CRJBSaveMod.setVisible(true);
+				CRJBSave.setVisible(false);
+				CRExcel.setEnabled(false); // 엑셀
+				return;
+			} else {
+
+				if (result != JFileChooser.APPROVE_OPTION) {
+					int su = JOptionPane.showConfirmDialog(null, "경로를 선택하지않았습니다 저장하실겁니까??", "경고",
+							JOptionPane.YES_NO_CANCEL_OPTION);
+					if (su == JOptionPane.YES_OPTION) {
+						dao.update(tf1, tf2, tf3, tf4, tf5, tf6);
+						dao.redefJTable();
+						CRtable.updateUI();
+						for (int j = 0; j < CRtext.length; j++) {
+							CRtext[j].setText("");
+							CRtext[j].setEnabled(false);
+							CRExcel.setEnabled(true); // 엑셀
+						}
+					} else if (su == JOptionPane.NO_OPTION) {
+						CRlb.setEnabled(true);
+						CRJBNew.setEnabled(false);// 신규
+						CRJBDel.setEnabled(false);// 삭제
+						CRJBMod.setEnabled(false); // 수정
+						CRJBCel.setEnabled(true); // 취소
+						CRJBSaveMod.setEnabled(true);
+						CRJBSaveMod.setVisible(true);
+						CRJBSave.setVisible(false);
+						CRExcel.setEnabled(false); // 엑셀
+					}
+
+				} else if (result == JFileChooser.APPROVE_OPTION) {
+					String tf7 = CRjfc.getSelectedFile().getPath();
+
+					dao.update(tf1, tf2, tf3, tf4, tf5, tf6, tf7);
+					dao.redefJTable();
+					CRtable.updateUI();
+					for (int j = 0; j < CRtext.length; j++) {
+						CRtext[j].setText("");
+						CRtext[j].setEnabled(false);
+						CRExcel.setEnabled(true); // 엑셀
+					}
+				}
+
+			}
+		}
+	}
+
+}

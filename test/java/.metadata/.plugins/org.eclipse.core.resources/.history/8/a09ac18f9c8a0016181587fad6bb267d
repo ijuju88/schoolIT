@@ -1,0 +1,186 @@
+package com.test;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
+
+import javax.swing.*;
+import javax.swing.filechooser.*;
+
+public class Company_registration extends JPanel {
+	private static final long serialVersionUID = 1L;
+	private Company_registrationDAO dao = new Company_registrationDAO();
+	private JTextField text[] = new JTextField[7];
+
+	private JTable table = new JTable();
+	private JScrollPane jp = new JScrollPane();
+
+	private String deleteRow = "";
+
+	private JFileChooser jfc = new JFileChooser();
+	private JButton btnNewButton;
+
+	Company_registration() {
+		setLayout(null);
+
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 795, 183);
+		// add(panel);
+		panel.setLayout(null);
+
+		JLabel CRNo = new JLabel("사업자번호");
+		CRNo.setFont(new Font("Dialog", Font.PLAIN, 20));
+		CRNo.setBounds(24, 8, 120, 18);
+		panel.add(CRNo);
+
+		text[0] = new JTextField();
+		text[0].setBounds(145, 5, 320, 24);
+		panel.add(text[0]);
+		text[0].setColumns(12);
+
+		JLabel CRName = new JLabel("회사명");
+		CRName.setFont(new Font("Dialog", Font.PLAIN, 20));
+		CRName.setBounds(24, 38, 120, 18);
+		panel.add(CRName);
+
+		text[1] = new JTextField();
+		text[1].setBounds(145, 35, 320, 24);
+		text[1].setColumns(12);
+		panel.add(text[1]);
+
+		JLabel CRBoss = new JLabel("대표자명");
+		CRBoss.setBounds(23, 68, 120, 18);
+		panel.add(CRBoss);
+		CRBoss.setFont(new Font("Dialog", Font.PLAIN, 20));
+
+		text[2] = new JTextField();
+		text[2].setColumns(12);
+		text[2].setBounds(145, 65, 320, 24);
+		panel.add(text[2]);
+
+		JLabel CRCrcategory = new JLabel("주소");
+		CRCrcategory.setFont(new Font("Dialog", Font.PLAIN, 20));
+		CRCrcategory.setBounds(24, 98, 120, 18);
+		panel.add(CRCrcategory);
+
+		text[3] = new JTextField();
+		text[3].setColumns(12);
+		text[3].setBounds(145, 95, 320, 24);
+		panel.add(text[3]);
+
+		JLabel CREvent = new JLabel("업태");
+		CREvent.setFont(new Font("Dialog", Font.PLAIN, 20));
+		CREvent.setBounds(24, 128, 120, 18);
+		panel.add(CREvent);
+
+		text[4] = new JTextField();
+		text[4].setColumns(12);
+		text[4].setBounds(145, 125, 320, 24);
+		panel.add(text[4]);
+
+		JLabel label = new JLabel("종목");
+		label.setFont(new Font("Dialog", Font.PLAIN, 20));
+		label.setBounds(24, 158, 120, 18);
+		panel.add(label);
+
+		text[5] = new JTextField();
+		text[5].setColumns(12);
+		text[5].setBounds(145, 155, 320, 24);
+		panel.add(text[5]);
+
+		btnNewButton = new JButton("직인찾기");
+		btnNewButton.setBounds(485, 5, 100, 27);
+		panel.add(btnNewButton);
+
+		JButton JBSave = new JButton("저장");
+		JBSave.setBounds(610, 75, 169, 27);
+		panel.add(JBSave);
+
+		JButton JBMod = new JButton("수정");
+		JBMod.setBounds(610, 40, 169, 27);
+		panel.add(JBMod);
+
+		JButton JBCel = new JButton("취소");
+		JBCel.setBounds(610, 145, 169, 27);
+		panel.add(JBCel);
+
+		JButton JBDel = new JButton("삭제");
+		JBDel.setBounds(610, 110, 169, 27);
+		panel.add(JBDel);
+
+		JBSave.addActionListener(new inputAction());
+		JBDel.addActionListener(new deleteAction());
+		JBMod.addActionListener(new renewAction());
+		btnNewButton.addActionListener(new fileAction());
+
+		table = dao.getJTable();
+		table.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				deleteRow = (String) table.getValueAt(table.getSelectedRow(), 0);
+				//System.out.println(deleteRow);
+			}
+		});
+
+		setLayout(new GridLayout(2, 1));
+		add(panel);
+		add(new JScrollPane(table));
+
+		setBounds(0, 0, 795, 400);
+		setVisible(true);
+	}
+
+	class inputAction implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			
+			String tf1 = text[0].getText();
+			String tf2 = text[1].getText();
+			String tf3 = text[2].getText();
+			String tf4 = text[3].getText();
+			String tf5 = text[4].getText();
+			String tf6 = text[5].getText();
+			String tf7 = jfc.getSelectedFile().getPath();
+			dao.inputdb(tf1, tf2, tf3, tf4, tf5, tf6, tf7);
+			dao.redefJTable();
+			table.updateUI();
+		}
+	}
+
+	class deleteAction implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			dao.deleteRow(deleteRow);
+			dao.redefJTable();
+			table.updateUI();
+		}
+	}
+
+	class renewAction implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			String tf1 = text[0].getText();
+			String tf2 = text[1].getText();
+			String tf3 = text[2].getText();
+			String tf4 = text[3].getText();
+			String tf5 = text[4].getText();
+			String tf6 = text[5].getText();
+			String tf7 = jfc.getSelectedFile().getPath();
+			dao.update(tf1, tf2, tf3, tf4, tf5, tf6, tf7);
+			dao.redefJTable();
+			table.updateUI();
+		}
+	}
+
+	class fileAction implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int result = jfc.showOpenDialog(null);
+
+			if (result != JFileChooser.APPROVE_OPTION) {
+				JOptionPane.showMessageDialog(null, "경로를 선택하지않았습니다.", "경고", JOptionPane.WARNING_MESSAGE);
+				return;
+			}
+			String filePath = jfc.getSelectedFile().getPath();
+			System.out.println(filePath);
+		}
+	}
+
+}

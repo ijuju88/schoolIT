@@ -1,0 +1,36 @@
+package com.ClassStary;
+
+public class PersonCon {
+	
+	public static void main(String[] args){
+		Person per1=new Person();
+		per1.display();
+		
+		Person per2=new Person("hong", 12);
+		per2.gender="M";
+		per2.display();
+		
+		Person per3=new Person("ha", "F");
+		per3.age=15;
+		per3.display();
+		
+		Person per4=new Person("hong", 20, "F");
+		per4.display();
+	}
+}
+
+class Person{
+	String name, gender;
+	int age;
+	
+	Person(){}
+	Person(String n, int a){name=n; age=a;}
+	Person(String n, String g){name=n; gender=g;}
+	Person(String n, int a, String g){name=n;  age=a; gender=g;}
+	
+	void display(){
+		System.out.print(name+" ");
+		System.out.print(gender+" ");
+		System.out.println(age);
+	}
+}

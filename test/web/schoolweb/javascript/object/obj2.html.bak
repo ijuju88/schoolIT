@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<script>
+	function main(){
+		s1=new Student(a, b, c);
+		s2=new Student("Kim", 59, 76);
+		s3=new Student("gee", 93, 56);
+		document.write
+		(s1.SName+"\t"+s1.SKor+"\t"+s1.SEng+"\t"+s1.total()+"\t"+s1.average());
+	}
+	function Student(tname, tkor, teng){//생성자
+		//속성
+		this.SName=tname,this.SKor=tkor,this.SEng=teng;
+		
+		//메소드
+		this.total=function()
+		{return parseInt(SKor)+parseInt(SEng);};
+
+		this.average=function()
+		{return (parseInt(SKor)+parseInt(SEng))/2;};
+		//function total(){}
+		//function average(){}
+
+
+	}
+</script>
+
+  <title>Document</title>
+ </head>
+ <body>
+ <input type="text" id="txtName">
+ <input type="text" id="txtKor">
+ <input type="text" id="txtEng">
+  <button onclick="main(txtName.value, txtKor.value, txtEng.value)">enter</button>
+ </body>
+</html>

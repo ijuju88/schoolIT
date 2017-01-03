@@ -1,0 +1,112 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+	<h1>자기소개 인데 배운거 다적으래요 ㅠㅠ</h1>
+	<img src="image1.PNG" width="170" height="100"></img>
+	<b>사진과는 무관합니다.</b><br>
+	이름 : 전옥주<br>
+	나이 : 아직은 20대라고 하고싶음<br>
+	직업 : 백수 and 학생<br>
+	취미 : 혼자여행 and 프라모델조립(안한지 오래됨)<br>
+	계획 : 일단10월되기전에는 실기따기, 내년에 취업계획<br>
+	<br>
+	<hr/>
+	<table border=1 bgcolor="#3366ff" width="600" >
+		<caption>지금까지 html 배운게 생각이 날려나 ?</caption>
+		<tr bgcolor="#ffffff">
+			<th colspan="2">아는것</th>
+			
+		</tr>
+
+		<tr>
+			<td>글자에 관해서</td>
+			<td>
+				<h1>h1의 크기- h1~6</h1>
+				<h1 align="right">h1의 크기- h1~6</h1>
+				<br>br-줄바꿈 <br>
+				<p>p-단락</p>
+				&lt;특수문자&gt;&nbsp;라  <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>리스트</td>
+			<td>
+				<ul>
+					<li>1번리스트</li>
+					<li>2번리스트</li>
+				</ul>
+
+				<ol>
+					<li value="3">3번리스트</li>
+					<li>4번리스트</li>
+				</ol>	
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<form>
+					
+					<a href="http://www.naver.com" target="_self">
+					<input type="button" value="네이버이동"></input>
+					</a>
+					<input type="reset"></input>
+					<table border=0 bgcolor="#66ffff" width="500" >	
+						<tr bgcolor="#ffffff">
+							<td>아이디</td>
+							<td>
+								<input type="text">
+							</td>
+
+							<td>비번</td>
+							<td>
+								<input type="password">
+							</td>
+						</tr>
+						
+						<tr bgcolor="#ffffff">
+							<td>흥미</td>
+							<td>
+								<input type="checkbox" checked>숨쉬기</input>
+								<input type="checkbox" >놀기</input>
+								<input type="checkbox" >자기</input>
+							</td>
+
+							<td>성별</td>
+							<td>
+								<select>
+									<option value="c1" selected>남</option>
+									<option value="c2">여</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr bgcolor="#ffffff">
+							<td>소개</td>
+							<td colspan="3">
+							<textarea rows=5 cols="50"></textarea>
+							</td>
+						</tr>
+						
+						<tr bgcolor="#ffffff">
+							<td>사는곳</td>
+							<td>
+								<input type="radio" name="v1">대륙</input>
+								<input type="radio" name="v1">섬</input>
+							</td>
+					</table>
+
+				</form>
+			</td>
+		</tr>
+
+
+
+
+	</table>
+ </body>
+</html>

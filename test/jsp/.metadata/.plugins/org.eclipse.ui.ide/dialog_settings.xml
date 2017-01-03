@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\it\Desktop\Desktop\pan"/>
+			<item value="C:\Users\it\Desktop\2차프로젝트(jsp,oracle,웹프로그램) (2).vol1"/>
+			<item value="C:\Users\it\Desktop\2차프로젝트(jsp,oracle,웹프로그램) (2).vol2"/>
+			<item value="D:\ijuju\test\jsp\pan"/>
+			<item value="C:\Users\it\Desktop\bbs"/>
+			<item value="D:\ijuju\test\jsp\pan2"/>
+			<item value="C:\Users\it\Desktop\pan"/>
+			<item value="C:\Users\it\Desktop\LoginSystem"/>
+			<item value="C:\Users\it\Downloads\jsp\DBtest"/>
+			<item value="C:\Users\it\Downloads\jsp\1105"/>
+			<item value="C:\Users\it\Desktop\jsp를 이용한 학원관리시스템"/>
+			<item value="C:\Users\it\Downloads\jsp\jsp를 이용한 학원관리시스템"/>
+			<item value="C:\Users\it\Downloads\jsp를 이용한 학원관리시스템"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="204" key="DIALOG_X_ORIGIN"/>
+		<item value="197" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+</section>

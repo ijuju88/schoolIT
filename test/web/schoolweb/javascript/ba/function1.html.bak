@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+	var num1, num2;
+	function main(){
+		getData(); //숫자값 가져오기
+		var total=plus(num1, num2); //더하기 연산하기
+		d1.innerHTML=makeTag(num1, num2, total);	//div id=d1에 출력
+	}
+
+	function getData(){
+		num1=parseInt(document.getElementById("t1").value);
+		num2=parseInt(document.getElementById("t2").value);
+	}
+	function plus(n1, n2){
+		return n1+n2;
+	}
+	function makeTag(a1, a2, a3){
+		var str="<table border='1'>";
+		str+="<tr>";
+		str+="<td>";
+		str+=a1;
+		str+="</td>";
+		str+="<td>";
+		str+=a2;
+		vstr+="</td>";
+		str+="<td>";
+		str+=a3;
+		str+="</td>";
+		str+="</tr></table>"
+		return str;
+	}
+  </script>
+ </head>
+ <body>
+  <input type="text" id="t1">
+  <input type="text" id="t2">
+  <button onclick="main()">enter</button>
+  <br/>
+  <div id="d1">
+  </div>
+ </body>
+</html>

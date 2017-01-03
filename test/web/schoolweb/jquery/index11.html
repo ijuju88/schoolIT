@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+	<title> New Document </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="tablesorter.js"></script> 
+
+	<script type="text/javascript">
+
+		var teg="";
+		
+		function main(na, n1, n2, n3, n4){
+			teg=new Student(na, n1, n2, n3, n4);
+			$('#tem > tbody:last').append('<tr><td>'+teg.na+'</td><td>'+teg.n1+'</td><td>'+teg.n2+
+				'</td><td>'+teg.n3+'</td><td>'+teg.n4+'</td><td>'+teg.total()+'</td><td>'+teg.average()+'</td></tr>');
+
+			$("#tem").tablesorter(); 
+
+		}
+
+		function Student(na, n1, n2, n3, n4){
+			this.na=$("#sName").val();
+			this.n1=parseInt($("#snum1").val());
+			this.n2=parseInt($("#snum2").val());
+			this.n3=parseInt($("#snum3").val());
+			this.n4=parseInt($("#snum4").val());
+
+// 	//합계구하기
+this.total=function(){return this.n1+this.n2+this.n3+this.n4; };
+// 	//평균구하기
+this.average=function(){return this.total()/4; };
+	//alert(this.avg());
+// 	//등급구하기
+
+}
+
+function randomNumber() {
+	var num=Math.floor((Math.random()*100)+1);
+	this.na="ID"+num;
+	this.n1=Math.floor((Math.random()*100)+1);
+	this.n2=Math.floor((Math.random()*100)+1);
+	this.n3=Math.floor((Math.random()*100)+1);
+	this.n4=Math.floor((Math.random()*100)+1);
+
+	frm.sName.value=na;
+	frm.snum1.value=n1;
+	frm.snum2.value=n2;
+	frm.snum3.value=n3;
+	frm.snum4.value=n4;
+	main(na, n1, n2,n3, n4);
+
+}
+
+
+
+</script>	
+</head>
+
+<body>
+ <form id="frm">
+	<p><h1>성적출력</h1></p>
+	학번 : <input type="text" id="sName" size="10">
+	국어 : <input type="text" id="snum1" size="3">
+	영어 : <input type="text" id="snum2" size="3">
+	수학 : <input type="text" id="snum3" size="3">
+	과학 : <input type="text" id="snum4" size="3">
+
+	<input type="button" value="입력" onclick="main(sName.value,snum1.value, snum2.value, snum3.value, snum4.value)">	   
+	<input type="button" value="Sample Data" onclick="randomNumber()"> </br>
+
+	<table id="tem" width="80%" align="center" class="tablesorter">
+		<thead>
+			<tr>
+				<th>학번</th><th>국어</th><th>영어</th><th>수학</th><th>과학</th><th>총점</th><th>평균</th>
+			</tr>
+		</thead>
+
+		<tbody></tbody>
+	</table>
+	</form>
+</body>
+</html>

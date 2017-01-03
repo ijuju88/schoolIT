@@ -1,0 +1,11 @@
+CREATE OR REPLACE PROCEDURE emp_pro (v_empno   IN EMP.EMPNO%TYPE,
+                                     v_name    IN EMP.ENAME%TYPE,
+                                     v_sal     IN EMP.SAL%TYPE)
+IS
+BEGIN
+   SELECT empno, ename, sal
+     INTO v_empno, v_name, V_sal
+     FROM emp
+    WHERE empno = v_empno;
+END emp_pro;
+/

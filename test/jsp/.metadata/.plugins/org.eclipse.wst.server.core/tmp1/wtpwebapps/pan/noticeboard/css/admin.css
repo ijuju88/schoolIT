@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+table {background:black;
+	   border-collapse:collapse;}
+
+th {border-style:solid; 
+	text-align:justify;
+	font-size:20pt;
+	color:white;
+	padding:7;
+	}
+	
+td {border:1px;
+	border-style:solid; 
+	text-align:justify;
+	font-size:14pt;
+	background:white;
+	padding:2;
+	}
+
+.tableSubject1 {background:#000040; text-align:center;}
+.tableSubject2 {background:#50508C; color:white; text-align:center;}
+.tableSubject3 {background:#8C8CF5; color:white; text-align:center;}
+.center1 {text-align:center;}
+
+a {color:white; text-decoration:none;}
+a:link {color:white;}
+a:active {color:green;}
+a:hover {color:red;}
+a:ivisited {color:skyblue;}
+
+hr {margin-top:20px;margin-bottom:20px;color:#50508C; height:6px;}

@@ -1,0 +1,441 @@
+package com.TB;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.*;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.border.BevelBorder;
+
+public class Tax_Bill extends JPanel implements ActionListener, MouseListener{
+	private TaxBills tb = new TaxBills();
+	// DBConPro dbConn=DBConPro.getInstance();
+	// private ArrayList<TaxBills> members=dbConn.SetTableDB();
+	private JTextField jtbooknum1, jtbooknum2, jtbooknum4;
+	private JButton jbTax_Bill_Cel;
+	private JTextField jtbooknum5;
+
+	private JLabel jlCRno, jlCRname, jlCRboss, jlCRloc, jlCRcategory, jlCRevent, jlARno, jlARname, jlARboss, jlARloc,
+			jlARcategory, jlARevent;
+	private JTextField jtCRname, jtCRboss, jtCRloc, jtCRcategory, jtCRevent, jtARname, jtARboss, jtARloc, jtARcategory,
+			jtARevent;
+
+	private JComboBox jbCRno, jbARno;
+
+	private JTable Tax_BillTable;
+	private String selectRow1="";
+	private String selectRow2="";
+	private String selectRow3="";
+	private String selectRow4="";
+	private String selectRow5="";
+	private String selectRow6="";
+	private String selectRow7="";
+	private String selectRow8="";
+	
+	private JScrollPane jsp;
+	
+	private String tablestr[] = { "날짜", "품목", "규격", "수량", "단가", "공급가액", "세액", "비고" };
+	private Object tablestr1[][] =new Object[4][8];
+
+	private JLabel jlCR, jlAR, jldate, jltotal, jlcash, jlcheck, jlpromissory_note, jlcredit, jlpay;
+	private JTextField jtdate, jtect, jttotal, jtcash, jtcheck, jtpromissory_note, jtcredit;
+
+	private JComboBox jcbpay;
+
+	public Tax_Bill() {
+		setLayout(null);
+		setBounds(0, 0, 895, 500);
+
+		JPanel panel1 = new JPanel();
+		panel1.setBounds(0, 0, 895, 60);
+		add(panel1);
+		panel1.setLayout(null);
+
+		JPanel panel1_1 = new JPanel();
+		panel1_1.setBounds(0, 0, 238, 60);
+		panel1.add(panel1_1);
+		panel1_1.setLayout(null);
+
+		// title부분
+		JLabel jlTitleName = new JLabel("세금계산서");
+		jlTitleName.setBounds(6, 6, 210, 47);
+		jlTitleName.setHorizontalAlignment(SwingConstants.LEFT);
+		jlTitleName.setForeground(Color.RED);
+		jlTitleName.setFont(new Font("굴림", Font.BOLD, 34));
+		panel1_1.add(jlTitleName);
+
+		JPanel panel1_2 = new JPanel();
+		panel1_2.setBounds(238, 0, 657, 60);
+		panel1.add(panel1_2);
+		panel1_2.setLayout(null);
+
+		JPanel panel1_2_1 = new JPanel();
+		panel1_2_1.setBounds(0, 0, 420, 60);
+		panel1_2.add(panel1_2_1);
+		panel1_2_1.setLayout(null);
+
+		JButton jbTax_Bill_Ent = new JButton("저장");
+		jbTax_Bill_Ent.setBounds(14, 5, 61, 43);
+		panel1_2_1.add(jbTax_Bill_Ent);
+
+		jbTax_Bill_Cel = new JButton("취소");
+		jbTax_Bill_Cel.setBounds(80, 5, 61, 43);
+		panel1_2_1.add(jbTax_Bill_Cel);
+
+		JButton jbTax_Bill_Excel1 = new JButton("세금계산서엑셀");
+		jbTax_Bill_Excel1.setBounds(146, 5, 117, 43);
+		panel1_2_1.add(jbTax_Bill_Excel1);
+
+		JButton jbTax_Bill_Excel2 = new JButton("거래명세서엑셀");
+		jbTax_Bill_Excel2.setBounds(265, 5, 117, 43);
+		panel1_2_1.add(jbTax_Bill_Excel2);
+
+		JPanel panel1_2_2 = new JPanel();
+		panel1_2_2.setBounds(420, 0, 236, 60);
+		panel1_2.add(panel1_2_2);
+		panel1_2_2.setLayout(null);
+
+		JPanel panel1_2_1_1 = new JPanel();
+		panel1_2_1_1.setBounds(0, 0, 236, 30);
+		panel1_2_2.add(panel1_2_1_1);
+		panel1_2_1_1.setLayout(null);
+
+		JLabel jbbooknum1 = new JLabel("책번호");
+		jbbooknum1.setBounds(10, 5, 42, 18);
+		panel1_2_1_1.add(jbbooknum1);
+
+		jtbooknum1 = new JTextField();
+		jtbooknum1.setBounds(140, 2, 50, 24);
+		panel1_2_1_1.add(jtbooknum1);
+		jtbooknum1.setColumns(3);
+
+		JLabel jbbooknum2 = new JLabel("권");
+		jbbooknum2.setBounds(121, 5, 22, 18);
+		panel1_2_1_1.add(jbbooknum2);
+
+		jtbooknum2 = new JTextField();
+		jtbooknum2.setBounds(70, 2, 50, 24);
+		panel1_2_1_1.add(jtbooknum2);
+		jtbooknum2.setColumns(3);
+
+		JLabel jbbooknum3 = new JLabel("호");
+		jbbooknum3.setBounds(197, 5, 22, 18);
+		panel1_2_1_1.add(jbbooknum3);
+
+		JPanel panel1_2_1_2 = new JPanel();
+		panel1_2_1_2.setBounds(0, 30, 236, 30);
+		panel1_2_2.add(panel1_2_1_2);
+		panel1_2_1_2.setLayout(null);
+
+		JLabel jbbooknum4 = new JLabel("일련번호");
+		jbbooknum4.setBounds(10, 5, 64, 21);
+		panel1_2_1_2.add(jbbooknum4);
+
+		jtbooknum4 = new JTextField();
+		jtbooknum4.setBounds(70, 2, 64, 24);
+		panel1_2_1_2.add(jtbooknum4);
+		jtbooknum4.setColumns(3);
+
+		JLabel jbbooknum5 = new JLabel("-");
+		jbbooknum5.setBounds(140, 5, 15, 21);
+		panel1_2_1_2.add(jbbooknum5);
+
+		jtbooknum5 = new JTextField();
+		jtbooknum5.setColumns(3);
+		jtbooknum5.setBounds(155, 3, 64, 24);
+		panel1_2_1_2.add(jtbooknum5);
+
+		JPanel panel2 = new JPanel();
+		panel2.setBounds(0, 60, 895, 170);
+		add(panel2);
+		panel2.setLayout(new GridLayout(1, 2));
+
+		JPanel panel2_1 = new JPanel();
+		panel2.add(panel2_1);
+		panel2_1.setLayout(null);
+
+		jlCR = new JLabel("     공급자");
+		jlCR.setBounds(0, 0, 91, 170);
+		panel2_1.add(jlCR);
+
+		// 공급자부분
+		jlCRno = new JLabel("등록번호");
+		jlCRno.setBounds(105, 5, 74, 27);
+		panel2_1.add(jlCRno);
+
+		jbCRno = new JComboBox<>();
+		jbCRno.setFont(new Font("굴림", Font.PLAIN, 12));
+		jbCRno.setBounds(190, 2, 240, 27);
+		panel2_1.add(jbCRno);
+
+		jlCRname = new JLabel("상호");
+		jlCRname.setBounds(105, 32, 74, 24);
+		panel2_1.add(jlCRname);
+
+		jtCRname = new JTextField();
+		jtCRname.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtCRname.setBounds(190, 29, 240, 27);
+		panel2_1.add(jtCRname);
+		jtCRname.setColumns(10);
+
+		jlCRboss = new JLabel("성명");
+		jlCRboss.setBounds(105, 59, 74, 24);
+		panel2_1.add(jlCRboss);
+
+		jtCRboss = new JTextField();
+		jtCRboss.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtCRboss.setBounds(190, 56, 240, 27);
+		panel2_1.add(jtCRboss);
+		jtCRboss.setColumns(10);
+
+		jlCRloc = new JLabel("사업장주소");
+		jlCRloc.setBounds(105, 86, 74, 24);
+		panel2_1.add(jlCRloc);
+
+		jtCRloc = new JTextField();
+		jtCRloc.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtCRloc.setBounds(190, 83, 240, 27);
+		panel2_1.add(jtCRloc);
+		jtCRloc.setColumns(10);
+
+		jlCRcategory = new JLabel("업태");
+		jlCRcategory.setBounds(105, 113, 74, 24);
+		panel2_1.add(jlCRcategory);
+
+		jtCRcategory = new JTextField();
+		jtCRcategory.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtCRcategory.setBounds(190, 110, 240, 27);
+		panel2_1.add(jtCRcategory);
+		jtCRcategory.setColumns(10);
+
+		jlCRevent = new JLabel("종목");
+		jlCRevent.setBounds(105, 140, 74, 24);
+		panel2_1.add(jlCRevent);
+
+		jtCRevent = new JTextField();
+		jtCRevent.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtCRevent.setBounds(190, 137, 240, 27);
+		panel2_1.add(jtCRevent);
+		jtCRevent.setColumns(10);
+
+		JPanel panel2_2 = new JPanel();
+		panel2.add(panel2_2);
+		panel2_2.setLayout(null);
+
+		jlAR = new JLabel("  공급받는자");
+		jlAR.setFont(new Font("굴림", Font.PLAIN, 15));
+		jlAR.setBounds(0, 0, 91, 170);
+		panel2_2.add(jlAR);
+
+		// 공급받는자부분
+		jlARno = new JLabel("등록번호");
+		jlARno.setBounds(105, 2, 74, 27);
+		panel2_2.add(jlARno);
+
+		jbARno = new JComboBox<>();
+		jbARno.setFont(new Font("굴림", Font.PLAIN, 12));
+		jbARno.setBounds(190, 2, 240, 27);
+		panel2_2.add(jbARno);
+
+		jlARname = new JLabel("상호");
+		jlARname.setBounds(105, 29, 74, 27);
+		panel2_2.add(jlARname);
+
+		jtARname = new JTextField();
+		jtARname.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtARname.setBounds(190, 29, 240, 27);
+		panel2_2.add(jtARname);
+		jtARname.setColumns(10);
+
+		jlARboss = new JLabel("성명");
+		jlARboss.setBounds(105, 59, 74, 27);
+		panel2_2.add(jlARboss);
+
+		jtARboss = new JTextField();
+		jtARboss.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtARboss.setBounds(190, 56, 240, 27);
+		panel2_2.add(jtARboss);
+		jtARboss.setColumns(10);
+
+		jlARloc = new JLabel("사업장주소");
+		jlARloc.setBounds(105, 83, 74, 27);
+		panel2_2.add(jlARloc);
+
+		jtARloc = new JTextField();
+		jtARloc.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtARloc.setBounds(190, 83, 240, 27);
+		panel2_2.add(jtARloc);
+		jtARloc.setColumns(10);
+
+		jlARcategory = new JLabel("업태");
+		jlARcategory.setBounds(105, 110, 74, 27);
+		panel2_2.add(jlARcategory);
+
+		jtARcategory = new JTextField();
+		jtARcategory.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtARcategory.setBounds(190, 110, 240, 27);
+		panel2_2.add(jtARcategory);
+		jtARcategory.setColumns(10);
+
+		jlARevent = new JLabel("종목");
+		jlARevent.setBounds(105, 138, 74, 24);
+		panel2_2.add(jlARevent);
+
+		jtARevent = new JTextField();
+		jtARevent.setFont(new Font("굴림", Font.PLAIN, 12));
+		jtARevent.setBounds(190, 137, 240, 27);
+		panel2_2.add(jtARevent);
+		jtARevent.setColumns(10);
+
+		JPanel panel3 = new JPanel();
+		panel3.setBounds(0, 230, 895, 30);
+		add(panel3);
+		panel3.setLayout(null);
+
+		jldate = new JLabel("일자");
+		jldate.setFont(new Font("SansSerif", Font.PLAIN, 15));
+		jldate.setBounds(20, 6, 41, 18);
+		panel3.add(jldate);
+
+		jtdate = new JTextField();
+		jtdate.setBounds(53, 0, 140, 30);
+		panel3.add(jtdate);
+		jtdate.setColumns(10);
+
+		JButton jbdate = new JButton("날짜선택");
+		jbdate.setBounds(200, 0, 90, 30);
+		panel3.add(jbdate);
+
+		JLabel jlect = new JLabel("비고");
+		jlect.setBounds(302, 0, 40, 30);
+		panel3.add(jlect);
+
+		jtect = new JTextField();
+		jtect.setBounds(340, 1, 535, 30);
+		panel3.add(jtect);
+		jtect.setColumns(30);
+
+		JPanel panel4 = new JPanel();
+		panel4.setBounds(0, 260, 895, 160);
+		add(panel4);
+		panel4.setLayout(null);
+
+		// 테이블
+		DefaultTableModel model=new DefaultTableModel(tablestr1,tablestr);
+		Tax_BillTable = new JTable(model);
+		
+		//배경색
+		Tax_BillTable.setBackground(SystemColor.inactiveCaptionBorder);
+	
+		//격자선
+		Tax_BillTable.setGridColor(Color.gray); //격자선색
+		Tax_BillTable.setShowGrid(true); //격자선그릴지 여부
+		
+		//칸 너비 지정중
+		Tax_BillTable.getColumnModel().getColumn(0).setPreferredWidth(60);
+		Tax_BillTable.getColumnModel().getColumn(2).setPreferredWidth(40);
+		Tax_BillTable.getColumnModel().getColumn(4).setPreferredWidth(70);
+		Tax_BillTable.getColumnModel().getColumn(5).setPreferredWidth(80);
+		Tax_BillTable.getColumnModel().getColumn(6).setPreferredWidth(80);
+		Tax_BillTable.getColumnModel().getColumn(7).setPreferredWidth(145);
+		
+		Tax_BillTable.setBounds(0, 0, 895, 160);
+		jsp=new JScrollPane(Tax_BillTable);
+		jsp.setSize(895, 160);
+		jsp.setLocation(0, 0);
+		panel4.add(jsp);
+
+		Tax_BillTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //단일선택
+		Tax_BillTable.addMouseListener(this);
+		
+		JPanel panel5 = new JPanel();
+		panel5.setBounds(0, 420, 895, 30);
+		add(panel5);
+
+		JPanel panel6 = new JPanel();
+		panel6.setBounds(0, 450, 895, 50);
+		add(panel6);
+		panel6.setLayout(new GridLayout(2, 6));
+
+		jltotal = new JLabel("합계금액");
+		panel6.add(jltotal);
+
+		jlcash = new JLabel("현금");
+		panel6.add(jlcash);
+
+		jlcheck = new JLabel("수표");
+		panel6.add(jlcheck);
+
+		jlpromissory_note = new JLabel("어음");
+		panel6.add(jlpromissory_note);
+
+		jlcredit = new JLabel("외상미수금");
+		panel6.add(jlcredit);
+
+		jlpay = new JLabel("이금액을");
+		panel6.add(jlpay);
+
+		jttotal = new JTextField();
+		jttotal.setEditable(false);
+		panel6.add(jttotal);
+		jttotal.setColumns(20);
+
+		jtcash = new JTextField();
+		jtcash.setColumns(20);
+		panel6.add(jtcash);
+
+		jtcheck = new JTextField();
+		jtcheck.setColumns(20);
+		panel6.add(jtcheck);
+
+		jtpromissory_note = new JTextField();
+		jtpromissory_note.setColumns(20);
+		panel6.add(jtpromissory_note);
+
+		jtcredit = new JTextField();
+		jtcredit.setColumns(20);
+		panel6.add(jtcredit);
+
+		jcbpay = new JComboBox();
+		panel6.add(jcbpay);
+		
+		setVisible(true);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String su=e.getActionCommand();
+		if(e.equals("저장")){
+			
+		}
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		int r=Tax_BillTable.getSelectedRow();
+		int c=Tax_BillTable.getSelectedColumn();
+		System.out.println(Tax_BillTable.getValueAt(r, c));
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {}
+
+	@Override
+	public void mouseExited(MouseEvent e) {}
+
+	@Override
+	public void mousePressed(MouseEvent e) {}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {}
+	
+	public static void main(String[] args) {
+		new Tax_Bill();
+	}
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+	function OnButtonDown(button){
+		button.style.color="#ff0000";
+	}
+
+	function OnButtonUp(button){
+		button.sryle.color="#000000";
+	}
+  </script>
+ </head>
+ <body>
+	<button onmousedown="OnButtonDown(this)" onmouseup="OnButtonUp(this)">
+	눌러보세요</button>
+ </body>
+</html>

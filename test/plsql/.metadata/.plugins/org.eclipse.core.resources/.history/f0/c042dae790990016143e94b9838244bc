@@ -1,0 +1,19 @@
+CREATE OR REPLACE PROCEDURE emp_test (t_empno    IN     EMP.EMPNO%TYPE,
+                                      t_name        OUT EMP.ENAME%TYPE,
+                                      t_job         OUT EMP.JOB%TYPE,
+                                      t_manger      OUT EMP.MGR%TYPE,
+                                      t_salary      OUT EMP.SAL%TYPE)
+IS
+BEGIN
+   SELECT ename,
+          job,
+          mgr,
+          sal
+     INTO t_name,
+          t_job,
+          t_manger,
+          t_salary
+     FROM emp
+    WHERE empno = t_empno;
+END;
+/

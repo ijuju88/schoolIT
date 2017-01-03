@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <title>Document</title>
+  <script>
+  function dan(){
+	var d=document.getElementById("dan1").value;
+	
+	document.write("<table border='1'>");
+	for (var i=1;i<=9 ;i++ )
+	{
+		document.write("<tr>");
+		document.write("<td>");
+		document.write(d+"*"+i+"="+d*i);
+		document.write("</td>");
+		document.write("</tr>");
+	}
+		document.write("</table>");
+  }
+  </script>
+ </head>
+ <body>
+ 단을 입력하세용!!()단
+  <input type="text" id="dan1"> 
+  <input type="button" value="enter" onclick="dan()">
+ </body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script>
+  function fn(){
+	prompt("tt","ttt");
+  }
+  
+  </script>
+  <title>Document</title>
+ </head>
+ <body>
+  <input type="button" value="enter" onclick="fn()">
+  <div id="erea">DIV1</div>
+ </body>
+</html>

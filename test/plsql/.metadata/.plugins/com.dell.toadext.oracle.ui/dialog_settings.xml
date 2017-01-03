@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.dell.toadext.oracle.nui.viewer.object.OraSequenceViewer">
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.object.OraTableViewer">
+		<section name="options">
+			<item value="false" key="STORAGE"/>
+			<item value="false" key="OWNER"/>
+			<item value="false" key="CONSTRAINTS"/>
+			<item value="false" key="INDEX"/>
+			<item value="false" key="METADATA"/>
+			<item value="false" key="SYNONYMS"/>
+			<item value="false" key="TABLESPACE"/>
+			<item value="false" key="GRANTS"/>
+			<item value="false" key="COMMENT"/>
+		</section>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraScriptViewer">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="OracleEditColumnDataTypeDialog">
+		<item value="600" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="223" key="GroupDialog.y"/>
+		<item value="241" key="GroupDialog.x"/>
+		<item value="600" key="GroupDialog.width"/>
+		<item value="600" key="DIALOG_HEIGHT"/>
+		<item value="600" key="GroupDialog.height"/>
+		<item value="241" key="DIALOG_X_ORIGIN"/>
+		<item value="223" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="OraEditUniqueConstraintDialog">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="353" key="GroupDialog.y"/>
+		<item value="718" key="GroupDialog.x"/>
+		<item value="500" key="GroupDialog.width"/>
+		<item value="350" key="DIALOG_HEIGHT"/>
+		<item value="350" key="GroupDialog.height"/>
+		<item value="718" key="DIALOG_X_ORIGIN"/>
+		<item value="353" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

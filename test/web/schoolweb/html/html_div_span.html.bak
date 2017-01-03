@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>Document</title>
+ </head>
+ <body>
+	<div style="background-color:red; height:20px">div1</div>
+	<span style="background-color:blue; height:20px">span1</span>
+ </body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+	div{width:100px; height:100px; background-color:yellow; 
+	border:1px solid black;}
+	
+	.container{background-color:#0099ff; border:1px solid black;}
+	.transformed{
+		backface-visibility:visible;
+		transform-origin:50% 42%;
+		transform:perspective(500px) rotatey(59deg) rotatex(0deg);
+	}
+</style>
+  <title>Document</title>
+ </head>
+ <body>
+	<div class="container"><div class="transformed"></div></div>
+  	
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title> New Document </title>
+ <script type="text/javascript">
+				var tname="";
+				var tkor=0;
+				var teng=0;
+				var total=0;
+				var avr=0;
+				var gra="";
+				var tag="<tr><td>학생명</td><td>국어</td><td>영어</td><td>총점</td><td>평균</td><td>등급</td></tr>";
+				
+				function  main()
+				{
+					getData();
+					sum();
+					average();
+					grade();
+					console.log("1--> "+ tag);
+					tag+= makeTag();
+					console.log("2--> "+ tag);
+					area.innerHTML = tag;
+				}
+				function getData()
+				{
+					tname=document.getElementById("txtName").value;
+					tkor=document.getElementById("txtKor").value;
+					teng=document.getElementById("txtEng").value;
+				}
+				function sum()
+				{
+				   total=parseInt(tkor)+parseInt(teng);
+				}
+				function average()
+				{
+				  avr=parseInt(total/2);
+				}
+				function grade()
+				{
+					if (avr>=90)
+					{gra="A";				}
+					else if (avr>=80)
+					{gra="B";				}
+					else if (avr>=70)
+					{gra="C";				}					
+					else
+					{gra="F";				}
+				}
+				function makeTag()
+				{
+					tag ="<tr>";
+					tag += "<td>"+ tname + "</td>";
+					tag += "<td>"+ tkor  + "</td>";
+					tag += "<td>"+ teng  + "</td>";
+					tag += "<td>"+ total + "</td>";
+					tag += "<td>"+ avr   + "</td>"  ;
+					tag += "<td>"+ gra   + "</td>"  ;
+					tag+="</tr>";
+					return tag;
+				}
+
+ </script>
+ </head>
+
+ <body>
+	<h1>성적 출력 </h1>
+
+	성명: <input type="text" id="txtName" size=10>  
+	국어 : <input type="text" id="txtKor" size=10>  
+    영어 : 	<input type="text" id="txtEng" size=10>
+	<input type="button" value="입력" onclick="main()"></br>
+	<table border="1" id = "area" ></table>
+ </body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="UI_STATE">
+	<section name="2df3cb95-4548-42de-81e5-0a4544ca4a48">
+		<item value="&lt;list&gt;&#x0A;  &lt;SQL__WORKSHEET&gt;&#x0A;    &lt;isActive&gt;true&lt;/isActive&gt;&#x0A;    &lt;isDirty&gt;true&lt;/isDirty&gt;&#x0A;    &lt;index&gt;0&lt;/index&gt;&#x0A;    &lt;content&gt;CREATE TABLE mvc_board&amp;#xd;&#x0A;(&amp;#xd;&#x0A;   bId        NUMBER (4) PRIMARY KEY,&amp;#xd;&#x0A;   bName      VARCHAR (20),&amp;#xd;&#x0A;   bTitle     VARCHAR (100),&amp;#xd;&#x0A;   bContent   VARCHAR (300),&amp;#xd;&#x0A;   bDate      DATE DEFAULT SYSDATE,&amp;#xd;&#x0A;   bHit       NUMBER (4) DEFAULT 0,&amp;#xd;&#x0A;   bGroup     NUMBER (4),&amp;#xd;&#x0A;   bStep      NUMBER (4),&amp;#xd;&#x0A;   bIndent    NUMBER (4)&amp;#xd;&#x0A;);&amp;#xd;&#x0A;&amp;#xd;&#x0A;COMMIT;&amp;#xd;&#x0A;&amp;#xd;&#x0A;CREATE SEQUENCE mvc_board_seq;&lt;/content&gt;&#x0A;    &lt;name&gt;Worksheet 1&lt;/name&gt;&#x0A;  &lt;/SQL__WORKSHEET&gt;&#x0A;  &lt;OBJECT__DETAIL&gt;&#x0A;    &lt;isActive&gt;false&lt;/isActive&gt;&#x0A;    &lt;isDirty&gt;false&lt;/isDirty&gt;&#x0A;    &lt;index&gt;1&lt;/index&gt;&#x0A;    &lt;name&gt;MVC_BOARD&lt;/name&gt;&#x0A;    &lt;parent&gt;OXJU88&lt;/parent&gt;&#x0A;    &lt;selectedTab&gt;4&lt;/selectedTab&gt;&#x0A;    &lt;sourceEditors/&gt;&#x0A;    &lt;type&gt;TABLE&lt;/type&gt;&#x0A;  &lt;/OBJECT__DETAIL&gt;&#x0A;&lt;/list&gt;" key="EDITORS"/>
+		<item value="" key="CONTAINER"/>
+	</section>
+	<section name="72513e2c-d3e8-4847-b791-a31e3362f531">
+		<item value="&lt;list/&gt;" key="EDITORS"/>
+		<item value="" key="CONTAINER"/>
+	</section>
+</section>

@@ -1,0 +1,121 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+
+<TITLE>게시판 글쓰기</TITLE>
+<style type="text/css">
+<!--
+input {
+	border: 0px;
+}
+
+.normal {
+	font-family: "굴림", "돋움";
+	font-size: 7pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none
+}
+
+.normalbold {
+	font-family: "굴림", "돋움";
+	font-size: 7pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none
+}
+-->
+</style>
+<script type="text/javascript">
+	function List() {
+		location.href = "./RegisterListAction.bo";
+	}
+</script>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+	<center>
+		<table align="center" border="1" style="width: 660px;">
+			<tr>
+				<td align="center"
+					style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);">등록페이지</td>
+			</tr>
+		</table>
+		<form method="post" action="./RegisterAddAction.bo" name="register">
+			<table align="center"
+				style="background-color: rgb(166, 188, 209); width: 660px; height: 10px;"
+				border="1" cellspacing="1" cellpadding="0">
+				<tr>
+					<td width="40%"
+						style="padding: 3px 4px 2px; text-align: left; color: rgb(255, 255, 255); font-weight: normal; background-color: rgb(98, 132, 171);"><p>강좌아이디</p></td>
+					<td width="60%"
+						style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
+							<input type="text" name="rg_id" size="60" placeholder="ex)수학"
+								required="required">
+						</p></td>
+				</tr>
+				<tr height=10px;>
+					<td width="40%"
+						style="padding: 3px 4px 2px; text-align: left; color: rgb(255, 255, 255); font-weight: normal; background-color: rgb(98, 132, 171);"><p>강좌번호</p></td>
+					<td width="60%"
+						style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
+							<input type="text" name="sub_no" size="60"
+								placeholder="숫자만 입력하세요" required="required">
+						</p></td>
+				</tr>
+				<tr height=10px;>
+					<td width="40%"
+						style="padding: 3px 4px 2px; text-align: left; color: rgb(255, 255, 255); font-weight: normal; background-color: rgb(98, 132, 171);"><p>시작날짜</p></td>
+					<td width="60%"
+						style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
+							<input type="text" name="rg_start" size="60"
+								placeholder="ex)20140101" required="required">
+						</p></td>
+				</tr>
+				<tr height=10px;>
+					<td width="40%"
+						style="padding: 3px 4px 2px; text-align: left; color: rgb(255, 255, 255); font-weight: normal; background-color: rgb(98, 132, 171);"><p>종료날짜</p></td>
+					<td width="60%"
+						style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
+							<input type="text" name="rg_end" size="60"
+								placeholder="ex)20140101" required="required">
+						</p></td>
+				</tr>
+				<tr height=10px;>
+					<td width="40%"
+						style="padding: 3px 4px 2px; text-align: left; color: rgb(255, 255, 255); font-weight: normal; background-color: rgb(98, 132, 171);"><p>수강료</p></td>
+					<td width="60px"
+						style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
+							<input type="text" name="charge" size="60"
+								placeholder="숫자만 입력하세요" required="required">
+						</p></td>
+				</tr>
+				<tr height=10px;>
+					<td width="40%"
+						style="padding: 3px 4px 2px; text-align: left; color: rgb(255, 255, 255); font-weight: normal; background-color: rgb(98, 132, 171);"><p>강의실</p></td>
+					<td width="60%"
+						style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
+							<input type="text" name="classroom" size="60"
+								placeholder="숫자만 입력하세요" required="required">
+						</p></td>
+				</tr>
+			</table>
+			<table align="center" border="1"
+				style="padding: 3px 4px 2px; width: 660px; height: 15px; color: rgb(61, 118, 171); border-bottom-color: rgb(235, 235, 235); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(246, 248, 250);"
+				rowspan="1" colspan="6">
+
+				<tr align="center">
+					<td><input type="submit" value="등록하기"> <input
+						type="reset" value="초기화"> <input Type='Button' Value='취소'
+						onClick='List();'></td>
+
+
+				</tr>
+			</table>
+		</form>
+
+	</center>
+</BODY>
+</HTML>

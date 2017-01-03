@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+<style>
+table{
+	border-collapse:separate;
+	background-color:#0099ff;
+	width:50%;
+}
+tr{background-color:#ffffcc; text-align:center;}
+body{font-family:"제주고딕";}
+</style>
+<script type="text/javascript" src="score.js"></script>
+//기본테이블 윗부분설정
+	var str="<table>";
+	str+="<tr>";
+	str+="<td>학생명</td><td>국어</td><td>수학</td><td>총점</td><td>평균</td><td>등급</td>";
+	str+="</tr>";
+	//이름, 성적1, 성적2, 총점, 평균, 등급 변수 지정하기
+	var na=" ", n1=0, n2=0,sum=0,avg=0,dep=" ";
+	
+	//본함수 실행부분
+	function main(){
+		getNum(); //값불려오기
+		sum=Total(); //합계
+		avg=Avg();  //평균
+		dep=SetDep(); //등급
+		//alert(dep);
+		SetTable(); //table출력
+
+		tem.innerHTML=str;//id=tem 인 부분에 출력하려고 함!
+	}
+</script>
+ </head>
+ <body>
+ <p><h1>성적출력</h1></p>
+ <table border="1" bgcolor="#ccffff" width="50%">
+ <tr colspan="6"><td>
+  성명 : <input type="text" id="name" size="10">
+  국어 : <input type="text" id="num1" size="3">
+  영어 : <input type="text" id="num2" size="3">
+  <button onclick="main();">입력</button>
+</td></tr>
+</table>
+  <div id="tem">
+
+  </div>
+ </body>
+</html>

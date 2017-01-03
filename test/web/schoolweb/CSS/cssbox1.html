@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+	#dotted{ border:dotted;}
+	#dashed{ border:dashed;}
+	#solid{ border:solid;}
+	#double{ border:double;}
+	#groove{ border:groove;}
+	#ridge{ border:ridge;}
+	#inset{ border:inset;}
+	#outset{ border:outset;}
+  
+	p.mul{border:dotted; border-right-style:solid; border-bottom-style:double;	border-left-style:dashed;}
+	
+	/*border-width속성 : thick, medium, ~px*/
+	p.thick{border:solid; border-width:1px; border-color:red;}
+
+	#d{padding:10px 20px; background-color:#cc99ff;
+	border-radius:25px; box-shadow:20px 20px 20px #66cccc;}
+	
+	#dimage{border:30px solid transparent; width:300px; height:50px;
+	/*border-image : 경계이미지*/
+	-webkit-border-image:url(border.png) 30 30 round; /*safari*/
+	-o-border-image:url(border.png) 30 30 round; /*opera*/
+	border-image:url(border.png) 30 30 round; /*chrome*/
+	}
+  </style>
+ </head>
+ <body>
+	<p id="dotted">dotted</p>
+	<p id="dashed">dashed</p>
+	<p id="solid">solid</p>
+	<p id="double">double</p>
+	<p id="groove">groove</p>
+	<p id="ridge">ridge</p>
+	<p id="inset">inset</p>
+	<p id="outset">outset</p>
+
+	<p class="mul">mul</p>
+
+	<p class="thick">경계선이 thick</p>
+
+	<div id="d">모양</div><p></p>
+	
+	<div id="dimage">모양</div>
+
+ </body>
+</html>

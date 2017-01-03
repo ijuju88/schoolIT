@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+	<style>
+		a:link{text-decoration:none; color:blue; background-color:white;}
+		a:visited{ text-decoration: none;color: green;background-color: silver;}
+		a:hover{text-decoration:none; color:white; background-color:blue;}
+	</style>
+ </head>
+ <body>
+	<a href="css1.html" target="_blank">넘어가랑</a>
+	<a href="http://www.naver.com">넘어가버렷!</a>
+ </body>
+</html>

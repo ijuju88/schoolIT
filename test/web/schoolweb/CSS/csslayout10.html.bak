@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+	div{width:80px; height:80px; background-color:yellow; 
+	border:1px solid black; text-align:center;}
+
+	div#box2{transform:translate(100px, 100px);}
+	div#box3{transform:scale(1.2, 1.2);}
+	div#box4{transform:rotate(30deg);}
+	div#box5{transform:skew(20deg, 20deg);}
+	div#box6{transform:matrix(0.9,0.5,-0.5,0.9,0,0);}
+</style>
+  <title>Document</title>
+ </head>
+ <body>
+	<div>box1</div>
+  	<div id="box2">box2 평행이동</div>
+	<div id="box3">box3 크기 변환</div>
+	<div id="box4">box4 회전</div>
+	<div id="box5">box5 비틀기</div>
+	<div id="box6">box6 2차원전환결합</div>
+ </body>
+</html>

@@ -1,0 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>hotel</title>
+<link href="/pan/Main/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/pan/Main/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="/pan/Main/css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Hospelry Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript">
+	
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+</script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="/pan/Main/js/bootstrap.js"></script>
+<script src="/pan/Main/js/responsiveslides.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+	$(function() {
+
+		$("#reservation").click(function() {
+			//$("#content").load("../Re.do");
+			window.open("/pan/Re.do", "title", "width=700,height=700") ;
+		});
+		/* $("#login").click(function() {
+			window.open("/pan/clientmember/login.jsp", "title", "width=700,height=700") ;
+		}); */
+		
+		$("#slider").responsiveSlides({
+			auto : true,
+			nav : true,
+			speed : 500,
+			namespace : "callbacks",
+			pager : true,
+		});
+
+	});
+</script>
+</head>
+<body>
+	<!--header-->
+	<div class="header" id="header">
+		<div class="container">
+			<div class="header-top">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1"
+								aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<div class="navbar-brand">
+								<h1>
+									<a href="/pan/Main/index.jsp" id="home">hospelry</a>
+								</h1>
+							</div>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse"
+							id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="/pan/Main/index.jsp" id="home1">Home <span
+										class="sr-only">(current)</span></a></li>
+								<li><a href="/pan/Room/about.jsp" id="about">About</a></li>
+								<li><a href="/pan/Room/services.jsp" id="services">Services</a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Rooms <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="/pan/Room/Room1.jsp" id="room1">Deluxe Rooms</a></li>
+										<li><a href="/pan/Room/Room2.jsp" id="room2">Sweet Rooms</a></li>
+										<li><a href="/pan/Room/Room3.jsp" id="room3">Korea Style Rooms</a></li>
+									</ul></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Reservation<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#" id="reservation">Reservation</a></li>
+										<li><a href="/pan/reservation/confirmBook.jsp" id="confirm">Confirm</a></li>
+
+									</ul></li>
+								<li><a href="/pan/noticeboard/NoticeMainServlet?command=notice_list" id="Notice">Notice</a></li>
+								<li><a href="/pan/usedBoard/list.jsp" id="Qboard">Question</a></li>
+								<li><a href="/pan/BoardServlet?command=board_list" id="review">Review</a></li>
+
+
+								<li>
+								<jsp:include page="/pan/clientmember/login.jsp"></jsp:include>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+
+			</div>
+			<div class="slider">
+				<div class="callbacks_container">
+					<ul class="rslides" id="slider">
+						<li>
+							<h3>
+								great choice of <span>hotels</span>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								best rates <span>guaranteed</span>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								the best place to <span>relax</span>
+							</h3>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--header-->
+	<!--Welcome-->

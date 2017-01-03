@@ -1,0 +1,18 @@
+package dao;
+
+import java.sql.*;
+
+public class DBConnect {
+	private DBConnect(){}
+	
+	//한개의 db연결을 위한 싱글톤생성
+	private static DBConnect dbconn=new DBConnect();
+	
+	public static DBConnect getInstance(){
+		return dbconn;
+	}
+	
+	private Connection getDBconnect(){
+		
+	}
+}

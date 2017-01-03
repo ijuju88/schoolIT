@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;forward.jsp&apos; to &apos;forward&apos;" description="Move &apos;forward.jsp&apos; to &apos;forward&apos;" destination="WebContent/forward" element1="WebContent/forward.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1477441732626" updateReferences="true"/>
+</session>

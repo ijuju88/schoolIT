@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script>
+  function tab(){
+  var str="<table border=1 bgcolor='red'>";
+  var r=document.getElementById("row").value;
+  var c=document.getElementById("col").value;
+
+  for (var i=1;i<=r;i++)
+  {
+	  str+="<tr bgcolor='#fff'>";
+	  for (var j=1;j<=c;j++)
+	  {
+		str+="<td>";
+		str+=i+','+j;
+		str+="</td>";
+	  }
+	   str+="</tr>";
+  }str+="</table>";
+
+  t1.innerHTML=str;
+
+  } 
+  
+  </script>
+  <title>Document</title>
+ </head>
+ <body>
+  ROW : <input type="text" id="row">
+  COL : <input type="text" id="col">
+ <button onclick="tab()">enter</button>	<hr/>
+ 
+ <div id="t1">
+ </div>
+
+ </body>
+</html>

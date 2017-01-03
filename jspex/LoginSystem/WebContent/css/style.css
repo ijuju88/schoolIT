@@ -1,0 +1,30 @@
+@CHARSET "utf-8";
+body{
+	background-color:#cae2f7;
+	width:1000;
+}
+table, tr, td, th{
+	border:ipx solid black;
+	border-collapse:collapse;
+}
+.box{
+	display:inline-block;
+	float:left;
+}
+ul li{
+	list-style:none;
+}
+ul, li{
+	margin:0px;
+	padding:0px;
+	border:1px solid black;
+	border-collspse:collapse;
+}
+.label{
+	background-color:#a5xff1;
+	width:100px;
+}
+.label2{
+	background-color:#a5xff1;
+	text-align:center;
+}

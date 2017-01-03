@@ -1,0 +1,9 @@
+package StudentManager;
+
+public class stuGUI {
+
+	public stuGUI() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

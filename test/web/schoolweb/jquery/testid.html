@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <script src="js/jquery-3.1.0.min.js"></script>
+	 <script>
+	 	$(function () {
+	 		$('#target').css('color','Orange');
+	 		$('li.li2').css('color','Orange');
+
+	 		$('div > item.select').css('color','#008AA3');
+	 		$('div *').css('text-align','center');
+
+	 		$("li:contains('Apple')")
+	 		.text('!!')
+	 		.css('color','#008AA3');
+
+	 		$('input[type=text]').val("아이디를 입력하세용~");
+
+	 		$('tr > th').css("background","#1ABA00");
+	 		$('td:nth-child(2n)').css('color','#008AA3');
+
+	 		
+	 		var array=[
+	 			{name:'hanbit media', link:'http://hanb.co.kr'},
+	 			{name:'naver', link:'http://www.naver.con'}
+	 		];
+	 		$.each(array, function(index, item){
+	 			var out="";
+	 			out+='<a href="'+item.link+'">';
+	 			out+='<h1>'+item.name+'</h1><br>';
+	 			out+='</a>';
+
+	 			$('body').html(out);
+	 		});
+	 	});
+
+	 </script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1 id="target">Hearder-1</h1>
+	<h2>Hearder-2</h2>
+
+	<div id="d1">
+		<h1 class="item">Header-0</h1>
+		<h1 class="item select" style="color:Orange;">Hearder-1</h1>
+		<h2 class="item">Hearder-2</h2>
+	</div>
+	<ul>
+		<li>Apple</li>
+		<li>Banana</li>
+		<li>Orange</li>
+		<li class="li2">Cat</li>
+		<li>DogApple</li>
+	</ul>
+
+	<input type="text"/>
+	<input type="password"/>
+	<table border="1">
+		<tr>
+		<th>이름</th>
+		<th>혈액형</th>
+		<th>지역</th>
+		</tr>
+
+		<hr>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		</tr>
+		<hr>
+		<td>2</td>
+		<td>2</td>
+		<td>2</td>
+		</tr>
+	</table>
+
+</body>
+</html>

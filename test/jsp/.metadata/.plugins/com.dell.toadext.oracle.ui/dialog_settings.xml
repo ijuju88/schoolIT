@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.dell.toadext.oracle.nui.viewer.object.OraTableViewer">
+		<section name="options">
+			<item value="false" key="STORAGE"/>
+			<item value="false" key="OWNER"/>
+			<item value="false" key="CONSTRAINTS"/>
+			<item value="false" key="INDEX"/>
+			<item value="false" key="METADATA"/>
+			<item value="false" key="SYNONYMS"/>
+			<item value="false" key="TABLESPACE"/>
+			<item value="false" key="GRANTS"/>
+			<item value="false" key="COMMENT"/>
+		</section>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraScriptViewer">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="OracleAnalyzeObjectDialog">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="278" key="GroupDialog.y"/>
+		<item value="705" key="GroupDialog.x"/>
+		<item value="525" key="GroupDialog.width"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="500" key="GroupDialog.height"/>
+		<item value="705" key="DIALOG_X_ORIGIN"/>
+		<item value="278" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

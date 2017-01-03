@@ -1,0 +1,205 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>hotel</title>
+</head>
+<body>
+	<jsp:include page="../common/head.jsp"></jsp:include>
+	
+	<div class="content" id="content">
+		<div class="Welcome-section">
+			<div class="container">
+				<h2>Welcome to hotel</h2>
+				<div class="Welcome-grids">
+					<div class="col-md-4 welcome-grid">
+						<div class="welcome-grid1">
+							<img src="images/w1.jpg" class="img-responsive" alt="" />
+						</div>
+						<h4>조식</h4>
+						<p>저희 리조트에서는 조식에 속을 편한하게 할 전복죽 등 간단한 한식 뷔페가 준비되어 있습니다.</p>
+					</div>
+					<div class="col-md-4 welcome-grid">
+						<div class="welcome-grid1">
+							<img src="images/w2.jpg" class="img-responsive" alt="" />
+						</div>
+						<h4>다양한 체험</h4>
+						<p>저희 리조트에서는 제주도 특산품인 녹차, 감귤류, 화산송이를 이용한 
+						비누만들기 체험이 준비되어 있습니다.
+						사랑하는 가족, 연인들과 같이 체험하실 수 있습니다.
+						</p>
+					</div>
+					<div class="col-md-4 welcome-grid">
+						<div class="welcome-grid1">
+							<img src="images/w3.jpg" class="img-responsive" alt="" />
+						</div>
+						<h4>특별한 장소</h4>
+						<p>저희 리조트에서는 주변에 바다전망대와 올레7코스,
+						 섬등 빼어난 자연 경관을 자랑합니다.</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!--Welcome-->
+		<div class="features">
+			<div class="container">
+				<h3>features</h3>
+				<div class="features-grids">
+					<div class="col-md-3 feature-grid">
+						<div class="feature">
+							<div class="feature1">
+								<span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+								<h4>이용안내</h4>
+							</div>
+							<div class="feature2" >
+								<p>
+								<img src="../Main/images/list-arrow.png" alt="" />체크인 15:00 부터 / 체크와웃 11:00 까지
+								<br><img src="../Main/images/list-arrow.png" alt="" />
+								레스토랑 무료 조식 - 07:00 ~ 10:00
+								<br><img src="../Main/images/list-arrow.png" alt="" />
+								부대시설 - 야외 바베규시설<br>(이용료 15000원, 사전 문의)
+								<br><img src="../Main/images/list-arrow.png" alt="" />
+								비치품 - 기본 목욕용품, 올래 GIRA 와이파이, tv, 에어컨 ......
+								
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 feature-grid">
+						<div class="feature">
+							<div class="feature1">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								<h4>취소수수료</h4>
+							</div>
+							<div class="feature2">
+								<p>7일전 : 10%<br>
+								6일~5일전 : 30%<br>
+								4~3일전 : 50%<br>
+								2~1일전 : 80%<br>
+								당일 : 환불안됨<br>
+								천재지변등 : 전액환불<br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 feature-grid">
+						<div class="feature">
+							<div class="feature1">
+								<span class="glyphicon glyphicon-camera" aria-hidden="true" onclick="javascript:location.href='../../pan/Room/gallery.jsp';"></span>
+								<h4>외부전경</h4>
+							</div>
+							<div class="feature2">
+								<p><img src="../Main/images/list-arrow.png" alt="" />외부전경 갤러리입니다<br>
+								 카메라 아이콘을 클릭해주세요
+								<br><br><br></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 feature-grid">
+						<div class="feature">
+							<div class="feature1">
+								<span class="glyphicon glyphicon-calendar" aria-hidden="true" onclick="javascript:location.href='../Room/about.jsp';"></span>
+								<h4>소개</h4>
+							</div>
+							<div class="feature2">
+								<p><img src="../Main/images/list-arrow.png" alt="" />소개, 수상내역을 볼수 있습니다<br><br><br><br></p>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- slider -->
+		<div class="slider1">
+			<div class="arrival-grids">
+				<ul id="flexiselDemo1">
+					<li><a href="javascript:location.href=('.../../pan/Room/Room1.jsp');"><img src="images/d2.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room1.jsp');"><img src="images/d4.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room1.jsp');"><img src="images/d6.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room2.jsp');"><img src="images/s2.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room2.jsp');"><img src="images/s4.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room2.jsp');"><img src="images/s5.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room3.jsp');"><img src="images/h1.jpg" alt="" />
+					</a></li>
+					<li><a href="javascript:location.href=('../../pan/Room/Room3.jsp');"><img src="images/h2.jpg" alt="" />
+					</a></li>
+				</ul>
+				<script type="text/javascript">
+					$(window).load(function() {
+						$("#flexiselDemo1").flexisel({
+							visibleItems : 4,
+							animationSpeed : 1000,
+							autoPlay : true,
+							autoPlaySpeed : 3000,
+							pauseOnHover : true,
+							enableResponsiveBreakpoints : true,
+							responsiveBreakpoints : {
+								portrait : {
+									changePoint : 480,
+									visibleItems : 1
+								},
+								landscape : {
+									changePoint : 640,
+									visibleItems : 2
+								},
+								tablet : {
+									changePoint : 768,
+									visibleItems : 3
+								}
+							}
+						});
+					});
+				</script>
+				<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+			</div>
+		</div>
+		<!-- //slider -->
+		<!--most-popular-->
+		<div class="most-popular">
+			<div class="container">
+				<div class="popular-grids">
+					<div class="col-md-5 popular-grid">
+						<h3>인기있는 정보</h3>
+						<ul>
+							<li><a href="#">RESTAURANTS & BARS</a></li>
+							<li><a href="#">WEDDINGS</a></li>
+							<li><a href="#">USEFUL ADVICE</a></li>
+							<li><a href="#">PRIVATE DINING & CELEBRATIONS</a></li>
+							<li><a href="#">HEALTH & FITNESS</a></li>
+							<li><a href="#">HOTEL PHOTOS & VIDEOS</a></li>
+							<li><a href="#">CAR RENTALS</a></li>
+						</ul>
+					</div>
+					<div class="col-md-7 popular-grid1">
+						<h3>회원평가</h3>
+						<p>2016년 00월 00일 가족들과 같이 000리조트에 놀려갔어요.
+						오자마자 바다와 섬이 보여서 아름다웠어요. 인포에 있는 사람들들도 친절하고
+						방도 깨끗했어요. </p>
+						<h4>
+							<a href="#">0000</a>
+						</h4>
+						
+						<p>저녁에 바베큐 먹었는데 밖에서 구워먹을 수 있어서 엄청 좋았어요.
+						주위에 자연경관이 얼마나 좋던지 올레코스도 있고 바다전망대도 가고 000리조트 앞으로도 
+						좋은 리조트로 남았으면 좋겠어요</p>
+						<h4>
+							<a href="#">0000</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div></div>
+		
+		<jsp:include page="../common/foot.jsp"></jsp:include>
+</body>
+</html>

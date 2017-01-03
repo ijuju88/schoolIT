@@ -1,0 +1,22 @@
+common(성수기, 계좌), member(회원) 관련 
+
+- pan2/WebContent/관리자용.sql을 열어서 데이터 추가하기(오라클)
+- 관리자 (id/pw는 admin)
+- ctrl+F 로 '작성부분'을 찾으세요
+- 시간남으면 css에서 스타일도 바꾸어보세요
+- 자세한 내용은 해당 줄에 있음
+
+------------------jsp--------------------
+pan2/WebContent/admin/common.jsp
+- (22~)(js파일로 따로 빼서 작업해도 됨) 
+input내용이 하나라도 입력 안되면 수정 못하게 작성
+
+pan2/WebContent/admin/commonPro.jsp
+- (7~) jsp:useBean, setProperty 작성하기
+
+----------------java----------------------
+pan2/src/common/CommonAction.java
+- updateCommon(), selectCommon(), selectMember()메소드 작성
+- *selectMember()메소드
+(58)(62) <- sql문
+(91~) 자세한건 들어가서 보기

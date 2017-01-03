@@ -1,0 +1,7 @@
+package ChatProgram.Client;
+
+public class test {
+public static void main(String[] args) {
+	new test();
+}
+}

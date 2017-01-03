@@ -1,0 +1,25 @@
+package com.ClassStary;
+
+public class PersonCon {
+	
+	public static void main(String[] args){
+		Person per1=new Person();
+		
+	}
+}
+
+class Person{
+	String name, gender;
+	int age;
+	
+	Person(){}
+	Person(String n, int a){name=n; age=a;}
+	Person(String n, String g){name=n; gender=g;}
+	Person(String n, int a, String g){name=n;  age=a; gender=g;}
+	
+	void display(){
+		System.out.println(name);
+		System.out.println(gender);
+		System.out.println(age);
+	}
+}

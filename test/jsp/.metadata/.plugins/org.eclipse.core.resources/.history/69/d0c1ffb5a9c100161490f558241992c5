@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function getCookie(name){    
+var wcname = name + '=';
+var wcstart, wcend, end;
+var i = 0;   
+  while(i <= document.cookie.length) {            
+   wcstart = i;  
+ wcend   = (i + wcname.length);            
+ if(document.cookie.substring(wcstart, wcend) == wcname) {                    
+  if((end = document.cookie.indexOf(';', wcend)) == -1)                           
+   end = document.cookie.length;                    
+  return document.cookie.substring(wcend, end);            
+   }           
+ i = document.cookie.indexOf('', i) + 1;            
+  
+   if(i == 0)                    
+  break;    
+  }    
+  return '';
+}
+if(getCookie('blogWebCafe') != 'rangs') {       
+ window.open('onedayPop.html','','width=250,height=200,top=0,left=0');
+}
+
+</script>
+</head>
+<body>
+팝업을 뛰우는 창 입니다.
+</body>
+</html>

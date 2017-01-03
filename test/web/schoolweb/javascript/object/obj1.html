@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+  function Car(){
+	//객체의 속성입니다
+	var model, speed, color;
+	
+	//메소드입니다
+	function brake(speed){}
+	function accel(speed){}
+	
+	//객체 상수로부터 객체생성(고객맞춤형)
+	var myCar={
+		model:"520d", 
+		speed:60,
+		color:"red",
+		brack:function(){this.speed -=10;},
+		accel:function(){this.speed +=10;}
+  };
+
+    
+	//document는 내장객체입니다 
+	//생성자를 정의하지 않고도 사용가능합니다.
+	document.write();
+  }
+
+  //생성자 함수를 이용한 객체생성
+	function Car(model, speed, color){
+		this.model=model; this.speed=speed; this.color=color;
+		
+		this.brack=function(){this.speed-=10;}
+		this.accel=function(){this.speed+=10;}
+		}
+
+//객체생성하기 - 자바처럼 타입이 없습니다..
+  c=new Car();
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

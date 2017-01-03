@@ -1,0 +1,18 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+
+  <title>메인페이지</title>
+ </head>
+	<!--frameset 구역나누기 * body태그는 지워주세용 ㅋㅋ-->
+	<frameset rows="10%, *" cols=",">
+	<frame src="../image1.PNG" name="in"></frame> 
+
+	<frameset rows="," cols="20%, *">
+	
+		<frame src="nav.html" name="nav"></frame> 
+		<frame src="sub1.html" name="s1"></frame>
+	</frameset>
+	</frameset>
+
+</html>

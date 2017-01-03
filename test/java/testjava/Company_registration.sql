@@ -1,0 +1,16 @@
+drop table COMPANYREGISTRATION;
+
+CREATE TABLE COMPANYREGISTRATION 
+(
+  CNO VARCHAR2(15) PRIMARY KEY --회사사업자번호
+, CNAME VARCHAR2(30) unique NOT NULL --회사명
+, CBOSS VARCHAR2(50) NOT NULL --회사대표
+, CLOC VARCHAR2(100) NOT NULL --회사주소
+, CCATEGORY VARCHAR2(100) --회사업태
+, CEVENT VARCHAR2(100) --회사종목
+, CSTAMP VARCHAR2(100) --도장저장경로(엑셀에서 필요함)
+);
+
+select CNO, CNAME, CBOSS , CLOC , CCATEGORY , CEVENT  from companyregistration;
+UPDATE COMPANYREGISTRATION set CNAME='11',CBOSS='dfe',CLOC='dfddf dfdfd ddfdf',CCATEGORY='dfdfd',CEVENT='dd/dd',CSTAMP='C:\Users\okjoo\Downloads\RedUTF8.exe' WHERE CNO='d111';
+select * from COMPANYREGISTRATION;

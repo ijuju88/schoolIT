@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ <script>
+ var arr=[];
+ var str="";
+
+function insert(num)
+{arr.push(num); display();}
+
+function outsert(){alert("최근입력값 "+arr.pop()+"를 꺼냄");display();}
+
+function display(){
+	for (var i in arr)
+	{
+		str+="arr["+i+"] =>"+ arr[i]+"&nbsp;&nbsp;";
+	}	
+	str+="</br>";
+	d1.innerHTML=str;
+	}
+}
+
+
+
+ </script>
+  <title>Document</title>
+ </head>
+ <body>
+  <input type="text" id="n1">
+  <button onclick="insert(n1.value)">push</button>
+  <button onclick="outsert(n1.value)">pop</button>
+  <div id="d1"></div>
+ </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+.t1{background:#ccffff;}
+</style>
+  <title>Document</title>
+
+<script>
+	function plus(){sum.value=Number(n1.value)+Number(n2.value);}
+
+	function minus(){sum.value=Number(n1.value)-Number(n2.value);}
+
+	function main(a){
+		if(a==1) sum.value=Number(n1.value)*Number(n2.value);
+		else if(a==2) sum.value=Number(n1.value)/Number(n2.value);
+	}
+
+	function tt(){var t=t1.value; 
+	//alert(t);
+	document.write(t);
+	}
+</script>
+
+ </head>
+ <body>
+  num 1 : <input type="text" id="n1"><br/>
+  num 2 : <input type="text" id="n2"><br/>
+  Result : <input type="text" class="t1" id="sum"><br/>
+
+  <hr/>
+  <input type="button" value="+" onclick="plus()">
+  <input type="button" value="-" onclick="minus()">
+  <hr/>
+  <input type="button" value="*" onclick="main(1)">
+  <input type="button" value="/" onclick="main(2)">
+  <hr/>
+  <input type="text" id="t1">
+  <input type="button" value="Enter" onclick="tt()">
+ </body>
+</html>

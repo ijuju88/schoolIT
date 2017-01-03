@@ -1,0 +1,71 @@
+//기본테이블 윗부분설정
+	var str="<table>";
+	str+="<tr>";
+	str+="<td>학생명</td><td>국어</td><td>수학</td><td>총점</td><td>평균</td><td>등급</td>";
+	str+="</tr>";
+	//이름, 성적1, 성적2, 총점, 평균, 등급 변수 지정하기
+	var na=" ", n1=0, n2=0,sum=0,avg=0,dep=" ";
+	
+	//본함수 실행부분
+	function main(Name, num1, num2){
+		getNum(); //값불려오기
+		sum=Total(); //합계
+		avg=Avg();  //평균
+		dep=SetDep(); //등급
+		alert(Name);
+		SetTable(); //table출력
+
+		tem.innerHTML=str;//id=tem 인 부분에 출력하려고 함!
+	}
+
+
+
+//값불려오기
+	function getNum(){
+	 na=document.getElementById("name").value;
+	 n1=parseInt(document.getElementById("num1").value);
+	 n2=parseInt(document.getElementById("num2").value);
+	//alert(document.getElementById("num1").value);
+	}
+
+	//합계구하기
+	function Total(){
+		return n1+n2;
+	}
+	
+	//평균구하기
+	function Avg(){
+		return sum/2;
+	}
+
+	//등급구하기
+	function SetDep(){
+		if(avg>=90){return dep="A";}
+		else if(avg>=80){return dep="B";}
+		else if(avg>=70){return dep="C";}
+		else{ alert("집중관리하세용!!"); return dep="F";}	
+	}
+
+	//배열로 저장해서 테이블에 넣어보기
+	function SetTable(){
+		var s=new Array(na, n1, n2, sum, avg, dep);
+		//s[0]=na; 
+		//s[1]=n1;
+		//s[2]=n2;
+		//s[3]=sum;
+		//s[4]=avg;
+		//s[5]=dep;
+
+		str+="<tr>";
+		//str += "<td>"+ s[0] + "</td>";
+		//str += "<td>"+ s[1] + "</td>";
+		//str += "<td>"+ s[2] + "</td>";
+		//str += "<td>"+ s[3] + "</td>";
+		//str += "<td>"+ s[4] + "</td>" ;
+		//str += "<td>"+ s[5] + "</td>" ;
+		for (var i=0;i<s.length ;i++ )
+		{str += "<td>"+ s[i] + "</td>";}
+		str+="</tr>";
+		return str;
+
+	}

@@ -1,0 +1,45 @@
+**우편번호 DB 만들기 **
+
+mysql> use auction;
+Database changed
+mysql> load data local infile 'C:\Java\Auction\zipcode\zipcode.csv' into table z
+ipcode character set euckr FIELDS terminated by ',' enclosed by '"' lines termin
+ated by '\n'(zipcode, sido, gugun, dong, bunji, seq);
+ERROR 1146 (42S02): Table 'auction.zipcode' doesn't exist
+mysql> create table zipcode(
+    -> zipcode char(7),
+    -> sido char(4) character set utf8,
+    -> gugun char(17) character set utf8,
+    -> dong varchar(52) character set utf8,
+    -> bunji varchar(17) character set utf8,
+    -> seq char(5));
+Query OK, 0 rows affected (0.21 sec)
+
+mysql> desc zipcode;d
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| zipcode | char(7)     | YES  |     | NULL    |       |
+| sido    | char(4)     | YES  |     | NULL    |       |
+| gugun   | char(17)    | YES  |     | NULL    |       |
+| dong    | varchar(52) | YES  |     | NULL    |       |
+| bunji   | varchar(17) | YES  |     | NULL    |       |
+| seq     | char(5)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+
+mysql> set names utf8;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> set character set utf8;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> load data local infile 'C:\Java\Auction\zipcode\zipcode.csv' into table z
+ipcode character set utf8 FIELDS terminated by ',' enclosed by '"' lines termin
+ated by '\n'(zipcode, sido, gugun, dong, bunji, seq);
+ERROR 2 (HY000): File 'C:JavaAuctionzipcodezipcode.csv' not found (Errcode: 2)
+mysql> load data local infile 'C:/Java/Auction/zipcode/zipcode.csv' into table z
+ipcode character set utf8 FIELDS terminated by ',' enclosed by '"' lines termin
+ated by '\n'(zipcode, sido, gugun, dong, bunji, seq);
+Query OK, 225841 rows affected, 65535 warnings (6.79 sec)
+Records: 225841  Deleted: 0  Skipped: 0  Warnings: 1350422

@@ -1,0 +1,10 @@
+package dao;
+
+public class DBConnect {
+	private DBConnect(){}
+	private static DBConnect dbconn=new DBConnect();
+	
+	public static DBConnect getInstance(){
+		return dbconn;
+	}
+}

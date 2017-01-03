@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+	/*animation 지속시간과 키프레임 규칙 이름     animation-iteration-count 반복횟수*/
+	div{width:100px; height:100px; background-color:#ff66ff; position:relative;
+	animation:1s myanim; animation-iteration-count:10;}
+
+	@keyframes myanim{
+		0%{left:0px; top:0px;}
+		25%{left:100px; top:50px;}
+		50%{left:200px; top:100px;}
+		75%{left:100px; top:50px;}
+		100%{left:0px; top:0px;}
+	}
+
+	@-webkit-keyframes bounce{
+		from, to{bottom: 0px;-webkit-animation-timing-function: ease-out;}
+		50%{bottom:200px; -webkit-animation-timing-function:ease-in;}
+	}
+
+	 #ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 10px;
+            -webkit-animation-name: bounce;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 5s;
+        }
+
+</style>
+  <title>Document</title>
+ </head>
+ <body>
+ <div></div>
+ <br/>
+ <div id="ball"></div>
+ </body>
+</html>

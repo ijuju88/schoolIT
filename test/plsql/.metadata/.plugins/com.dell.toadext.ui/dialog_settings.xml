@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="OpenRecentFiles">
+		<item value="D:\ijuju\test\plsql\plsql\PL_SQL_sub_program2.sql"/>
+		<item value="D:\ijuju\test\plsql\plsql\PL_SQL_sub_program.sql"/>
+	</list>
+	<section name="com.dell.toadext.ide.java.extensions.ShowJavaFilesAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.view.connection.actions.LinkWithEditorAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.editor.AbstractEditorExtension$HideResultSetAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.dependencies.DependenciesView$ShowUsesAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraTableIndexesViewer">
+	</section>
+	<section name="com.dell.toadext.ui.console.actions.LockAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.console.actions.ShowDataAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraTriggersViewer">
+	</section>
+	<section name="com.dell.toadext.view.monitor.AbstractConnectionMonitorView$LockAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="aliases_section">
+		<list key="aliases">
+		</list>
+		<list key="queryables">
+		</list>
+	</section>
+	<section name="com.dell.toadext.editor.outline.SqlOutlinePage$HideAnonymousBlocksAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.editor.OraSpecObjectDetailEditorExtension">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="com.dell.toadext.editor.outline.SqlOutlinePage$ShowParameterListAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.editor.outline.SqlOutlinePage$HideVariablesAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.pages.ToadextOutlinePage$OutlineSortAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.editor.outline.SqlOutlinePage$SortByNameAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.view.connection.view.handlers.GroupByDbHandler">
+	</section>
+	<section name="com.dell.toadext.ui.console.actions.ShowErrorsAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.detailbrowser.AbstractColumnsViewer$ShowCommentAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.console.actions.ShowInputAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.console.DbConsoleView">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="com.dell.toadext.ui.quickdoc.QuickDocView$LinkWithSelectionAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.editor.AbstractEditorExtension$RightAlignResultSet">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.view.history.actions.HideUnpinnedHistoryItemsAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraTableColumnsViewer">
+	</section>
+	<section name="com.dell.toadext.oracle.nui.editor.OraBodyObjectDetailEditorExtension">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="com.dell.toadext.view.monitor.DbmsOutputView">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="com.dell.toadext.schemabrowser.actions.DisplayDescribeObjectEditorAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.editor.SqlEditor">
+		<section name="saveToFile">
+			<item value="D:\ijuju\test\plsql\plsql\PL_SQL_sub_program2.sql" key="filename"/>
+			<item value="D:\ijuju\test\plsql\plsql" key="pathname"/>
+		</section>
+	</section>
+	<section name="com.dell.toadext.schemabrowser.actions.LinkWithEditorAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.view.monitor.SqlMonitorView">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.editor.OraSqlEditorExtension">
+		<section name="editorWeights">
+			<item value="378" key="rsWeight"/>
+			<item value="615" key="editorWeight"/>
+		</section>
+	</section>
+	<section name="com.dell.toadext.view.monitor.AbstractConnectionMonitorView$EnableAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.dependencies.DependenciesView$ShowUsedByAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.detailbrowser.viewer.AbstractQueryResultViewer$SortColumnsAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraQueryResultViewer$1">
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.TAX">
+			<item value=",,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.PRO">
+			<item value=",,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.REGISTER">
+			<item value=",,,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.CUSTOMER">
+			<item value=",,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.MEMBER">
+			<item value=",,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.MOVIETEST">
+			<item value=",,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.BO">
+			<item value=",,,,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.RESERVATION">
+			<item value=",,,,,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.BOARDMEMBER">
+			<item value=",,,,,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.EMP20">
+			<item value=",,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.BOARD">
+			<item value=",,,,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.PUBLICPENSION">
+			<item value=",,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.TEACHER">
+			<item value=",,,,,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.PROFESSOR">
+			<item value=",,,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.STUDENT">
+			<item value=",,,,,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.EMP">
+			<item value=",,,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.PRO_IN">
+			<item value=",,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.DDL_TEST01">
+			<item value=",,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.LOGIN">
+			<item value=",,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.ATTENDANCE">
+			<item value=",,,,,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.PRO_SUM">
+			<item value=",,,," key="col.widths"/>
+		</section>
+		<section name="875d9e6d-85a8-444a-a287-dea0d5f97245#TEST1.PRO_OUT">
+			<item value=",,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.EMP">
+			<item value=",,,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.MEMBER">
+			<item value=",,,,,,,,,,,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.T_CON">
+			<item value=",,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.STUDENT">
+			<item value=",,,,,,,,,," key="col.widths"/>
+		</section>
+		<section name="e82154b7-4132-469a-9c0f-a325c317da03#TEST2.&quot;테스트_테이블&quot;">
+			<item value=",,,," key="col.widths"/>
+		</section>
+		<section name="6bf4d8e1-2078-4626-862d-e2e7d1ea34c3#OXJU88.ROOM">
+			<item value=",,,,,,,,,," key="col.widths"/>
+		</section>
+	</section>
+	<section name="com.dell.toadext.editor.AbstractEditorExtension$BottomAlignResultSet">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.ui.dependencies.actions.ShowEditorsAction">
+		<item value="false" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.editor.OraObjectDetailEditorExtension">
+		<section name="saveToFile">
+		</section>
+	</section>
+	<section name="com.dell.toadext.ui.console.actions.ShowStandardLogsAction">
+		<item value="true" key="active"/>
+	</section>
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraTableConstraintsViewer">
+	</section>
+	<section name="com.dell.toadext.detailbrowser.AbstractColumnsViewer$SortColumnsAction">
+		<item value="false" key="active"/>
+	</section>
+</section>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<script>
+	function fn(){
+//		document.write("<table border=1>");	
+//		for (var i=1;i<=9;i++)
+//		{		document.write("<tr>");	
+//			for (var j=2;j<=9 ;j++)
+//			{document.write("<td>"+j+"*"+i+"="+j*i+"</td>");
+//			document.write("\t");
+//			}
+//			document.write("</tr>");	
+//		}
+//		document.write("</table>");	
+	var Dant=document.getElementById("dan").value;
+	for (var i=1;i<=9;i++)
+	{
+		//document.write(Dant+"*"+i+"="+i*Dant);
+		//document.write("<br>");
+		alert(Dant+"*"+i+"="+i*Dant+"<br>");
+	}
+	document.write("\t");
+	}
+	
+</script>
+  <title>Document</title>
+ </head>
+ <body>
+ <h1>단출력하기!!</h1><hr/>
+ <input type="text" id="dan"><br>
+ <button onclick="fn()">Enter</button>
+ </body>
+</html>

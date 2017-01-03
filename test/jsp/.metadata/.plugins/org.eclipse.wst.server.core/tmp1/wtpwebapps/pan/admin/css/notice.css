@@ -1,0 +1,76 @@
+@CHARSET "utf-8";
+
+#warp{
+	width:971px;
+	magin:0;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#wrap2{
+	border:1px;
+	border-color:silver;
+}
+
+h1{
+	color:black;
+}
+
+table{
+	width:90%;
+	border-collapse:collapse;
+	font-size:12px;
+	line-height:24px;
+	margin: auto;
+	
+}
+
+table td, th{
+	border:#d3d3d3 solid 1px;
+	padding:5px;
+}
+
+th{
+	background:black;
+	width:120px;
+	color:white;
+}
+
+.numc{
+	width:5%;
+}
+
+.titlec{
+	width:48%;
+}
+
+.idc{
+	width:25%;
+}
+
+.writedatec{
+	width:17%;
+}
+
+.readcountc{
+	width:5%;
+}
+
+img{
+	width:220px;
+	height:300px;
+}
+
+a{
+	text-decoration:none;
+	color:#595757;
+}
+
+a:HOVER{
+	text-decoration:underline;
+	color:#808080;
+}
+
+.box{
+	background:silver;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+<script>
+	function fc(){
+		var total=document.getElementById("sum").value;
+		
+		if(total<=100)
+		{
+			if(total>=90){document.getElementById("grade").value="A";}
+			else if(total>=80){document.getElementById("grade").value="B";}
+			else if(total>=70){document.getElementById("grade").value="C";}
+			else document.getElementById("grade").value="F";
+		}else alert("점수가 100점이상일수가 없어요 ㅠㅠ");
+		
+
+	}
+
+	function fc2(){
+		for (var i=0;i<=10 ;i++ )
+		{document.write(i+"<br>"); }
+	}
+
+</script>
+
+  <title>Document</title>
+ </head>
+ <body>
+  총점 : <input type="text" id="sum"><br>
+  등급 : <input type="text" id="grade">
+  <input type="button" value="enter" onclick="fc()">
+
+  <input type="button" value="enter2" onclick="fc2()">
+ </body>
+</html>

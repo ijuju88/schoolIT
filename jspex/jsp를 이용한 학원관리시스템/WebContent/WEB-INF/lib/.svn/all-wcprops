@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/project/!svn/ver/32/roti_ing/WebContent/WEB-INF/lib
+END
+ojdbc6_g.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/ojdbc6_g.jar
+END
+jsp-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/jsp-api.jar
+END
+taglibs-standard-impl-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.1.jar
+END
+cos.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/project/!svn/ver/32/roti_ing/WebContent/WEB-INF/lib/cos.jar
+END
+taglibs-standard-compat-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/taglibs-standard-compat-1.2.1.jar
+END
+taglibs-standard-jstlel-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/taglibs-standard-jstlel-1.2.1.jar
+END
+taglibs-standard-spec-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.1.jar
+END
+servlet-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/project/!svn/ver/5/roti_ing/WebContent/WEB-INF/lib/servlet-api.jar
+END

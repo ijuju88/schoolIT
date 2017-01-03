@@ -1,0 +1,21 @@
+@CHARSET "utf-8";
+
+
+table{
+	width:100%;
+	border-collapse:collapse;
+	font-size:12px;
+	line-height:24px;
+}
+
+table td, th{
+	border:#d3d3d3 solid 1px;
+	padding:5px;
+}
+
+th{
+	background:black;
+	width:120px;
+	color:white;
+}
+

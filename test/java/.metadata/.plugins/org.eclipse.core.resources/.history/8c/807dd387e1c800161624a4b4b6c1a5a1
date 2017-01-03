@@ -1,0 +1,165 @@
+package com.server;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.AcceptPendingException;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.Vector;
+
+public class ChatServer {
+	ServerFrame sf;
+	Selector selector;
+	ServerSocketChannel ssc;
+	List<Client> connections=new Vector<Client>();
+	
+	public ChatServer(ServerFrame sf){
+		this.sf=sf;
+	}
+	
+	void startServer(){
+		try{
+			selector=Selector.open();
+			ssc=ServerSocketChannel.open();
+			ssc.configureBlocking(false);
+			ssc.bind(new InetSocketAddress(5005));
+			ssc.register(selector, SelectionKey.OP_ACCEPT);
+		}catch(Exception e){
+			if(ssc.isOpen()){
+				stopServer();
+			}
+			return;
+		}
+		Thread thread=new Thread(){
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				//super.run();
+				while(true){
+					try{
+						int keyCount=selector.select();
+						if(keyCount==0) continue;
+						Set<SelectionKey> selectdKeys=selector.selectedKeys();
+						Iterator<SelectionKey> iterator=selectdKeys.iterator();
+						while(iterator.hasNext()){
+							SelectionKey stKey=iterator.next();
+							if(stKey.isAcceptable()){
+								accept(stKey);
+							}else if(stKey.isReadable()){
+								Client client=(Client)stKey.attachment();
+								client.receive(stKey);
+							}else if(stKey.isWritable()){
+								Client client=(Client)stKey.attachment();
+								client.send(stKey);
+							}
+							iterator.remove();
+						}
+					}catch(Exception e){
+						if(ssc.isOpen()){
+							stopServer();
+						}
+						break;
+					}
+				}
+			}
+		};
+		thread.start();
+		sf.displayText("[서버시작]");
+		sf.butStartStop.setText("stop");
+	}
+	
+	void stopServer(){
+		try{
+			Iterator<Client> iterator=connections.iterator();
+			while(iterator.hasNext()){
+				Client client=iterator.next();
+				client.sc.close();
+				iterator.remove();
+			}
+			if(ssc !=null && selector.isOpen()){
+				selector.close();
+			}
+			sf.displayText("[종료]");
+			sf.butStartStop.setText("start");
+		}catch(Exception e){}
+	}
+	
+	void accept(SelectionKey stKey){
+		try{
+			ServerSocketChannel ssc=(ServerSocketChannel)stKey.channel();
+			SocketChannel sc=ssc.accept();
+			String message="[연결 수락:"+sc.getRemoteAddress()+":"+Thread.currentThread()+"]";
+			sf.displayText(message);
+			
+			Client client=new Client(sc);
+			connections.add(client);
+			sf.displayText("[연결수 :]"+connections.size());
+		}catch(Exception e){
+			if(ssc.isOpen()){
+				stopServer();
+			}
+		}
+	}
+	class Client{
+		SocketChannel sc;
+		String sendData;
+		Client(SocketChannel sc) throws Exception{
+			this.sc=sc;
+			sc.configureBlocking(false);
+			SelectionKey stKey=sc.register(selector, SelectionKey.OP_READ);
+			stKey.attach(this);
+		}
+		
+		void receive(SelectionKey stKey){
+			try{
+				ByteBuffer byteBu=ByteBuffer.allocate(100);
+				int byteCount=sc.read(byteBu);
+				if(byteCount==-1) throw new IOException();
+				byteBu.flip();
+				Charset chs=Charset.forName("utf-8");
+				String data=chs.decode(byteBu).toString();
+				
+				String message="[연결요청 :"+sc.getRemoteAddress()+":"+Thread.currentThread()+"]";
+				sf.displayText(message);
+				
+				for(Client client:connections){
+					client.sendData=data;
+					SelectionKey key=client.sc.keyFor(selector);
+					key.interestOps(SelectionKey.OP_WRITE);
+				}
+				selector.wakeup();
+			}catch(Exception e){
+				try{
+					connections.remove(this);
+					String message="[클라이언트 연결 에러:"+sc.getRemoteAddress()+"]";
+					sf.displayText(message);
+					sc.close();
+				}catch(Exception e1){}
+			}
+		}
+		void send(SelectionKey stKey){
+			try{
+				Charset chs=Charset.forName("utf-8");
+				ByteBuffer byteBu=chs.encode(sendData);
+				sc.write(byteBu);
+				stKey.interestOps(SelectionKey.OP_READ);
+				selector.wakeup();
+			}catch(Exception e){
+				try{
+					connections.remove(this);
+					String message="[클라이언트 연결 에러:"+sc.getRemoteAddress()+"]";
+					sf.displayText(message);
+					sc.close();
+				}catch(Exception e1){}
+			}
+		}
+	}
+	
+}

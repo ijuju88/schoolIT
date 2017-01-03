@@ -1,0 +1,37 @@
+<map>
+  <entry>
+    <string>:v_num_e82154b7-4132-469a-9c0f-a325c317da03</string>
+    <com.dell.toadext.editor.bindParams.BindParameter>
+      <name>:v_num</name>
+      <id>:v_num_e82154b7-4132-469a-9c0f-a325c317da03</id>
+      <value>5</value>
+      <time>1477466759674</time>
+      <offsets>
+        <long>10</long>
+        <long>18</long>
+      </offsets>
+      <length>6</length>
+      <includeTime>false</includeTime>
+      <isSuppliedVariable>false</isSuppliedVariable>
+      <isDateType>false</isDateType>
+      <QUOTATION__DIFFERENCE>0</QUOTATION__DIFFERENCE>
+    </com.dell.toadext.editor.bindParams.BindParameter>
+  </entry>
+  <entry>
+    <string>&amp;empno_e82154b7-4132-469a-9c0f-a325c317da03</string>
+    <com.dell.toadext.editor.bindParams.BindParameter>
+      <name>&amp;empno</name>
+      <id>&amp;empno_e82154b7-4132-469a-9c0f-a325c317da03</id>
+      <value>101</value>
+      <time>1477014096248</time>
+      <offsets>
+        <long>117</long>
+      </offsets>
+      <length>6</length>
+      <includeTime>false</includeTime>
+      <isSuppliedVariable>true</isSuppliedVariable>
+      <isDateType>false</isDateType>
+      <QUOTATION__DIFFERENCE>0</QUOTATION__DIFFERENCE>
+    </com.dell.toadext.editor.bindParams.BindParameter>
+  </entry>
+</map>

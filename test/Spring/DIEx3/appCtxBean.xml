@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="department" name="dep" class="com.agm.diex3.Department" scope="prototype">
+	<!-- 생성자를 불러옵니다 -->
+	<constructor-arg name="dname" value="영업"/>
+	<constructor-arg name="deptno" >
+		<value>1</value>
+	</constructor-arg>
+</bean>
+
+<bean id="employee" name="emp" class="com.agm.diex3.Employee">
+	<!-- 생성자를 불러옵니다 -->
+	<constructor-arg name="empno" value="2"/>
+	<constructor-arg name="name" value="김철수"/>
+	
+	<!-- 변수에 값을 넣어봅니다 -->
+	<property name="position" value="과장"/>
+	
+	<property name="dept"><ref bean="department"/></property>
+	
+</bean>
+
+
+</beans>

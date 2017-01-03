@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="http://s.pm.naver.net/css/main_v20160817.css" />
+ </head>
+ <body>
+  <div id="s_menu" class="s_menu">
+<dl id="naver_menu" class="nmenu">
+<dt class="blind">네이버 메뉴</dt>
+<dd class="f"><a href="http://mail.naver.com/" id="svc.mail" class="mn_mail"><span></span>메일</a></dd>
+<dd><a href="http://cafe.naver.com/" id="svc.cafe" class="mn_cafe"><span></span>카페</a></dd>
+<dd><a href="http://section.blog.naver.com/" id="svc.blog" class="mn_blog"><span></span>블로그</a></dd>
+<dd><a href="http://kin.naver.com/" id="svc.kin" class="mn_kin"><span></span>지식iN</a></dd>
+<dd><a href="http://shopping.naver.com/" id="svc.shopping" class="mn_shopping"><span></span>쇼핑</a></dd>
+<dd><a href="http://tvcast.naver.com/" id="svc.tvcast" class="mn_tvcast"><span></span>TV캐스트</a></dd>
+</dl>
+<dl class="fmenu" id="fmenu">
+<dt class="blind">자주 쓰는 메뉴</dt>
+<dd class="f"><a href="http://dic.naver.com" onclick="clickcr(this,'svc.defaultservice','dic','',event);" title="사전" class="mn_dic"><span></span>사전</a></dd>
+<dd><a href="http://news.naver.com" onclick="clickcr(this,'svc.defaultservice','news','',event);" title="뉴스" class="mn_news"><span></span>뉴스</a></dd>
+<dd><a href="http://stock.naver.com" onclick="clickcr(this,'svc.defaultservice','stock','',event);" title="증권" class="mn_stock"><span></span>증권</a></dd>
+<dd><a href="http://land.naver.com" onclick="clickcr(this,'svc.defaultservice','land','',event);" title="부동산" class="mn_land"><span></span>부동산</a></dd>
+<dd><a href="http://map.naver.com" onclick="clickcr(this,'svc.defaultservice','map','',event);" title="지도" class="mn_map"><span></span>지도</a></dd>
+<dd><a href="http://movie.naver.com" onclick="clickcr(this,'svc.defaultservice','movie','',event);" title="영화" class="mn_movie"><span></span>영화</a></dd>
+<dd><a href="http://music.naver.com" onclick="clickcr(this,'svc.defaultservice','music','',event);" title="뮤직" class="mn_music"><span></span>뮤직</a></dd>
+<dd><a href="http://book.naver.com" onclick="clickcr(this,'svc.defaultservice','book','',event);" title="책" class="mn_book"><span></span>책</a></dd>
+<dd><a href="http://comic.naver.com" onclick="clickcr(this,'svc.defaultservice','comic','',event);" title="웹툰" class="mn_comic"><span></span>웹툰</a></dd>
+
+</dl>
+<div id="hmenu" class="hmenu">
+<dl>
+<dt class="blind">신규 서비스</dt>
+<dd><a href="http://pay.naver.com/" onclick="clickcr(this,'svc.defaultservice','naverpay','',event);" title="NPay" class="mn_npay"><span></span>NPay</a></dd>
+</dl>
+<a href="#" id="svcmore_h" title="주요서비스 더보기" class="svcm"><span></span>더보기</a>
+</div>
+</div>
+ </body>
+</html>

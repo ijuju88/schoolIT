@@ -1,0 +1,16 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+ </head>
+ <body>
+	<!-- target을 지정하여 nav에 뜨게함-->
+	<h1>menu</h1>
+	<ul>
+		<li><a href="../html4-2(0823).html">sub1</a>
+		<li><a href="sub2.html" target="s1">sub2</a>
+		<li><a href="sub3.html" target="s1">sub3</a>
+	</ul>
+ </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+<style>
+table{
+	border-collapse:separate;
+	background-color:#0099ff;
+	width:50%;
+}
+tr{background-color:#ffffcc; text-align:center;}
+body{font-family:"제주고딕";}
+</style>
+<script type="text/javascript" src="scoreobj2.js"></script>
+ </head>
+ <body>
+ <p><h1>성적출력</h1></p>
+ <form name=frm>
+ <table border="1" bgcolor="#ccffff" width="50%">
+ <tr colspan="7"><td>
+  성명 : <input type="text" id="sName" size="10">
+  국어 : <input type="text" id="snum1" size="3">
+  영어 : <input type="text" id="snum2" size="3">
+
+  <input type="button" value="입력" onclick="main(sName.value, snum1.value, snum2.value)"> 
+  <input type="button" value="Sample" onclick="sample_date()"> 
+</td></tr>
+
+  <table id=tem></table>
+</form>
+ </body>
+</html>

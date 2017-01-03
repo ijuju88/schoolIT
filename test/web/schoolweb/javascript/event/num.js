@@ -1,0 +1,11 @@
+function checkNumeric(elem, msg){
+	var exp = /^[0-9]+$/;
+	if (elem.value.match(exp)) {return true;} 
+	else {alert(msg);elem.focus();return false;}
+}
+
+function checkEmailic(elem, msg){
+	var exp = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9_.-]+\.([a-zA-Z0-9])+$/;
+	if (elem.value.match(exp)) {return true;} 
+	else {alert(msg);elem.focus();return false;}
+}

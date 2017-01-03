@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script>
+  function fn(){//alert("aaaa");
+	//document.write("<h1>aaa</h1>");
+	//console.log("test");//크롬 콘솔창~~검사용
+	var s1="Hello";
+	var s2=123;
+	var s3=1.33;
+	var s4=true;
+	var s5;
+
+	//typeof=자료형이 멀까용??
+	document.write(s1+"<br>"+s2+"<br>"+s3+"<br>"+s4+"<br>"+s5);
+	console.log(typeof(s1)+"\t"+typeof(s2)+"\t"+typeof(s3)+"\t"
+	+typeof(s4)+"\t"+typeof(s5));
+	
+	e=document.getElementById("area");
+	document.write(typeof(e));
+  }
+  
+  </script>
+  <title>Document</title>
+ </head>
+ <body>
+  <input type="button" value="enter" onclick="fn()">
+  <div id="erea">DIV1</div>
+ </body>
+</html>

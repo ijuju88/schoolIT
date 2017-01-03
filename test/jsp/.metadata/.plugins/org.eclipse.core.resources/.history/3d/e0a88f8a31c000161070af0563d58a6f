@@ -1,0 +1,297 @@
+package board.dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+
+
+
+
+import board.vo.BoardBean;
+import util.ConnectionUtil;
+
+public class BoardDao {
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	
+	private static BoardDao instance = new BoardDao();
+
+	public static BoardDao getInstance() {
+		return instance;
+	}
+	
+	public ArrayList<BoardBean> selectBoard(String search, String category, int pageno) throws SQLException{
+		conn = ConnectionUtil.getConnection();
+		ArrayList<BoardBean> list = new ArrayList<BoardBean>();
+		
+		StringBuffer sql = new StringBuffer();
+		
+		/*sql.append("SELECT  NO, CATEGORY, TITLE, USERNAME, USERIP, PASSWORD				\n");
+		sql.append("		, CONTENT, HIT, FILE_NAME, FILE_SIZE, TIME						\n");
+		sql.append("FROM(																	\n");
+		sql.append("	SELECT ROWNUM R, NO, CATEGORY, TITLE, USERNAME, USERIP, PASSWORD	\n");
+		sql.append("		 , CONTENT, HIT, FILE_NAME, FILE_SIZE, TIME 					\n");
+		sql.append("	FROM BO 															\n");
+		sql.append("	WHERE TITLE LIKE '%'|| ? ||'%'										\n");
+		sql.append("	AND CATEGORY LIKE '%' || ? || '%'									\n");
+		sql.append("	AND ROWNUM <= ?														\n");
+		sql.append("	) b	 																\n");
+		sql.append("WHERE R >= ?															\n");
+		sql.append("ORDER BY NO DESC														\n");
+*/	
+		
+		sql.append("SELECT  NO, CATEGORY, TITLE, USERNAME, USERIP, PASSWORD				\n");
+		sql.append("		, CONTENT, HIT, FILE_NAME, FILE_SIZE, TIME						\n");
+		sql.append("FROM(																	\n");
+		sql.append("	SELECT * FROM BO 													\n");
+		sql.append("	WHERE TITLE LIKE ?													\n");
+		sql.append("	AND CATEGORY LIKE ?													\n");
+		sql.append("	and NO <=? 															\n");
+		sql.append("	)b	 																\n");
+		sql.append("WHERE no >= ?															\n");
+		sql.append("ORDER BY NO DESC  limit ?											\n");
+	
+
+		
+		pstmt = conn.prepareStatement(sql.toString());
+		System.out.println("pangno*10 -> "+((pageno-1)*10)+1);
+		pstmt.setString(1, "%"+search+"%");
+		pstmt.setString(2, "%"+("all".equals(category)?"":category)+"%");
+		pstmt.setInt(3, pageno*10);
+		pstmt.setInt(4, ((pageno-1)*10)+1);
+		pstmt.setInt(5,((pageno-1)*10)+1);
+		rs = pstmt.executeQuery();
+		
+		
+		while(rs.next()){
+			BoardBean vo = new BoardBean();
+			vo.setNo(rs.getInt("no"));
+			vo.setCategory(rs.getString("category"));
+			vo.setTitle(rs.getString("title"));
+			vo.setUsername(rs.getString("username"));
+			vo.setUserip(rs.getString("userip"));
+			vo.setPassword(rs.getString("password"));
+			vo.setContent(rs.getString("content"));
+			vo.setHit(rs.getInt("hit"));
+			vo.setFile_name(rs.getString("file_name"));
+			vo.setFile_size(rs.getInt("file_size"));
+			vo.setTime(rs.getDate("time"));
+			
+			list.add(vo);
+		}
+		util.ConnectionUtil.close(conn, pstmt, rs);
+		
+		return list;
+	}
+	
+	public int getArticleCount()
+		    throws Exception {
+
+		        int x=0;
+
+		        try {
+		            conn = ConnectionUtil.getConnection();
+		            
+		            pstmt = conn.prepareStatement("select count(*) from BO");
+		            rs = pstmt.executeQuery();
+
+		            if (rs.next()) {
+		               x= rs.getInt(1);
+					}
+		        } catch(Exception ex) {
+		            ex.printStackTrace();
+		        } finally {
+		            ConnectionUtil.close(conn, pstmt, rs);
+		        }
+				return x;
+		    }
+	
+	public int cntTotalBoard(String category, String search) throws SQLException{
+		conn = ConnectionUtil.getConnection();
+		ArrayList<BoardBean> list = new ArrayList<BoardBean>();
+		
+		StringBuffer sql = new StringBuffer();
+		sql.append("SELECT COUNT(*)	cnt						\n");
+		sql.append("FROM BO									\n");
+		sql.append("	WHERE TITLE LIKE ?													\n");
+		sql.append("	AND CATEGORY LIKE ?													\n");
+		
+		
+		pstmt = conn.prepareStatement(sql.toString());
+		pstmt.setString(1, "%"+search+"%");
+		pstmt.setString(2, "%"+("all".equals(category)?"":category)+"%");
+		rs = pstmt.executeQuery();
+		
+		int result = 0;
+		if(rs.next()){
+			result = rs.getInt("cnt");
+		}
+		util.ConnectionUtil.close(conn, pstmt, rs);
+		
+		return result;
+	}
+	
+	public BoardBean selectBoard(int no) throws Exception{
+		BoardBean vo = new BoardBean();
+		conn = ConnectionUtil.getConnection();
+		StringBuffer sql = new StringBuffer();
+		sql.append("SELECT NO, CATEGORY, TITLE, USERNAME, USERIP, PASSWORD		\n");
+		sql.append("	 , CONTENT, HIT, FILE_NAME, FILE_SIZE, TIME 			\n");
+		sql.append("FROM BO 													\n");
+		sql.append("WHERE NO = ?												\n");
+		
+		
+
+		pstmt = conn.prepareStatement(sql.toString());
+		pstmt.setInt(1, no);
+		
+		rs = pstmt.executeQuery();
+		if(rs.next()){
+			vo.setNo(rs.getInt("no"));
+			vo.setCategory(rs.getString("category"));
+			vo.setTitle(rs.getString("title"));
+			vo.setUsername(rs.getString("username"));
+			vo.setUserip(rs.getString("userip"));
+			vo.setPassword(rs.getString("password"));
+			vo.setContent(rs.getString("content"));
+			vo.setHit(rs.getInt("hit"));
+			vo.setFile_name(rs.getString("file_name"));
+			vo.setFile_size(rs.getInt("file_size"));
+			vo.setTime(rs.getDate("time"));
+		}
+		
+		util.ConnectionUtil.close(conn, pstmt, rs);
+		
+		return vo;
+	}
+	
+	public int insertBoard(String category, String title, String username, String userip, String password
+					 	 , String content, String file_name, int file_size
+																			) throws SQLException{
+		conn = ConnectionUtil.getConnection();
+		ArrayList<BoardBean> list = new ArrayList<BoardBean>();
+		int max_num = 1;
+		StringBuffer sql = new StringBuffer();
+		
+		sql.append("SELECT MAX(NO) FROM BO");
+		
+		pstmt = conn.prepareStatement(sql.toString());
+		rs = pstmt.executeQuery();
+		if(rs.next()){
+			max_num = rs.getInt(1)+1;
+		}
+		
+		sql.delete(0, sql.length());
+		
+		sql.append("INSERT INTO BO(NO, CATEGORY, TITLE, USERNAME, USERIP, PASSWORD, CONTENT, FILE_NAME, HIT, FILE_SIZE, TIME )	\n");
+		sql.append("	   VALUES(?, ?, ?, ?, ?, ?, ?, ?, 0, ?, now()) 															\n");
+		pstmt = conn.prepareStatement(sql.toString());
+		pstmt.setInt(1, max_num);
+		pstmt.setString(2, category);
+		pstmt.setString(3, title);
+		pstmt.setString(4, username);
+		pstmt.setString(5, userip);
+		pstmt.setString(6, password);
+		pstmt.setString(7, content);
+		pstmt.setString(8, file_name);
+		pstmt.setInt(9, file_size);
+		
+		int result = pstmt.executeUpdate();
+		
+		util.ConnectionUtil.close(conn, pstmt, rs);
+		
+		return result;
+	}
+
+
+	public BoardBean getArticle(int no) throws Exception {
+		try {
+			conn = ConnectionUtil.getConnection();
+
+			pstmt = conn
+					.prepareStatement("update BO set hit=hit+1 where no = ?");
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+			}
+		 catch (Exception ex) {} finally {
+			util.ConnectionUtil.close(conn, pstmt, rs);
+		}
+		return null;
+	}
+	
+	
+	public int userCheck(int no, String password) throws Exception {
+		conn = ConnectionUtil.getConnection();
+		String dbpass = "";
+		int x = -1;
+		try {
+			pstmt = conn
+					.prepareStatement("select password from bo where no=?");
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dbpass = rs.getString("password");
+				if (dbpass.equals(password)) {
+					x = 1;
+				} else
+					x = 0;
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			util.ConnectionUtil.close(conn, pstmt, rs);
+		}
+		return x;
+
+	}
+	
+	
+	
+	public int updateBoard(String category, String title, String username, String userip,
+							String content, String file_name, int file_size, int no	) throws SQLException{
+		conn = ConnectionUtil.getConnection();
+		ArrayList<BoardBean> list = new ArrayList<BoardBean>();
+		int max_num = 1;
+		StringBuffer sql = new StringBuffer();
+		
+		sql.append("UPDATE BO																									\n");
+		sql.append("SET CATEGORY = ?, TITLE = ?, USERNAME = ?, USERIP = ?, CONTENT = ?, FILE_NAME=?, FILE_SIZE = ?, TIME = now() 	\n");
+		sql.append("WHERE NO = ?																									\n"); 
+		pstmt = conn.prepareStatement(sql.toString());
+		pstmt.setString(1, category);
+		pstmt.setString(2, title);
+		pstmt.setString(3, username);
+		pstmt.setString(4, userip);
+		pstmt.setString(5, content);
+		pstmt.setString(6, file_name);
+		pstmt.setInt(7, file_size);
+		pstmt.setInt(8, no);
+		
+		int result = pstmt.executeUpdate();
+		
+		util.ConnectionUtil.close(conn, pstmt, rs);
+		
+		return result;
+		}
+	
+	public int deleteBoard(int no) throws SQLException{
+		conn = ConnectionUtil.getConnection();
+		StringBuffer sql = new StringBuffer();
+		
+		sql.append("DELETE FROM BO		\n");
+		sql.append("WHERE NO = ?			\n");
+		pstmt = conn.prepareStatement(sql.toString());
+		pstmt.setInt(1, no);
+		
+		int result = pstmt.executeUpdate();
+		
+		util.ConnectionUtil.close(conn, pstmt, rs);
+		
+		return result;
+	}
+
+}

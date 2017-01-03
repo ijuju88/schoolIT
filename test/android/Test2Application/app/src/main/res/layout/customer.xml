@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="고객관리"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:gravity="center"
+        android:background="#b6beff"
+        android:id="@+id/textView" />
+
+    <Button
+        android:text="닫기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cusexit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_below="@+id/etcusName"
+        android:layout_alignStart="@+id/etcusName"
+        android:layout_marginTop="61dp"
+        android:id="@+id/etcusPhone" />
+
+    <TextView
+        android:text="전화"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_below="@+id/etcusName"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:text="이름"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="13dp"
+        android:id="@+id/etcusName"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="전송"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etcusPhone"
+        android:layout_alignStart="@+id/etcusPhone"
+        android:layout_marginTop="52dp"
+        android:id="@+id/cusent"
+        android:layout_alignEnd="@+id/etcusPhone" />
+
+</RelativeLayout>

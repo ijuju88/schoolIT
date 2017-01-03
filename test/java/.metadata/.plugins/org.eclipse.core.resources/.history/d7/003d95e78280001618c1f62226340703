@@ -1,0 +1,60 @@
+package com.Threadtest;
+
+public class NumSumThread {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		NumSum ns=new NumSum();
+		Thread1 t1=new Thread1(ns1);
+		Thread2 t2=new Thread2(ns);
+		t1.start();
+		t1.join();
+		t2.start();
+	}
+
+}
+
+class NumSum {
+	int sum=0;
+	
+	public int add(int num){
+		sum+=num;
+		try {
+			Thread.sleep(500);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sum;
+	}
+}
+class Thread1 extends Thread{
+	NumSum numsum;
+	public Thread1(NumSum1 ns1){
+		this.numsum=ns1;
+		setName("Thread1");
+		}
+	
+	public void run(){
+		for (int i = 0; i <10; i++) {
+			System.out.println(getName()+"출력"+numsum.add(i));
+		}
+	}
+	
+}
+
+
+class Thread2 extends Thread{
+	NumSum numsum;
+	public Thread2(NumSum numsum){
+		this.numsum=numsum;
+		setName("Thread2");
+		}
+	
+	public void run(){
+		for (int i = 0; i <10; i++) {
+			System.out.println(getName()+"출력"+numsum.add(i));
+		}
+	}
+	
+}
+

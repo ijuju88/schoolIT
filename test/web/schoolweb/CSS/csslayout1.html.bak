@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ <style>
+	p, em, strong{border:dotted 3px red;}
+ </style>
+ </head>
+ <body>
+	body안에 <em>강조문자</em>와 <strong>강한문자</strong>를 가지고 있습니다.
+	<p>여기는 다른 단락입니다.</p>
+ </body>
+</html>

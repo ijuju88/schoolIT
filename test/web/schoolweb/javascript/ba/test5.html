@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+<script>
+//	var sum=0;
+//	function main(){sum++; console.log(sum);}
+//	function main2(){console.log(sum);}
+function fn(a)
+{
+	if(a==1){a=document.getElementById("area1"); a.style.color="red";}
+	if(a==2){a=document.getElementById("area2"); a.style.backgroundColor="#66ccff"}
+	if(a==3){a=document.getElementById("area3"); a.style.color="blue";}
+}
+</script>
+ </head>
+ <body>
+<!--   <button onclick="main();">Enter</button> -->
+<!--   <button onclick="main2();">Enter2</button> -->
+	<button onclick="fn(1)">enter1</button>
+	<button onclick="fn(2)">enter2</button>
+	<button onclick="fn(3)">enter3</button>
+	<div id="area1">This is area1</div>
+	<div id="area2">This is area2</div>
+	<div id="area3">This is area3</div>
+ </body>
+</html>

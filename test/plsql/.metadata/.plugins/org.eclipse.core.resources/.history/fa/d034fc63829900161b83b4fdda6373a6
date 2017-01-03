@@ -1,0 +1,8 @@
+CREATE OR REPLACE PROCEDURE up_sal (vempno emp.empno%TYPE)
+IS
+BEGIN
+   UPDATE emp
+      SET sal = 5000
+    WHERE empno = vempno;
+END;
+/

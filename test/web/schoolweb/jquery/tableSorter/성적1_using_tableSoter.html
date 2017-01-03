@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="jquery-3.1.0.js"></script> 
+<script type="text/javascript" src="tablesorter.js"></script> 
+<script>
+/*
+$(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+);
+ */
+</script>
+ <script type="text/javascript">
+ 
+				//var tag="<tr><th>국어</th><th>영어</th><th>총점</th><th>평균</th></tr>";
+				var tag="";
+				function  main(name, kor, eng)
+				{
+					
+					STU = new student(name, kor,eng)
+					
+					$('#myTable > tbody:last').append('<tr><td>'+STU.name+'</td><td>'+STU.kor+'</td><td>'+STU.eng+'</td><td>'+STU.plus()+'</td><td>'+STU.avg()+'</td></tr>');
+					  
+					 $("#myTable").tablesorter(); 
+					//tag+= print(STU.name, STU.kor, STU.eng, STU.plus(), STU.avg());
+					//myTable.innerHTML = tag;
+				
+				}
+
+				function student(i, j, k)
+				{
+					this.name = i;
+					this.kor = j;
+					this.eng=k;
+					this.plus=function(){return parseInt(j)+parseInt(k);}
+					this.avg=function(){return (parseInt(j)+parseInt(k))/2;}
+					
+				}
+				
+
+				/* print() 삭제	
+				function print(name, kor, eng, tot, avr)
+				{
+					tag ="<tr>"
+					tag += "<td> "+ name + "</td>" + "<td> " + kor +"</td>  "+ "<td>"+eng + "</td>" ;
+					tag += "<td> " +tot + "</td>";
+					tag += "<td> " +avr + "</td>";
+					tag += "</tr>";
+					return tag;
+				}
+				*/
+
+				function sample_data()
+				{
+				
+					num=Math.floor((Math.random()*100)+1);
+					name="길동"+num;
+					sub1=Math.floor((Math.random()*100)+1);
+					sub2=Math.floor((Math.random()*100)+1);
+					
+
+				
+					frm.txtName.value=name;
+					frm.txtName.style.backgroundColor = "#ffff00";
+					frm.txtKor.value=sub1;
+					frm.txtKor.style.backgroundColor = "#ffff00";
+					frm.txtEng.value=sub2;
+					frm.txtEng.style.backgroundColor = "#ffff00";
+					main(name,sub1,sub2);
+
+				}
+
+ 
+ </script>
+ <script>
+
+</script>
+ </head>
+
+ <body>
+ <form id="frm">
+	<h1>성적 출력 </h1>
+
+	성명: <input type="text" id="txtName" size=10>  
+	국어 :<input type="text" id="txtKor" size=10>  
+	영어 :<input type="text" id="txtEng" size=10>
+	<input type="button" value="입력" onclick="main(txtName.value,txtKor.value, txtEng.value)">	   
+	<input type="button" value="Sample Data" onclick="sample_data()"> </br>
+	<table id="myTable" class="tablesorter">
+	  	<thead>
+	  		<tr>
+	  			<th>학생명</th><th>국어</th><th>영어</th><th>총점</th><th>평균</th>
+	  		</tr>
+	  	</thead>
+	  	<tbody ></tbody>
+	 </table>
+  </form>
+ </body>
+</html>

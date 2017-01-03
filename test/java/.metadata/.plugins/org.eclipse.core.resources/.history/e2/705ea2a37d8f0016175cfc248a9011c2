@@ -1,0 +1,60 @@
+package com.test;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class Tax_Bill extends JPanel{
+	//private final JPanel Taxpanel[]=new JPanel[6];
+	private JPanel Taxpanel1, Taxpanel2, Taxpanel3, Taxpanel4, Taxpanel5, Taxpanel6; 
+	private JButton button1;
+	private JButton button2;
+	private JLabel jltitlename;
+	
+	public Tax_Bill() {
+		setBounds(0, 0, 795, 400);
+		setLayout(null);
+		
+		Taxpanel1=new JPanel();
+		Taxpanel1.setBounds(0, 0, 795, 50);
+		add(Taxpanel1);
+		Taxpanel1.setLayout(new GridLayout(1,2));
+		
+		button1 = new JButton("저장");
+		Taxpanel1.add(button1);
+		
+		button2 = new JButton("엑셀로불러오기");
+		Taxpanel1.add(button2);
+		
+		jltitlename = new JLabel("세금계산서");
+		jltitlename.setForeground(Color.RED);
+		jltitlename.setFont(new Font("SansSerif", Font.BOLD, 25));
+		Taxpanel1.add(jltitlename);
+		Taxpanel2=new JPanel();
+		Taxpanel2.setSize(795, 130);
+		Taxpanel2.setLocation(0, 50);
+		add(Taxpanel2);
+		Taxpanel3=new JPanel();
+		Taxpanel3.setLocation(0, 180);
+		Taxpanel3.setSize(795, 25);
+		add(Taxpanel3);
+		Taxpanel4=new JPanel();
+		Taxpanel4.setSize(795, 130);
+		Taxpanel4.setLocation(0, 205);
+		add(Taxpanel4);
+		Taxpanel5=new JPanel();
+		Taxpanel5.setSize(795, 30);
+		Taxpanel5.setLocation(0, 335);
+		add(Taxpanel5);
+		Taxpanel6=new JPanel();
+		Taxpanel6.setSize(795, 35);
+		Taxpanel6.setLocation(0, 365);
+		add(Taxpanel6);
+		
+		
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new Tax_Bill();
+	}
+}

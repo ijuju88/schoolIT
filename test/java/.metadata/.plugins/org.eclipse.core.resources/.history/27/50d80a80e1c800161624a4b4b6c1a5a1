@@ -1,0 +1,144 @@
+package com.clinet;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import java.util.Set;
+
+public class ChatClient {
+	Selector st;
+	SocketChannel sc;
+	SelectionKey stKey;
+	ClientFrame cf;
+	
+	
+	public ChatClient(ClientFrame cf){
+		this.cf=cf;
+	}
+	
+	void startClient(String address){
+		try{
+			st=Selector.open();
+			sc=SocketChannel.open();
+			sc.configureBlocking(false);
+			sc.register(st, SelectionKey.OP_CONNECT);
+			sc.connect(new InetSocketAddress(address, 5005));
+		}catch(Exception e){
+			cf.displayText("[통신 에러]");
+			if(sc.isOpen()){
+				stopClient();
+			}
+			return;
+		}
+		Runnable runna=new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(true){
+					try{
+						int KeyCount=st.select();
+						if(KeyCount==0){
+							continue;
+						}
+						Set<SelectionKey> stedKey=st.selectedKeys();
+						Iterator<SelectionKey> iterator=stedKey.iterator();
+						while(iterator.hasNext()){
+							SelectionKey stKey=iterator.next();
+							if(stKey.isConnectable()){
+								connect(stKey);
+							}else if(stKey.isReadable()){
+								receive(stKey);
+							}else if(stKey.isWritable()){
+								send(stKey);
+							}
+							iterator.remove();
+						}
+					}catch(Exception e){
+						cf.displayText("[통신 에러]");
+						if(sc.isOpen()){
+							stopClient();
+						}
+						//return;
+					}
+				}
+			}
+			
+		};
+		new Thread(runna).start();
+	}
+	
+	void stopClient(){
+		try{
+			cf.displayText("[접속 끊김]");
+			cf.btConn.setText("start");
+			if(sc !=null && sc.isOpen()){
+				sc.close();
+			}
+		}catch(Exception e){}
+	}
+	
+	void connect(SelectionKey stKey){
+		try{
+			sc.finishConnect();
+			cf.displayText("[연결: "+sc.getRemoteAddress()+"]");
+			cf.btSend.setEnabled(true);
+			cf.btConn.setText("stop");
+			stKey.interestOps(SelectionKey.OP_READ);
+		}catch(Exception e){
+			cf.displayText("[통신 에러]");
+			if(sc.isOpen()){
+				stopClient();
+			}
+		}
+	}
+	
+	void receive(SelectionKey stKey){
+		try{
+			ByteBuffer byteBu=ByteBuffer.allocate(100);
+			int byteCount=sc.read(byteBu);
+			if(byteCount==-1){
+				throw new IOException();
+		}
+		byteBu.flip();
+		Charset chs=Charset.forName("utf-8");
+		String data=chs.decode(byteBu).toString();
+		System.out.println("receive data >"+data);
+		cf.displayText(data);
+		
+		}catch(Exception e){
+			cf.displayText("[ 통신 에러 ]");
+			stopClient();
+		}
+	}
+	
+	public void send(SelectionKey stKey) {
+		try {
+			ByteBuffer byteBu =(ByteBuffer)stKey.attachment();
+			sc.write(byteBu);
+			cf.displayText("[보내기완료]");
+			stKey.interestOps(SelectionKey.OP_READ);
+		} catch (Exception e) {
+			cf.displayText("[통신 에러]");
+			stopClient();
+		}
+
+	}
+	
+	void send(String data) {
+		Charset chs=Charset.forName("UTF-8");
+		ByteBuffer byteBu=chs.encode(data);
+		SelectionKey key=sc.keyFor(st);
+		key.attach(byteBu);
+		System.out.println("kkk"+data);
+		key.interestOps(SelectionKey.OP_WRITE);
+		st.wakeup();
+		
+	}
+	
+}

@@ -1,0 +1,62 @@
+package reservation;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Vector;
+
+import javax.servlet.http.HttpServletRequest;
+
+import util.ConnectionUtil;
+
+public class ActionBean {
+	
+	public ActionBean(){}
+	
+	
+	// DB연결객체 Close
+	private void close(ResultSet rs,PreparedStatement pstmt,Connection conn){
+		if(rs != null) try{ rs.close(); }catch(SQLException e){}finally{ rs = null; }
+		if(pstmt != null) try{ pstmt.close(); }catch(SQLException e){}finally{ pstmt = null; }
+		if(conn != null) try{ conn.close(); }catch(SQLException e){}finally{ conn = null; }
+	}
+	
+	
+	// 방정보 검색
+	public Vector<RoomBean> getRoom(){
+		Vector<RoomBean> rooms = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "SELECT * FROM ROOM ORDER BY RNO ASC";
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if( rs.next() ){
+				rooms = new Vector<RoomBean>();
+				do{
+					RoomBean room = new RoomBean();
+					room.setRno(rs.getInt("rno"));			// 고유번호 primary key
+					room.setRname(rs.getString("rname"));	// 방이름
+					room.setRsize(rs.getInt("rsize"));		// 방크기
+					room.setMen(rs.getInt("men"));			// 최대인원수-기본:2명
+					room.setAddman(rs.getInt("addman"));	// 추가인원당 금액
+					room.setWeekday(rs.getInt("weekday"));	// 주중가격
+					room.setWeekend(rs.getInt("weekend"));	// 주말가격
+					room.setSweekday(rs.getInt("sweekday"));// 성수기주중가격
+					room.setSweekend(rs.getInt("sweekend"));// 성수기
+					rooms.add(room);
+				}while(rs.next());	
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return rooms;
+	}
+}

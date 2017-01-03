@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		 <script>
+
+		 	$(function(){
+    			$('html').keydown(function(e){
+	 			var key = e.which;
+	 			var de;
+	 			switch(key){
+            case 38:
+               	$("#myLay").animate({
+               		
+               	});
+                break;
+            case 37:
+                $("#myLay").animate({
+               		left:'50px',
+               	});
+                break;
+            case 39:
+               	 $("#myLay").animate({
+               		
+               	});
+                break;
+            case 40:
+            	$("#myLay").animate({
+               		
+               	});
+                break;
+            default:
+               
+                break;
+        }
+
+ 			 	 //$('#test').text(key);
+      			 //$('#myLay').text(direction);
+			});
+	 	});
+		 </script>
+</head>
+<body>
+	<div id="myLay" style="position: absolute;top:100px; left:100px; width: 80px; height: 80px; background-color: #ff6493;">
+		<div id="test">레이어</div>	
+	</div>
+</body>
+</html>

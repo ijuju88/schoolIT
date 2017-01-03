@@ -1,0 +1,54 @@
+var sn="",n1=0, n2=0, total=0, avg=0, dep="";
+var students=[];
+function main(sName, snum1, snum2){
+	students.push(new Student(this.Sname, this.snum1, this.snum2));
+	students.sort(function(a, b){return b.indexof("total().value").value-a.total();});
+	SetPrint();
+}
+
+function Student(sn, n1, n2)
+{
+	this.sn=document.getElementById("sName").value;
+	this.n1=parseInt(document.getElementById("snum1").value);
+	this.n2=parseInt(document.getElementById("snum2").value);
+
+	this.total=function(){return this.n1+this.n2;}
+	this.avg=function(){return this.total()/2}
+
+	this.dep=function(){
+	if(this.avg()>=90){return "A"}
+	else if(this.avg()>=80){return "B"}
+	else if(this.avg()>=70){return "C"}
+	else return "F";
+	}
+}
+function SetPrint(){
+	var str="<tr>";
+	str+="<th>이름</th><th>국어</th><th>수학</th><th>총점</th><th>평균</th><th>등급</th><th>순위</th></tr>"
+	
+	for(var i in students)
+		{str+="<tr>";
+			with(students[i]){
+				str+="<td>"+sn+"</td>";
+				str+="<td>"+n1+"</td>";
+				str+="<td>"+n2+"</td>";
+				str+="<td>"+total()+"</td>";
+				str+="<td>"+avg()+"</td>";
+				str+="<td>"+dep()+"</td>";
+				str+="<td>"+(parseInt(i)+1)+"</td>";
+			}str+="</tr>";
+		}
+		tem.innerHTML=str;
+}
+
+function sample_date(){
+	var num=Math.floor((Math.random()*100)+1);
+	this.sn="ID"+num;
+	this.n1=Math.floor((Math.random()*100)+1);
+	this.n2=Math.floor((Math.random()*100)+1);
+
+	frm.sName.value=sn;
+	frm.snum1.value=n1;
+	frm.snum2.value=n2;
+	main(sn, n1, n2);
+}

@@ -1,0 +1,10 @@
+CREATE OR REPLACE PROCEDURE EMP_PRO (p_deptno       EMP.DEPTNO%TYPE,
+                                     p_sal      OUT EMP.SAL%TYPE)
+IS
+BEGIN
+   SELECT sal
+     INTO p_sal
+     FROM EMP
+    WHERE deptno = p_deptno;
+END;
+/

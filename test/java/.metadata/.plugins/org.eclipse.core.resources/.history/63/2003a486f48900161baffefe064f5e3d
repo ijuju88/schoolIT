@@ -1,0 +1,9 @@
+package StudentManager;
+
+public class stuEx {
+
+	public stuEx() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

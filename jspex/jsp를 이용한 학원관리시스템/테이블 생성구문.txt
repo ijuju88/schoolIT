@@ -1,0 +1,48 @@
+create table student (
+st_id varchar2(14) primary key,
+st_pass varchar2(16),
+st_name varchar(20),
+birth number(6),
+addr varchar2(100),
+st_hp varchar2(20),
+st_ehp varchar2(20),
+gender varchar2(6),
+rdate varchar2(20)
+);
+
+create table teacher (
+tch_no varchar2(10) primary key,
+tch_pass varchar2(16),
+tch_name varchar2(20),
+acab varchar2(20),
+resp_sub varchar2(20),
+tch_hp varchar2(20)
+);
+
+create table subject (
+sub_no number(5) primary key,
+sub_name varchar2(20),
+tch_no varchar2(20) references teacher(tch_no)
+);
+
+create table register (
+rg_id varchar2(14) references student(st_id),
+sub_no number(5) references subject(sub_no),
+rg_start varchar2(20),
+rg_end varchar2(20),
+classroom number(4),
+charge number(10),
+primary key(rg_id, sub_no)
+);
+
+create table attendance (
+at_id varchar2(14) references student(st_id),
+at_pass varchar2(16),
+at_date varchar2(20),
+checkin varchar2(20),
+checkout varchar2(20),
+at_stmt varchar2(20),
+primary key(at_id, at_date)
+);
+
+commit;

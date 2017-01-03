@@ -1,0 +1,24 @@
+package com.test;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
+
+public class Tax_Bill extends JPanel{
+
+	
+	public Tax_Bill() {
+		setLayout(null);
+		setBounds(0, 0, 795, 400);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new Tax_Bill();
+	}
+}

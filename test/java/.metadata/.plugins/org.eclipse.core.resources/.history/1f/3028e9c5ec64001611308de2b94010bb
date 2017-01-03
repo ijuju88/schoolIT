@@ -1,0 +1,19 @@
+package com.ClassStary;
+
+public class MethodTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class  Number{
+	int num1, num2, sum;
+	
+	void display(){
+		System.out.println(num1); System.out.println(num2);
+	}
+	int plus(int x, int y){}
+}

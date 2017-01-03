@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+  <style>
+		p, em{margin-left:auto; margin-right:auto; border:3px solid red; width:50%;}
+
+		#target1{width:150px; height:50px; background-color:yellow;
+		margin:10px 20px 30px 40px;/*margin 축약 - 시계방향*/
+		border:5px solid red;
+		}
+		#target2{width:150px; height:50px; background-color:#66ff00; resize:both; overflow: auto; /*resize - 익스플로러는 안됨*/
+		
+		}
+	</style>
+ </head>
+ <body>
+	<p id="target1">이것은 p요소.</p>
+	<div id="target2">이것은 div요소.</div>
+	<p style="text-align:center;"><em>My Text</em></p>
+ </body>
+</html>
+
+ </body>
+</html>

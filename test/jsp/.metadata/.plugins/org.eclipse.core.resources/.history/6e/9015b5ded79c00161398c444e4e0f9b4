@@ -1,0 +1,50 @@
+package dao;
+
+import java.sql.*;
+
+public class DBConnect {
+	private DBConnect() {
+	}
+
+	// 한개의 db연결을 위한 싱글톤생성
+	private static DBConnect dbconn = new DBConnect();
+
+	public static DBConnect getInstance() {
+		return dbconn;
+	}
+
+	private Connection getDBconnect() {
+
+		Connection conn = null;
+
+		// oracle
+		String url1 = "jdbc:oracle:thin:@localhost:1521:xe";
+		String id1 = "test2";
+		String pw1 = "1234";
+
+		// mysql
+		// String url2 = "jdbc:mysql://localhost:3306/emp";
+		// String id2 = "oxju88";
+		// String pw2 = "1234";
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url1, id1, pw1);
+
+			// mysql
+			// Class.forName("org.gjt.mm.mysql.Driver");
+			// conn = DriverManager.getConnection(url2, id2, pw2);
+			
+			System.out.println("연결완료!!");
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		return conn;
+
+	}
+	
+	//insert문
+	public void InsertMember(){
+		
+	}
+}

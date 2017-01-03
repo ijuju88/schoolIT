@@ -1,0 +1,128 @@
+<!DOCTYPE HTML >
+<html>
+	 <head>
+	 <meta charset="utf-8">
+		  <title> 성적 출력 - 배열로 순위 </title>
+
+		  <script type="text/javascript">
+		  <!--		
+		    var cnt=1;
+
+				var students = [];
+				
+				//  "확인" 버튼 눌렀을때 호출되는 main함수
+				function main( sNo,name, korean, math, english, science )
+				{	
+					// 입력받은 값을 Student 함수를 이용해서 배열에 넣기
+					students.push ( new Student( sNo,name, korean, math, english, science ) ) ;
+
+					students.sort ( function (right, left)	 { return left.getSum() - right.getSum(); 	}	);		// 총점에 따라 오름차순으로 정렬
+
+					//	3등까지만 
+//					students = students.slice(0,3);
+					
+					area.innerHTML = print();					// print함수 호출해서 area에 출력
+								
+				}
+
+				// 성적 정보를 배열에 넣는 함수
+				function Student(sNo,name, korean, math, english, science)
+				
+				{
+						// this => students 를 지칭함.
+						this.학번 = sNo;
+						this.이름 = name;
+						this.국어 = parseInt(korean);
+						this.수학 = parseInt(math);
+						this.영어 = parseInt(english);
+						this.과학 = parseInt(science);
+
+						// 총점
+						this.getSum = function (){
+												return this.국어 + this.수학 + this.영어 + this.과학;
+						};
+						
+						// 평균
+						this.getAverage = function(){
+													return this.getSum() / 4;
+						};
+				}	
+				
+				// 출력
+				function print()
+				{
+					var output ="<tr align=center><td>순위</td><td>학번</td><td>이름</td><td>국어</td><td>수학</td><td>영어</td><td>과학</td><td>총점</td><td>평균</td></tr>";
+
+					for ( var i in students )		// students 배열의 주소값이 차례로 넘어옴
+					{	
+							with ( students[i] )
+							{
+								output += "<tr align=center><td>"+ (parseInt(i)+1) +"</td>";		// 순위
+								output += "<td>" + 학번+ "</td>";													// 학번
+								output += "<td>" + 이름 + "</td>";													// 이름
+								output += "<td>" + 국어 + "</td>";													// 국어 점수
+								output += "<td>" + 수학 + "</td>";													// 수학 점수
+								output += "<td>" + 영어 + "</td>";													// 영어 점수
+								output += "<td>" + 과학 + "</td>";													// 과학 점수
+								output += "<td>" + getSum() + "</td>";										// 총점
+								output += "<td>" + getAverage() + "</td></tr>";							// 평균
+							}
+					}
+
+
+
+					return output;
+				}
+				
+
+
+					function sample_data()
+				{
+					ssNo="20130"+cnt;
+					cnt++;
+					num=Math.floor((Math.random()*100)+1);
+					name="길동"+num;
+					sub1=Math.floor((Math.random()*100)+1);
+					sub2=Math.floor((Math.random()*100)+1);
+					sub3=Math.floor((Math.random()*100)+1);
+					sub4=Math.floor((Math.random()*100)+1);
+
+					frm.txt_sNo.value=ssNo;
+					frm.txt_name.style.backgroundColor = "#ffff00";
+					frm.txt_name.value=name;
+					frm.txt_name.style.backgroundColor = "#ffff00";
+					frm.txt_kor.value=sub1;
+					frm.txt_kor.style.backgroundColor = "#ffff00";
+					frm.txt_mat.value=sub2;
+					frm.txt_mat.style.backgroundColor = "#ffff00";
+					frm.txt_eng.value=sub3;
+					frm.txt_eng.style.backgroundColor = "#ffff00";
+					frm.txt_sci.value=sub4;
+					frm.txt_sci.style.backgroundColor = "#ffff00";
+					main(ssNo,name,sub1,sub2,sub3,sub4);
+
+				}
+		  //-->
+		  </script>
+	 </head>
+	 
+	 <body>
+		 <form name=frm>
+			 <h1>성적처리</h1>
+
+			  학번 : <input size=10 type="text" id="txt_sNo">
+			  이름 : <input size=10 type="text" id="txt_name">
+			  국어 : <input size=5 type="text" id="txt_kor">
+			  수학 : <input size=5 type="text" id="txt_mat">
+			  영어 : <input size=5 type="text" id="txt_eng">
+			  과학 : <input size=5 type="text" id="txt_sci">
+
+			  <input type="button" value="확인" onclick="main(txt_sNo.value,txt_name.value, txt_kor.value, txt_mat.value, txt_eng.value, txt_sci.value)"> 
+			  <input type="button" value="Sample Data" onclick="sample_data()"> 
+			  <hr>
+
+			  <table id=area></table>
+		  </form>
+	 </body>
+</html>
+

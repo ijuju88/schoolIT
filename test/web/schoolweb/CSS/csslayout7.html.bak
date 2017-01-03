@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<style>
+	#header{background-color:#00ccff; width:100%; height:50px;}
+	#nav{background-color:#ffccff;  width:30%; height:10px; float:left;}
+	#content{background-color:#ccffff; width:70%; height:100px; float:right;}
+	#footer{background-color:#ff9900; width:100%; height:50px; clear:both;}
+</style>
+  <title>My Blog Page</title>
+ </head>
+ <body>
+	<div id="wrapper">
+		<div id="header">header</div>
+		<div id="nav">nav</div>
+		<div id="content">content</div>
+		<div id="footer">footer</div>
+	</div>
+ </body>
+</html>
